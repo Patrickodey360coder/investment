@@ -1,0 +1,713 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Leadway Invest | Dashboard</title>
+        <link rel="icon" type="image/x-icon" href="resources/images/invest.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+  
+      <!--STYLESHEET-->
+      <!--=================================================-->
+      <link rel='stylesheet' href='resources/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/css/nifty.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+  
+      <link rel='stylesheet' href='resources/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/plugins/animate-css/animate.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/plugins/bootstrap-select/bootstrap-select.min.css?v=1.1' type='text/css' media='all' />
+      
+        
+      <link rel='stylesheet' href='resources/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/plugins/morris-js/morris.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/plugins/switchery/switchery.min.css?v=1.1' type='text/css' media='all' />
+  
+      <script type='text/javascript' src='resources/plugins/pace/pace.min.js?v=1.1'></script>
+          
+  </head>
+  
+   
+  <body>
+      <div id="container" class="effect mainnav-lg">
+          
+          <!--NAVBAR-->
+          <!--===================================================-->
+           <header id="navbar">
+              <div id="navbar-container" class="boxed">
+  
+                  <!--Brand logo & name-->
+                  <!--================================-->
+                  <div class="navbar-header">
+                      <a href="https://mytuitionaid.com/leadwayinvest/admin/" class="navbar-brand">
+                        <!--  <img src="resources/images/invest.ico" alt="" class="brand-icon">-->
+                          <div class="brand-title">
+                              <span class="brand-text">Leadway Invest</span>
+                          </div>
+                      </a>
+                  </div>
+                  <!--================================-->
+                  <!--End brand logo & name-->
+  
+  
+                  <!--Navbar Dropdown-->
+                  <!--================================-->
+                  <div class="navbar-content clearfix">
+                      <ul class="nav navbar-top-links pull-left">
+  
+                          <!--Navigation toogle button-->
+                          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                          <li class="tgl-menu-btn">
+                              <a class="mainnav-toggle" href="#">
+                                  <i class="fa fa-navicon fa-lg"></i>
+                              </a>
+                          </li>
+                          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                          <!--End Navigation toogle button-->
+  
+  
+        
+  
+                      </ul>
+                      <ul class="nav navbar-top-links pull-right">
+  
+  
+  
+                          <!--User dropdown-->
+                          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                       
+                          <li id="dropdown-user" class="dropdown">
+                              <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                  <span class="pull-right">
+                                      <img class="img-circle img-user media-object" src="resources/images/av1.png" alt="Profile Picture">
+                                  </span>
+                                  <div class="username hidden-xs">   admin</div>
+                              </a>
+  
+  
+                              <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+  
+                                  <!-- Dropdown heading  -->
+                                  <div class="pad-all bord-btm">
+                                    <script>var lifespan=3600;</script>
+                                      <p class="text-lg text-semibold mar-btm">Session Lifespan</p>
+                                           <div id="life_bar" class="progress"><div  style="width: 100%;" class="progress-bar progress-bar-info">100%</div></div>
+                                  </div>
+  
+  
+                                  <!-- User dropdown menu -->
+                                  <ul class="head-list">
+                                      
+                                      <li>
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Setting">
+                                               <i class="fa fa-cog fa-2x icon-lg icon-fw"></i> Settings
+                                          </a>
+                                      </li>
+                                     
+                                  </ul>
+  
+                                  <!-- Dropdown footer -->
+                                  <div class="pad-all text-right">
+                                      <a href="https://mytuitionaid.com/leadwayinvest/admin/Logout" class="btn btn-primary">
+                                          <i class="pli-unlock"></i> Logout
+                                      </a>
+                                  </div>
+                              </div>
+                          </li>
+                          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                          <!--End user dropdown-->
+  
+                      </ul>
+                  </div>
+                  <!--================================-->
+                  <!--End Navbar Dropdown-->
+  
+              </div>
+          </header>        <!--===================================================-->
+          <!--END NAVBAR-->
+  
+          <div class="boxed">
+  
+              <!--CONTENT CONTAINER-->
+              <!--===================================================-->
+              <div id="content-container">
+                  
+                  <!--Page Title-->
+                  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                  <div id="page-title">
+                      <h1 class="page-header text-overflow">Dashboard</h1>
+  
+                        <!--Searchbox-->
+                      <div class="searchbox">
+                       <form method="post" action="https://mytuitionaid.com/leadwayinvest/admin/Search">
+                           
+                          <div class="input-group custom-search-form">
+                              <input type="text" name="query" class="form-control" placeholder="Search..">
+                              <span class="input-group-btn">
+                                  <button name="search" class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                              </span>
+                            
+                          </div>
+                      </form>
+                      </div>
+                  </div>
+                  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                  <!--End page title-->
+  
+                  <!--Page content-->
+                  <!--===================================================-->
+                  <div id="page-content">
+                      
+                      
+                      
+                      
+                      <!--Tiles - Bright Version-->
+                      <!--===================================================-->
+                      <div class="row">
+                          <div class="col-sm-6 col-lg-3">
+                      
+                              <!--Registered User-->
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                              <div class="panel media pad-all">
+                                  <div class="media-left">
+                                      <span class="icon-wrap icon-circle  icon-wrap-md bg-success">
+                                         <i class="fa fa-user fa-2x"></i>
+                                      </span>
+                                  </div>
+                      
+                                  <div class="media-body">
+                                      <p class="text-2x mar-no text-semibold">37</p>
+                                      <p class="text-muted mar-no">Investors</p>
+                                  </div>
+                              </div>
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                      
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                      
+                              <!--New Order-->
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                              <div class="panel media pad-all">
+                                  <div class="media-left">
+                                      <span class="icon-wrap icon-circle icon-wrap-md bg-info">
+                                          <i class="fa fa-user fa-2x"></i>
+                                      </span>
+                                  </div>
+                      
+                                  <div class="media-body">
+                                      <p class="text-2x mar-no text-semibold">2</p>
+                                      <p class="text-muted mar-no">Administrators</p>
+                                  </div>
+                              </div>
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                      
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                      
+                              <!--Comments-->
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                              <div class="panel media pad-all">
+                                  <div class="media-left">
+                                      <span class="icon-wrap icon-circle  icon-wrap-md bg-warning">
+                                          <i class=" fa fa-dollar fa-2x"></i>
+                                      </span>
+                                  </div>
+                      
+                                  <div class="media-body">
+                                      <p class="text-2x mar-no text-semibold">27</p>
+                                      <p class="text-muted mar-no">Investments</p>
+                                  </div>
+                              </div>
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                      
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                      
+                              <!--Sales-->
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                              <div class="panel media pad-all">
+                                  <div class="media-left">
+                                      <span class="icon-wrap  icon-circle  icon-wrap-md bg-danger">
+                                           <i class=" fa fa-dollar fa-2x"></i>
+                                      </span>
+                                  </div>
+                      
+                                  <div class="media-body">
+                                      <p class="text-2x mar-no text-semibold">2</p>
+                                      <p class="text-muted mar-no">Withdrawals</p>
+                                  </div>
+                              </div>
+                              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                      
+                          </div>
+                      </div>
+                      <!--===================================================-->
+                      <!--End Tiles - Bright Version-->
+                      
+                  
+                     <div class="row">
+                          
+                          <div class="col-lg-6">
+                              <div class="panel">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">New & Verified Investors (2019)</h3>
+                                  </div>
+                                  <div class="panel-body">
+                      
+                                      <!--Morris Area Chart placeholder-->
+                                      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                                      <div id="demo-morris-area" style="height:215px"></div>
+                                      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                      
+                                  </div>
+                              </div>
+                          </div>
+                      
+                         
+                         <div class="col-lg-6">
+                              <div class="panel">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Investments</h3>
+                                  </div>
+                                  <div class="panel-body">
+                      
+                                      <!--Flot Donut Chart placeholder -->
+                                      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                                      <div id="demo-flot-donut" style="height:215px"></div>
+                                      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                      
+                                  </div>
+                              </div>
+                          </div>
+                      
+                      </div>                    
+                                                                  
+                      
+                      <div class="row">
+                       
+                        <div class="panel">
+                                  <div class="panel-heading">
+                                      <div class="panel-control">
+                                          <a class="fa fa-question-circle fa-lg fa-fw unselectable add-tooltip" href="#" data-original-title="<h4 class='text-thin'>Information</h4><p style='width:150px'>Last 15 registered investors</p>" data-html="true" title=""></a>
+                                      </div>
+                                      <h3 class="panel-title">Recently Registered Investors</h3>
+                                  </div>
+                      
+                                  <div class="panel-body">
+                                  
+                                      <div class="table-responsive">
+                                          <table class="table table-striped table-hover">
+                                              <thead>
+                                                  <tr>
+                                                      <th>UID</th>
+                                                      <th>Name</th>
+                                                       <th class="text-center">Email</th>
+                                                      <th class="text-center">Country</th>
+                                                      <th class="text-center">Date</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=40" class="btn-link">SPI/0040</a></td>
+                                                      <td><a href="investors?view=40" class="btn-link">olowolaju tola</a></td>
+                                                      <td class="text-center"><span >mattayefx@gmail.com</span></td>
+                                                      <td class="text-center"><span >United States of America</span></td>
+                                                      <td class="text-center"><span >23rd of February, 2019 9:20 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=39" class="btn-link">SPI/0039</a></td>
+                                                      <td><a href="investors?view=39" class="btn-link">Smith James</a></td>
+                                                      <td class="text-center"><span >smith@school.com</span></td>
+                                                      <td class="text-center"><span >United States of America</span></td>
+                                                      <td class="text-center"><span >11th of July, 2018 5:36 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=38" class="btn-link">SPI/0038</a></td>
+                                                      <td><a href="investors?view=38" class="btn-link">Akintunde James</a></td>
+                                                      <td class="text-center"><span >jamesak@gmail.com</span></td>
+                                                      <td class="text-center"><span >Nigeria</span></td>
+                                                      <td class="text-center"><span >10th of July, 2017 12:55 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=37" class="btn-link">SPI/0037</a></td>
+                                                      <td><a href="investors?view=37" class="btn-link">ROBERTS MIEBAKA</a></td>
+                                                      <td class="text-center"><span >robertsmiebaka@gmail.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >4th of December, 2016 3:59 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=36" class="btn-link">SPI/0036</a></td>
+                                                      <td><a href="investors?view=36" class="btn-link">Roberts Miebaka</a></td>
+                                                      <td class="text-center"><span >robertsmiebaka@yahoo.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >28th of November, 2016 9:21 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=35" class="btn-link">SPI/0035</a></td>
+                                                      <td><a href="investors?view=35" class="btn-link">amachree edwin</a></td>
+                                                      <td class="text-center"><span >edchree7@gmail.com</span></td>
+                                                      <td class="text-center"><span >Nigeria</span></td>
+                                                      <td class="text-center"><span >25th of November, 2016 7:36 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=34" class="btn-link">SPI/0034</a></td>
+                                                      <td><a href="investors?view=34" class="btn-link">Falana Louis</a></td>
+                                                      <td class="text-center"><span >seeadesola@gmail.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >5th of November, 2016 3:54 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=33" class="btn-link">SPI/0033</a></td>
+                                                      <td><a href="investors?view=33" class="btn-link">jaspiro igboke </a></td>
+                                                      <td class="text-center"><span >igbokejaspiro@gmail.com</span></td>
+                                                      <td class="text-center"><span >United States of America</span></td>
+                                                      <td class="text-center"><span >4th of November, 2016 10:12 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=32" class="btn-link">SPI/0032</a></td>
+                                                      <td><a href="investors?view=32" class="btn-link">arthur darlington</a></td>
+                                                      <td class="text-center"><span >arthurdarlington@yahoo.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >31st of October, 2016 6:37 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=31" class="btn-link">SPI/0031</a></td>
+                                                      <td><a href="investors?view=31" class="btn-link">jasper IGBOKE</a></td>
+                                                      <td class="text-center"><span >igbokejasper12@gmail.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >26th of October, 2016 6:56 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=30" class="btn-link">SPI/0030</a></td>
+                                                      <td><a href="investors?view=30" class="btn-link">TIMOTHY AFUBE</a></td>
+                                                      <td class="text-center"><span >afube.chisom1@yahoo.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >25th of October, 2016 6:18 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=29" class="btn-link">SPI/0029</a></td>
+                                                      <td><a href="investors?view=29" class="btn-link">Bughuul Fanen</a></td>
+                                                      <td class="text-center"><span >fanenbughuul@yahoo.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >19th of October, 2016 11:41 am</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=28" class="btn-link">SPI/0028</a></td>
+                                                      <td><a href="investors?view=28" class="btn-link">Inyang Menyene</a></td>
+                                                      <td class="text-center"><span >inyang@yahoo.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >10th of October, 2016 7:37 am</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=27" class="btn-link">SPI/0027</a></td>
+                                                      <td><a href="investors?view=27" class="btn-link">Amachree Edwin</a></td>
+                                                      <td class="text-center"><span >amachreeeddy@gmail.com</span></td>
+                                                      <td class="text-center"><span >Russia</span></td>
+                                                      <td class="text-center"><span >9th of October, 2016 4:02 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                                 <tr>
+                                                      <td><a href="investors?view=26" class="btn-link">SPI/0026</a></td>
+                                                      <td><a href="investors?view=26" class="btn-link">Amachree Edwin</a></td>
+                                                      <td class="text-center"><span >otonyeedwin@gmail.com</span></td>
+                                                      <td class="text-center"><span >Nigeria</span></td>
+                                                      <td class="text-center"><span >9th of October, 2016 3:32 pm</span></td>
+                                                       
+                                                  </tr>
+                                                                                             </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                      
+                      </div>
+                      
+                      
+                  </div>
+                  <!--===================================================-->
+                  <!--End page content-->
+             
+  
+              </div>
+              <!--===================================================-->
+              <!--END CONTENT CONTAINER-->
+  
+  
+              
+              <!--MAIN NAVIGATION-->
+              <!--===================================================-->
+              <nav id="mainnav-container">
+                  <div id="mainnav">
+                  
+                     <!--Shortcut buttons-->
+                      <!--================================-->
+                      <div id="mainnav-shortcut">
+                          
+                      </div>
+                      <!--================================-->
+                      <!--End shortcut buttons-->
+                      <!--Menu-->
+                      <!--================================-->
+                       <div id="mainnav-menu-wrap">
+                          <div class="nano">
+                              <div class="nano-content">
+                                  <ul id="mainnav-menu" class="list-group">
+                          
+                                      <!--Category name-->
+                                      <li class="list-header">Navigation</li>
+                          
+                                      <!--Menu list item-->
+                                      <li  class="active-link"  >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/">
+                                              <i class="fa fa-home"></i>
+                                              <span class="menu-title">
+                                                  <strong>Dashboard</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                          
+                                      <li class="list-divider"></li>
+                                      
+                                      
+                                      <li  >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
+                                              <i class="fa fa-users"></i>
+                                              <span class="menu-title">
+                                                  <strong>Investors</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                      
+                                      <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Payment">
+                                              <i class="fa fa-dollar"></i>
+                                              <span class="menu-title">
+                                                  <strong>Payments</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                      
+                                        <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Investment">
+                                              <i class="fa fa-bar-chart"></i>
+                                              <span class="menu-title">
+                                                  <strong>Investments & Interests</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                      
+                                      <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/WithdrawalRequest">
+                                              <i class="fa fa-money"></i>
+                                              <span class="menu-title">
+                                                  <strong>Withdrawal Requests</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                     
+                                      <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
+                                              <i class="fa fa-money"></i>
+                                              <span class="menu-title">
+                                                  <strong>Pending Payments</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                    
+                                        <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/ApprovedPayment">
+                                              <i class="fa fa-check"></i>
+                                              <span class="menu-title">
+                                                  <strong>Approved Payment</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                        
+                                      
+                                       <li class="list-divider"></li>
+                                      
+                                     
+                                      
+                                      <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminAccount">
+                                              <i class="fa fa-users"></i>
+                                              <span class="menu-title">
+                                                  <strong>Admin Accounts</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                       <li >
+                                          <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminActivity">
+                                              <i class="fa fa-folder"></i>
+                                              <span class="menu-title">
+                                                  <strong>Admin Activity</strong>
+                                              </span>
+                                          </a>
+                                      </li>
+                                      
+                                  <!--    
+                                      <li class="list-divider"></li>
+                                         
+                                         <li >
+                                              <a href="https://mytuitionaid.com/leadwayinvest/admin/Report">
+                                                  <i class="fa fa-files-o"></i>
+                                                  <span class="menu-title">
+                                                      <strong>Reports</strong>
+                                                  </span>
+                                              </a>
+                                          </li>
+                                      
+                                       <li class="list-divider"></li>
+                                 -->
+                              </div>
+                          </div>
+                      </div>                    <!--================================-->
+                      <!--End menu-->
+                  </div>
+              </nav>
+              <!--===================================================-->
+              <!--END MAIN NAVIGATION-->
+  
+          </div>
+  
+          
+  
+          <!-- FOOTER -->
+          <!--===================================================-->
+          <footer id="footer">
+             <p class="pad-lft">&#0169; 2016 Leadway Invest</p>
+          </footer>
+          <!--===================================================-->
+          <!-- END FOOTER -->
+  
+  
+          <!-- SCROLL TOP BUTTON -->
+          <!--===================================================-->
+          <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+          <!--===================================================-->
+  
+  
+  
+      </div>
+      <!--===================================================-->
+      <!-- END OF CONTAINER -->
+  
+      
+      <!--JAVASCRIPT-->
+      <!--=================================================-->
+  
+      <!--jQuery [ REQUIRED ]-->
+      <script type='text/javascript' src='resources/js/jquery-2.2.1.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/bootstrap.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/nifty.min.js?v=1.1'></script>
+      
+      <script type='text/javascript' src='resources/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/morris-js/morris.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/morris-js/raphael-js/raphael.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/flot-charts/jquery.flot.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/flot-charts/jquery.flot.resize.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/plugins/flot-charts/jquery.flot.pie.min.js?v=1.1'></script>
+      
+      <script>
+      
+       var dataSet = [];
+       
+             var dataSet = [
+          { label: "Active", data: 14, color: "#177bbb" },
+           { label: "Pending", data: 10, color: "#f84f9a" },
+          { label: "Withdrawn", data: 3, color: "#a6c600" },
+          { label: "Re-Invested", data: 0, color: "#8669CC" }
+      
+      ];
+          
+        var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
+        var graph_data=[
+                        {
+              period: ''+month[0],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[1],
+              dl: 1,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[2],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[3],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[4],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[5],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[6],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[7],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[8],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[9],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[10],
+              dl: 0,
+              up: 0			} 
+              
+              ,           {
+              period: ''+month[11],
+              dl: 0,
+              up: 0			} 
+              
+                          
+              ];
+       
+      </script>
+      
+       <script type='text/javascript' src='resources/js/dashboard.js?v=1.1'></script>
+      
+  </body>
+  </html>
+  

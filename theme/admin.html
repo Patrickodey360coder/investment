@@ -1,0 +1,112 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Leadway Invest | Login</title>
+        <link rel="icon" type="image/x-icon" href="resources/images/invest.ico" />
+      <meta name='robots' content='noindex,follow' />
+      <!--STYLESHEET-->
+      <!--=================================================-->
+      
+      <link rel='stylesheet' href='resources/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/css/nifty.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+  
+      <link rel='stylesheet' href='resources/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
+  <link rel='stylesheet' href='resources/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
+  
+      <link rel='stylesheet' href='resources/css/demo/nifty-demo.min.css?v=1.1' type='text/css' media='all' />
+   
+      <script type='text/javascript' src='resources/plugins/pace/pace.min.js?v=1.1'></script>
+          
+  </head>
+  
+  <body>
+      <div id="container" class="cls-container">
+          
+          <!-- BACKGROUND IMAGE -->
+          <!--===================================================-->
+          <div id="bg-overlay" class="bg-img img-balloon"></div>
+          
+          
+          <!-- HEADER -->
+          <!--===================================================-->
+          <div class="cls-header cls-header-lg">
+              <div class="cls-brand">
+                  <a class="box-inline" href="https://mytuitionaid.com/leadwayinvest/">
+                      <span class="brand-title">Leadway Invest </span>
+                  </a>
+              </div>
+          </div>
+          <!--===================================================-->
+          
+          
+          <!-- LOGIN FORM -->
+          <!--===================================================-->
+          <div class="cls-content">
+              <div class="cls-content-sm panel">
+              <div id="blocked" hidden="hidden" class="alert alert-danger">Authentication Blocked</div>
+                <div id="denied" hidden="hidden" class="alert alert-danger">Incorrect Login Details</div>
+             <div id="connection" hidden="hidden" class="alert alert-danger">Network error</div>
+             <div id="loading" hidden="hidden" class="alert alert-info">Processing</div>
+             <div id="done" hidden="hidden" class="alert alert-success"><i class="fa fa-check"></i>&nbsp;Authenticated</div>
+                  
+                  <div class="panel-body">
+                       <p class="pad-btm">Sign In to your account</p>
+                      <form onsubmit="return false;" method="post" action="">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                  <input id="email" type="text" class="form-control" placeholder="Username">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                                  <input id="key" type="password" class="form-control" placeholder="Password">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-8 text-left checkbox">
+                               
+                              </div>
+                              <div class="col-xs-4">
+                                  <div class="form-group text-right">
+                                  <button id="login_button" onclick="begin_login('https://mytuitionaid.com/leadwayinvest/admin/home')" class="btn btn-success text-uppercase" type="submit">Sign In</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+           
+          </div>
+          <!--===================================================-->
+          
+          
+      </div>
+      <!--===================================================-->
+      <!-- END OF CONTAINER -->
+  
+  
+          
+      <!--JAVASCRIPT-->
+      <!--=================================================-->
+      
+      <script type='text/javascript' src='resources/js/jquery-2.2.1.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/bootstrap.min.js?v=1.1'></script>
+      
+      <script type='text/javascript' src='resources/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+      
+      <script type='text/javascript' src='resources/js/nifty.min.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/sha512.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/demo/bg-images.js?v=1.1'></script>
+  <script type='text/javascript' src='resources/js/login_admin.js?v=1.1'></script>
+          
+  
+  </body>
+  </html>
+  

@@ -1,0 +1,826 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadway Invest | Investors</title>
+  	<link rel="icon" type="image/x-icon" href="resources/images/invest.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <link rel='stylesheet' href='resources/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/nifty.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+
+    <link rel='stylesheet' href='resources/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/animate-css/animate.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/bootstrap-select/bootstrap-select.min.css?v=1.1' type='text/css' media='all' />
+    
+     
+    <link rel='stylesheet' href='resources/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/fooTable/css/footable.core.css?v=1.1' type='text/css' media='all' />
+
+    <script type='text/javascript' src='resources/plugins/pace/pace.min.js?v=1.1'></script>
+        
+</head>
+
+ 
+<body>
+    <div id="container" class="effect mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+         <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="https://mytuitionaid.com/leadwayinvest/admin/" class="navbar-brand">
+                      <!--  <img src="resources/images/invest.ico" alt="" class="brand-icon">-->
+                        <div class="brand-title">
+                            <span class="brand-text">Leadway Invest</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="fa fa-navicon fa-lg"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+      
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                     
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <img class="img-circle img-user media-object" src="resources/images/av1.png" alt="Profile Picture">
+                                </span>
+                                <div class="username hidden-xs">   admin</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                                <!-- Dropdown heading  -->
+                                <div class="pad-all bord-btm">
+                                  <script>var lifespan=3600;</script>
+                                    <p class="text-lg text-semibold mar-btm">Session Lifespan</p>
+                                         <div id="life_bar" class="progress"><div  style="width: 100%;" class="progress-bar progress-bar-info">100%</div></div>
+                                </div>
+
+
+                                <!-- User dropdown menu -->
+                                <ul class="head-list">
+                                    
+                                    <li>
+                                        <a href="https://mytuitionaid.com/leadwayinvest/admin/Setting">
+                                             <i class="fa fa-cog fa-2x icon-lg icon-fw"></i> Settings
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="https://mytuitionaid.com/leadwayinvest/admin/Logout" class="btn btn-primary">
+                                        <i class="pli-unlock"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <h1 class="page-header text-overflow">Investors</h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                     <form method="post" action="https://mytuitionaid.com/leadwayinvest/admin/Search">
+                         
+                        <div class="input-group custom-search-form">
+                            <input type="text" name="query" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button name="search" class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                          
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+       
+				 	<div class="panel">
+						 
+					
+						<!-- Foo Table - Filtering -->
+						<!--===================================================-->
+						<div class="panel-body">
+							<table id="demo-foo-filtering" class="table table-bordered table-hover toggle-circle" data-page-size="20">
+								<thead>
+									<tr>
+										<th data-toggle="true">Last Name</th>
+										<th>First Name</th>
+										<th data-hide="phone, tablet">Email</th>
+										<th data-hide="phone, tablet">Country</th>
+										<th data-hide="phone, tablet">Status</th>
+                                        <th>Action</th>
+									</tr>
+								</thead>
+								<div class="pad-btm form-inline">
+									<div class="row">
+										<div class="col-sm-6 text-xs-center">
+											<div class="form-group">
+												<label class="control-label">Status</label>
+												<select id="demo-foo-filter-status" class="form-control">
+													<option value="">Show all</option>
+													<option value="active">Active</option>
+            	                                    <option value="passive">Passive</option>
+													<option value="disabled">Disabled</option>
+												
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 text-xs-center text-right">
+											<div class="form-group">
+												<input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="off">
+											</div>
+										</div>
+									</div>
+								</div>
+								<tbody>
+								                                  	<tr>
+										<td>Akintunde</td>
+										<td>James</td>
+										<td>jamesak@gmail.com</td>
+										<td>Nigeria</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=38" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Amachree</td>
+										<td>Edwin</td>
+										<td>amachreeeddy@gmail.com</td>
+										<td>Russia</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=27" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>amachree</td>
+										<td>edwin</td>
+										<td>edchree7@gmail.com</td>
+										<td>Nigeria</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=35" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Amachree</td>
+										<td>Edwin</td>
+										<td>otonyeedwin@gmail.com</td>
+										<td>Nigeria</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=26" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Amachree</td>
+										<td>Edwin</td>
+										<td>edwinamachree@gmail.com</td>
+										<td>Nigeria</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=25" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>amarabhi</td>
+										<td>melrose</td>
+										<td>melrosetari@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=6" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>arthur</td>
+										<td>darlington</td>
+										<td>arthurdarlington@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=32" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>asamoah nketia</td>
+										<td>samuel </td>
+										<td>luccidosty@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=21" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>BALOGUN</td>
+										<td>SEYI</td>
+										<td>seyionpoint@gmail.com</td>
+										<td>Russia</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=11" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Bughuul</td>
+										<td>Fanen</td>
+										<td>fanenbughuul@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=29" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Effiong</td>
+										<td>Glory</td>
+										<td>effionggloryephraim@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=18" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>ewelike</td>
+										<td>king</td>
+										<td>keenglike@gmail.com</td>
+										<td>Nigeria</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=22" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Falana</td>
+										<td>Louis</td>
+										<td>seeadesola@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=34" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Habakkuk</td>
+										<td>Kyenret</td>
+										<td>kyenretehabakkuk@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=23" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Imam</td>
+										<td>Mariam</td>
+										<td>hajmari2010@yahoo.com</td>
+										<td>United States of America</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=14" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Inyang</td>
+										<td>Menyene</td>
+										<td>inyang@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=28" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>jasper</td>
+										<td>igboke</td>
+										<td>igbokejazzy@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=7" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>jasper</td>
+										<td>IGBOKE</td>
+										<td>igbokejasper12@gmail.com</td>
+										<td>Russia</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=31" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>jaspiro</td>
+										<td>igboke </td>
+										<td>igbokejaspiro@gmail.com</td>
+										<td>United States of America</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=33" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>JIMOH </td>
+										<td>KAMALDEEN </td>
+										<td>jimohiyanda@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=8" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>John</td>
+										<td>Tolu</td>
+										<td>tolu.john24@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=16" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Lanase</td>
+										<td>Motunrayo</td>
+										<td>kultunrayo@yahoo.com</td>
+										<td>Saint Vincent and the Grenadines</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=17" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>lola</td>
+										<td>Tola</td>
+										<td>tolaolowolaju2010@yahoo.com</td>
+										<td>Ukraine</td>
+                                                                                                                        										<td><span class="label label-table label-danger">Disabled</span></td>
+                                                                                <td>
+                                          <a href="?view=3" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Menyene</td>
+										<td>Inyang</td>
+										<td>christianinyang02@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=15" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Nyadar</td>
+										<td>Palmah</td>
+										<td>octagoncorporations@gmail.com</td>
+										<td>Nigeria</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=13" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Officha</td>
+										<td>Finnia</td>
+										<td>offichafinnia@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=24" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>okafor</td>
+										<td>victor</td>
+										<td>zaraemperor1@gmail.com</td>
+										<td>Russia</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=12" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Okoli</td>
+										<td>Gloria</td>
+										<td>globarbiee@gmail.com</td>
+										<td>Russia</td>
+                                                                                                                        										<td><span class="label label-table label-danger">Disabled</span></td>
+                                                                                <td>
+                                          <a href="?view=20" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>OLOTU</td>
+										<td>Babatunde Bradford </td>
+										<td>dedeloluwa@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=10" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>olowolaju</td>
+										<td>tola</td>
+										<td>mattayefx@gmail.com</td>
+										<td>United States of America</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=40" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>olowolaju</td>
+										<td>adetola</td>
+										<td>fastbiztrader@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=2" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>olugbemi</td>
+										<td>elizabeth</td>
+										<td>toladprince@gmail.com</td>
+										<td>Nigeria</td>
+                                                                                                                        										<td><span class="label label-table label-danger">Disabled</span></td>
+                                                                                <td>
+                                          <a href="?view=1" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Olugbemi</td>
+										<td>Elizabeth</td>
+										<td>oyinolugbemi1994@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=19" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>onyekwelu</td>
+										<td>sylvester</td>
+										<td>iykesyl2003@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=4" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Riyed</td>
+										<td>Mazharul</td>
+										<td>drmazharulriyed@yahoo.com</td>
+										<td>United States of America</td>
+                                                                                										<td><span class="label label-table label-dark">Passive</span></td>
+                                                                                                                        <td>
+                                          <a href="?view=5" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Roberts</td>
+										<td>Miebaka</td>
+										<td>robertsmiebaka@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=36" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>ROBERTS</td>
+										<td>MIEBAKA</td>
+										<td>robertsmiebaka@gmail.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=37" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>Smith</td>
+										<td>James</td>
+										<td>smith@school.com</td>
+										<td>United States of America</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=39" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>TIMOTHY</td>
+										<td>AFUBE</td>
+										<td>afube.chisom1@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=30" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								                                 	<tr>
+										<td>TOHOMDET</td>
+										<td>LONGNAN</td>
+										<td>tohomdetlongnan@yahoo.com</td>
+										<td>Russia</td>
+                                        										<td><span class="label label-table label-success">Active</span></td>
+                                                                                                                                                                <td>
+                                          <a href="?view=9" class="btn btn-md"><i class="fa fa-search text-info"></i></a>
+                                         </td>
+									</tr>
+								 								
+                                </tbody>
+                                <tfoot>
+									<tr>
+										<td colspan="6">
+											<div class="text-right">
+												<ul class="pagination"></ul>
+											</div>
+										</td>
+									</tr>
+								</tfoot>
+                             </table>
+                        </div>
+                     </div>
+                
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+           
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+                
+                   <!--Shortcut buttons-->
+                    <!--================================-->
+                    <div id="mainnav-shortcut">
+                        
+                    </div>
+                    <!--================================-->
+                    <!--End shortcut buttons-->
+                    <!--Menu-->
+                    <!--================================-->
+                     <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <!--Category name-->
+						            <li class="list-header">Navigation</li>
+						
+						            <!--Menu list item-->
+						            <li  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/">
+						                    <i class="fa fa-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
+						            <li class="list-divider"></li>
+                                    
+                                    
+                                    <li  class="active-link"  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Investors</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Payment">
+						                    <i class="fa fa-dollar"></i>
+						                    <span class="menu-title">
+												<strong>Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                      <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investment">
+						                    <i class="fa fa-bar-chart"></i>
+						                    <span class="menu-title">
+												<strong>Investments & Interests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/WithdrawalRequest">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Withdrawal Requests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                   
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Pending Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                  
+                                      <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/ApprovedPayment">
+						                    <i class="fa fa-check"></i>
+						                    <span class="menu-title">
+												<strong>Approved Payment</strong>
+											</span>
+						                </a>
+						            </li>
+                                      
+                                    
+                                     <li class="list-divider"></li>
+                                    
+                                   
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminAccount">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Admin Accounts</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                     <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminActivity">
+						                    <i class="fa fa-folder"></i>
+						                    <span class="menu-title">
+												<strong>Admin Activity</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                <!--    
+                                    <li class="list-divider"></li>
+                                       
+                                       <li >
+    						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Report">
+    						                    <i class="fa fa-files-o"></i>
+    						                    <span class="menu-title">
+    												<strong>Reports</strong>
+    											</span>
+    						                </a>
+    						            </li>
+                                    
+                                     <li class="list-divider"></li>
+                               -->
+                            </div>
+                        </div>
+                    </div>                    <!--================================-->
+                    <!--End menu-->
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">&#0169; 2016 Leadway Invest</p>
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script type='text/javascript' src='resources/js/jquery-2.2.1.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/bootstrap.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/nifty.min.js?v=1.1'></script>
+    
+    <script type='text/javascript' src='resources/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/fooTable/dist/footable.all.min.js?v=1.1'></script>
+        
+    <script>
+      
+      var filtering = $('#demo-foo-filtering');
+	filtering.footable().on('footable_filtering', function (e) {
+		var selected = $('#demo-foo-filter-status').find(':selected').val();
+		e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+		e.clear = !e.filter;
+	});
+
+	// Filter status
+	$('#demo-foo-filter-status').change(function (e) {
+		e.preventDefault();
+		filtering.trigger('footable_filter', {filter: $(this).val()});
+	});
+
+	// Search input
+	$('#demo-foo-search').on('input', function (e) {
+		e.preventDefault();
+		filtering.trigger('footable_filter', {filter: $(this).val()});
+	});
+
+    
+    </script>
+    
+</body>
+</html>

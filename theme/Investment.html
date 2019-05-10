@@ -1,0 +1,706 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadway Invest | Investments</title>
+  	<link rel="icon" type="image/x-icon" href="resources/images/invest.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <link rel='stylesheet' href='resources/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/nifty.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+
+    <link rel='stylesheet' href='resources/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/animate-css/animate.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/bootstrap-select/bootstrap-select.min.css?v=1.1' type='text/css' media='all' />
+    
+     
+    <link rel='stylesheet' href='resources/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/fooTable/css/footable.core.css?v=1.1' type='text/css' media='all' />
+
+    <script type='text/javascript' src='resources/plugins/pace/pace.min.js?v=1.1'></script>
+        
+</head>
+
+ 
+<body>
+    <div id="container" class="effect mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+         <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="https://mytuitionaid.com/leadwayinvest/admin/" class="navbar-brand">
+                      <!--  <img src="resources/images/invest.ico" alt="" class="brand-icon">-->
+                        <div class="brand-title">
+                            <span class="brand-text">Leadway Invest</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="fa fa-navicon fa-lg"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+      
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                     
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <img class="img-circle img-user media-object" src="resources/images/av1.png" alt="Profile Picture">
+                                </span>
+                                <div class="username hidden-xs">   admin</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                                <!-- Dropdown heading  -->
+                                <div class="pad-all bord-btm">
+                                  <script>var lifespan=3600;</script>
+                                    <p class="text-lg text-semibold mar-btm">Session Lifespan</p>
+                                         <div id="life_bar" class="progress"><div  style="width: 100%;" class="progress-bar progress-bar-info">100%</div></div>
+                                </div>
+
+
+                                <!-- User dropdown menu -->
+                                <ul class="head-list">
+                                    
+                                    <li>
+                                        <a href="https://mytuitionaid.com/leadwayinvest/admin/Setting">
+                                             <i class="fa fa-cog fa-2x icon-lg icon-fw"></i> Settings
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="https://mytuitionaid.com/leadwayinvest/admin/Logout" class="btn btn-primary">
+                                        <i class="pli-unlock"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <h1 class="page-header text-overflow">Investments</h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                     <form method="post" action="https://mytuitionaid.com/leadwayinvest/admin/Search">
+                         
+                        <div class="input-group custom-search-form">
+                            <input type="text" name="query" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button name="search" class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                          
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                  <br />
+					  <div class="row">
+                    
+                      	<div class="panel">
+						 
+					
+						<!-- Foo Table - Filtering -->
+						<!--===================================================-->
+						<div class="panel-body">
+							<table id="demo-foo-filtering" class="table table-bordered table-hover toggle-circle" data-page-size="20">
+								<thead>
+									 
+                                    <tr>
+										<th data-toggle="true">#</th>
+                                        <th data-hide="phone, tablet">Investor</th>
+										<th>Amount</th>
+                                        <th>Interest</th> 
+										<th data-hide="phone, tablet">Re-Invested</th>
+										<th data-hide="phone, tablet">Withdrawn</th>
+										<th>Status</th>
+                                     	<th data-hide="phone, tablet">Date of investment</th>
+                                     	
+                                        
+									</tr>
+								</thead>
+								<div class="pad-btm form-inline">
+									<div class="row">
+										<div class="col-sm-6 text-xs-center">
+											<div class="form-group">
+												<label class="control-label">Status</label>
+												<select id="demo-foo-filter-status" class="form-control">
+													<option value="">Show all</option>
+                                                     <option value="active">Active</option>
+												 	<option value="closed">Closed</option>
+            	                                   
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 text-xs-center text-right">
+											<div class="form-group">
+												<input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="off">
+											</div>
+										</div>
+									</div>
+								</div>
+					   			<tbody>
+                                
+                                                                           <tr style=" ">
+                                           <td>1</td>
+                                           <td><a href="investors?view=9">TOHOMDET LONGNAN - SPI/0009</a></td>
+                                           <td>&#8358;1,000.00</td>
+                                           <td>&#8358;770.00 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>16th of July, 2016 12:00 am</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>2</td>
+                                           <td><a href="investors?view=2">olowolaju adetola - SPI/0002</a></td>
+                                           <td>&#8358;1,000.00</td>
+                                           <td>&#8358;325.00 (33%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>6th of September, 2016 6:15 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>3</td>
+                                           <td><a href="investors?view=5">Riyed Mazharul - SPI/0005</a></td>
+                                           <td>&#8358;2,430.00</td>
+                                           <td>&#8358;1,631.10 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>1st of July, 2016 12:00 am</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>4</td>
+                                           <td><a href="investors?view=6">amarabhi melrose - SPI/0006</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;450.00 (90%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>7th of July, 2016 6:30 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>5</td>
+                                           <td><a href="investors?view=7">jasper igboke - SPI/0007</a></td>
+                                           <td>&#8358;900.00</td>
+                                           <td>&#8358;693.00 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>27th of June, 2016 7:00 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>6</td>
+                                           <td><a href="investors?view=4">onyekwelu sylvester - SPI/0004</a></td>
+                                           <td>&#8358;6,000.00</td>
+                                           <td>&#8358;4,620.00 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>4th of June, 2016 7:00 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>7</td>
+                                           <td><a href="investors?view=11">BALOGUN SEYI - SPI/0011</a></td>
+                                           <td>&#8358;1,500.00</td>
+                                           <td>&#8358;1,155.00 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>4th of June, 2016 7:15 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>8</td>
+                                           <td><a href="investors?view=10">OLOTU Babatunde Bradford  - SPI/0010</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;385.00 (77%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>26th of May, 2016 7:30 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>9</td>
+                                           <td><a href="investors?view=8">JIMOH  KAMALDEEN  - SPI/0008</a></td>
+                                           <td>&#8358;1,500.00</td>
+                                           <td>&#8358;900.00 (60%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>7th of August, 2016 2:30 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>10</td>
+                                           <td><a href="investors?view=15">Menyene Inyang - SPI/0015</a></td>
+                                           <td>&#8358;700.00</td>
+                                           <td>&#8358;336.00 (48%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>8th of September, 2016 8:45 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>11</td>
+                                           <td><a href="investors?view=16">John Tolu - SPI/0016</a></td>
+                                           <td>&#8358;610.60</td>
+                                           <td>&#8358;198.45 (33%)</td>
+                                           <td>No</td>
+                                           <td>Yes</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>12th of September, 2016 6:30 am</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>12</td>
+                                           <td><a href="investors?view=19">Olugbemi Elizabeth - SPI/0019</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;180.00 (36%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>22nd of September, 2016 10:15 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>13</td>
+                                           <td><a href="investors?view=20">Okoli Gloria - SPI/0020</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;180.00 (36%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>24th of September, 2016 10:15 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>14</td>
+                                           <td><a href="investors?view=21">asamoah nketia samuel  - SPI/0021</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;180.00 (36%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>3rd of October, 2016 8:45 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>15</td>
+                                           <td><a href="investors?view=22">ewelike king - SPI/0022</a></td>
+                                           <td>&#8358;550.00</td>
+                                           <td>&#8358;198.00 (36%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>5th of October, 2016 11:00 am</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>16</td>
+                                           <td><a href="investors?view=24">Officha Finnia - SPI/0024</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;180.00 (36%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>6th of October, 2016 1:45 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>17</td>
+                                           <td><a href="investors?view=27">Amachree Edwin - SPI/0027</a></td>
+                                           <td>&#8358;250.00</td>
+                                           <td>&#8358;81.25 (33%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>9th of October, 2016 12:00 am</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>18</td>
+                                           <td><a href="investors?view=28">Inyang Menyene - SPI/0028</a></td>
+                                           <td>&#8358;5,000.00</td>
+                                           <td>&#8358;1,625.00 (33%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>10th of October, 2016 10:00 am</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>19</td>
+                                           <td><a href="investors?view=23">Habakkuk Kyenret - SPI/0023</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;162.50 (33%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>19th of August, 2016 7:15 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>20</td>
+                                           <td><a href="investors?view=29">Bughuul Fanen - SPI/0029</a></td>
+                                           <td>&#8358;600.00</td>
+                                           <td>&#8358;144.00 (24%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>19th of October, 2016 1:45 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>21</td>
+                                           <td><a href="investors?view=30">TIMOTHY AFUBE - SPI/0030</a></td>
+                                           <td>&#8358;1,000.00</td>
+                                           <td>&#8358;0.00 (0%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>25th of March, 2017 11:30 am</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>22</td>
+                                           <td><a href="investors?view=32">arthur darlington - SPI/0032</a></td>
+                                           <td>&#8358;1,000.00</td>
+                                           <td>&#8358;240.00 (24%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>31st of October, 2016 1:00 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>23</td>
+                                           <td><a href="investors?view=31">jasper IGBOKE - SPI/0031</a></td>
+                                           <td>&#8358;500.00</td>
+                                           <td>&#8358;120.00 (24%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>27th of October, 2016 11:30 pm</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>24</td>
+                                           <td><a href="investors?view=33">jaspiro igboke  - SPI/0033</a></td>
+                                           <td>&#8358;400.00</td>
+                                           <td>&#8358;80.00 (20%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>5th of November, 2016 12:30 am</td>   
+                                          </tr>
+                                                                                 <tr style="font-weight: bold ">
+                                           <td>25</td>
+                                           <td><a href="investors?view=34">Falana Louis - SPI/0034</a></td>
+                                           <td>&#8358;250.00</td>
+                                           <td>&#8358;50.00 (20%)</td>
+                                           <td>No</td>
+                                           <td>No</td>
+                                                                                        <td><span class="label label-table label-success">Active</label></td>
+                                                                                      <td>5th of November, 2016 6:00 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>26</td>
+                                           <td><a href="investors?view=37">ROBERTS MIEBAKA - SPI/0037</a></td>
+                                           <td>&#8358;300.00</td>
+                                           <td>&#8358;30.00 (10%)</td>
+                                           <td>No</td>
+                                           <td>Yes</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>5th of December, 2016 12:30 pm</td>   
+                                          </tr>
+                                                                                 <tr style=" ">
+                                           <td>27</td>
+                                           <td><a href="investors?view=39">Smith James - SPI/0039</a></td>
+                                           <td>&#8358;100,000.00</td>
+                                           <td>&#8358;1,000.00 (10%)</td>
+                                           <td>No</td>
+                                           <td>Yes</td>
+                                                                                        <td><span class="label label-table label-dark">Closed</label></td>
+                                                                                      <td>10th of July, 2017 1:15 pm</td>   
+                                          </tr>
+                                                                                
+                                        
+									</tbody>
+                                      <tfoot>
+    									<tr>
+                                        	<td colspan="8">
+    											<div class="text-right">
+    												<ul class="pagination"></ul>
+    											</div>
+    										</td>
+    									</tr>
+    								</tfoot>
+                                    </table>
+                                </div>
+                               </div>
+                            
+                   
+                   </div>
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+           
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+                
+                   <!--Shortcut buttons-->
+                    <!--================================-->
+                    <div id="mainnav-shortcut">
+                        
+                    </div>
+                    <!--================================-->
+                    <!--End shortcut buttons-->
+                    <!--Menu-->
+                    <!--================================-->
+                     <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <!--Category name-->
+						            <li class="list-header">Navigation</li>
+						
+						            <!--Menu list item-->
+						            <li  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/">
+						                    <i class="fa fa-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
+						            <li class="list-divider"></li>
+                                    
+                                    
+                                    <li  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Investors</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Payment">
+						                    <i class="fa fa-dollar"></i>
+						                    <span class="menu-title">
+												<strong>Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                      <li  class="active-link" >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investment">
+						                    <i class="fa fa-bar-chart"></i>
+						                    <span class="menu-title">
+												<strong>Investments & Interests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/WithdrawalRequest">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Withdrawal Requests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                   
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Pending Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                  
+                                      <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/ApprovedPayment">
+						                    <i class="fa fa-check"></i>
+						                    <span class="menu-title">
+												<strong>Approved Payment</strong>
+											</span>
+						                </a>
+						            </li>
+                                      
+                                    
+                                     <li class="list-divider"></li>
+                                    
+                                   
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminAccount">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Admin Accounts</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                     <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminActivity">
+						                    <i class="fa fa-folder"></i>
+						                    <span class="menu-title">
+												<strong>Admin Activity</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                <!--    
+                                    <li class="list-divider"></li>
+                                       
+                                       <li >
+    						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Report">
+    						                    <i class="fa fa-files-o"></i>
+    						                    <span class="menu-title">
+    												<strong>Reports</strong>
+    											</span>
+    						                </a>
+    						            </li>
+                                    
+                                     <li class="list-divider"></li>
+                               -->
+                            </div>
+                        </div>
+                    </div>                    <!--================================-->
+                    <!--End menu-->
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">&#0169; 2016 Leadway Invest</p>
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script type='text/javascript' src='resources/js/jquery-2.2.1.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/bootstrap.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/nifty.min.js?v=1.1'></script>
+    
+    <script type='text/javascript' src='resources/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/fooTable/dist/footable.all.min.js?v=1.1'></script>
+        
+      <script>
+      
+      var filtering = $('#demo-foo-filtering');
+	filtering.footable().on('footable_filtering', function (e) {
+		var selected = $('#demo-foo-filter-status').find(':selected').val();
+		e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+		e.clear = !e.filter;
+	});
+
+	// Filter status
+	$('#demo-foo-filter-status').change(function (e) {
+		e.preventDefault();
+		filtering.trigger('footable_filter', {filter: $(this).val()});
+	});
+
+	// Search input
+	$('#demo-foo-search').on('input', function (e) {
+		e.preventDefault();
+		filtering.trigger('footable_filter', {filter: $(this).val()});
+	});
+
+    
+    </script>
+    
+</body>
+</html>
