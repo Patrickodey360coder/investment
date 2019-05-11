@@ -52,7 +52,7 @@
 		"Democratic Republic Of The Congo",
 		"Cook Islands",
 		"Costa Rica",
-		"Cote D\'Ivoire (Ivory Coast)",
+		"Cote D'Ivoire (Ivory Coast)",
 		"Croatia (Hrvatska)",
 		"Cuba",
 		"Cyprus",

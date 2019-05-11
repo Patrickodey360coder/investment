@@ -37,7 +37,7 @@
     </div>
     <div class="row">
         <div class="col-xs-8 text-left checkbox">
-          <a class="btn btn-link" href="{{ route('password.request') }}" style="color: black;">
+          <a class="btn btn-link" href="{{ route('password.request') }}" style="color: blue;">
             Forgot Your Password?
           </a>
         </div>

@@ -33,7 +33,7 @@
           <!-- HEADER -->
           <div class="cls-header cls-header-lg">
               <div class="cls-brand">
-                  <a class="box-inline" href="https://mytuitionaid.com/leadwayinvest/">
+                  <a class="box-inline" href="{{ route('index') }}">
                       <span class="brand-title">Leadway Invest </span>
                   </a>
               </div>
