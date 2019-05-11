@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Wallet;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 require '../resources/countries.php';
 
@@ -80,5 +82,15 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         return view('auth.register')->with('countries', Countries);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        Wallet::create([
+            'user_id' => $user->id,
+            'total_earnings' => 0,
+            'balance' => 0,
+            'withdrawable' => 0,
+        ]);
     }
 }

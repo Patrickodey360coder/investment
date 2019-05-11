@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Wallet;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $wallet = Wallet::all()->where('user_id', Auth::user()['id'])->first();
+        return view('home')->with('wallet', $wallet);
     }
 }
