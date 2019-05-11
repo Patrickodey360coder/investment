@@ -30,6 +30,14 @@
           
                       <li class="list-divider"></li>
                       
+                      <li >
+                          <a href="{{ route('user.investments') }}">
+                              <i class="fa fa-bar-chart"></i>
+                              <span class="menu-title">
+                                  <strong>Trustway 90, 180 & 360 Investments</strong>
+                              </span>
+                          </a>
+                      </li>
                       
                       <li  >
                           <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
@@ -46,16 +54,6 @@
                               <i class="fa fa-dollar"></i>
                               <span class="menu-title">
                                   <strong>Payments</strong>
-                              </span>
-                          </a>
-                      </li>
-                      
-                      
-                        <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Investment">
-                              <i class="fa fa-bar-chart"></i>
-                              <span class="menu-title">
-                                  <strong>Investments & Interests</strong>
                               </span>
                           </a>
                       </li>
