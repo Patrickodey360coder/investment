@@ -21,8 +21,8 @@ class CreateTrustwayInvestmentsTable extends Migration
             $table->float('checkout_amount');
             $table->enum('status', TrustwayInvestment::getStatusValues())->default('Pending');
             $table->enum('investment_type', TrustwayInvestment::getInvestmentTypes());
-            $table->timestamp('investment_date')->useCurrent();
-            $table->timestamp('checkout_date');
+            $table->timestamp('investment_date')->nullable();
+            $table->timestamp('checkout_date')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -34,7 +34,7 @@
                           <a href="{{ route('user.investments') }}">
                               <i class="fa fa-bar-chart"></i>
                               <span class="menu-title">
-                                  <strong>Trustway 90, 180 & 360 Investments</strong>
+                                  <strong>My Investments</strong>
                               </span>
                           </a>
                       </li>

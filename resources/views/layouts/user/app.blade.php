@@ -22,6 +22,11 @@
       <link rel='stylesheet' href='/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
   <link rel='stylesheet' href='/plugins/morris-js/morris.min.css?v=1.1' type='text/css' media='all' />
   <link rel='stylesheet' href='/plugins/switchery/switchery.min.css?v=1.1' type='text/css' media='all' />
+  <style type="text/css">
+    #mainnav-container {
+      min-height: 100vh;
+    }
+  </style>
   
       <script type='text/javascript' src='/plugins/pace/pace.min.js?v=1.1'></script>
           

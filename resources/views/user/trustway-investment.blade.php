@@ -19,6 +19,9 @@
                   </select>
                 </div>
               </div>
+              <div class="col-sm-6 text-xs-center text-right">
+                <a class="btn btn-success" href="{{ route('user.create-trustway-investments') }}">Create Investment</a>
+              </div>
             </div>
           </div>
           <thead>
@@ -44,7 +47,7 @@
             </tr>  
             <tr>
               <td colspan="7">
-                <h2 class="text-center">You don't have any Trustway 90, 180 & 360 Investment</h2>
+                <h2 class="text-center">You don't have any Trustway Investment</h2>
               </td>
             </tr>
           </tbody>

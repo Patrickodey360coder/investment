@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
+	Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
+	Route::get('/trustway-investment/create', 'TrustwayInvestmentController@createForm')->name('user.create-trustway-investments');
+});
