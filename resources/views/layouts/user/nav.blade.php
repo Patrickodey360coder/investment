@@ -58,11 +58,20 @@
                       
                        <li class="list-divider"></li>
                       
-                       <li class="@if(isset($activeLink) && $activeLink=='activities') active-link @endif">
+                      <li class="@if(isset($activeLink) && $activeLink=='activities') active-link @endif">
                           <a href="{{ route('user.activities') }}">
                               <i class="fa fa-folder"></i>
                               <span class="menu-title">
                                   <strong>My Activities</strong>
+                              </span>
+                          </a>
+                      </li>
+
+                      <li class="@if(isset($activeLink) && $activeLink=='profile') active-link @endif">
+                          <a href="{{ route('profile') }}">
+                              <i class="fa fa-user"></i>
+                              <span class="menu-title">
+                                  <strong>My Profile</strong>
                               </span>
                           </a>
                       </li>
@@ -76,28 +85,9 @@
                               <strong>Logout</strong>
                             </span>
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
                       </li>
-                      
-                  <!--    
-                      <li class="list-divider"></li>
-                         
-                         <li >
-                              <a href="https://mytuitionaid.com/leadwayinvest/admin/Report">
-                                  <i class="fa fa-files-o"></i>
-                                  <span class="menu-title">
-                                      <strong>Reports</strong>
-                                  </span>
-                              </a>
-                          </li>
-                      
-                       <li class="list-divider"></li>
-                 -->
               </div>
           </div>
-      </div>                    <!--================================-->
-      <!--End menu-->
+      </div>
   </div>
 </nav>

@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
+
+	Route::get('/profile', 'UserController@index')->name('profile');
+	Route::post('/profile', 'UserController@update')->name('profile.update');
+
 	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
 		Route::get('/activities', 'ActivityController@index')->name('user.activities');
 

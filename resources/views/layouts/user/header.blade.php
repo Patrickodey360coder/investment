@@ -4,7 +4,7 @@
       <!--Brand logo & name-->
       <!--================================-->
       <div class="navbar-header">
-          <a href="https://mytuitionaid.com/leadwayinvest/admin/" class="navbar-brand">
+          <a href="{{ route('index') }}" class="navbar-brand">
             <!--  <img src="/images/invest.ico" alt="" class="brand-icon">-->
               <div class="brand-title">
                   <span class="brand-text">Leadway Invest</span>
@@ -64,8 +64,8 @@
                       <ul class="head-list">
                           
                           <li>
-                              <a href="https://mytuitionaid.com/leadwayinvest/admin/Setting">
-                                   <i class="fa fa-cog fa-2x icon-lg icon-fw"></i> Settings
+                              <a href="{{ route('profile') }}">
+                                   <i class="fa fa-user fa-2x icon-lg icon-fw"></i> My Profile
                               </a>
                           </li>
                          

@@ -1,0 +1,493 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadway Invest | Dashboard</title>
+  	<link rel="icon" type="image/x-icon" href="resources/images/invest.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <link rel='stylesheet' href='resources/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/nifty.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+
+    <link rel='stylesheet' href='resources/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/animate-css/animate.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/bootstrap-select/bootstrap-select.min.css?v=1.1' type='text/css' media='all' />
+    
+     
+    <link rel='stylesheet' href='resources/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
+<link rel='stylesheet' href='resources/plugins/bootstrap-validator/bootstrapValidator.min.css?v=1.1' type='text/css' media='all' />
+
+    <script type='text/javascript' src='resources/plugins/pace/pace.min.js?v=1.1'></script>
+        
+</head>
+
+ 
+<body>
+    <div id="container" class="effect mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+         <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="https://mytuitionaid.com/leadwayinvest/admin/" class="navbar-brand">
+                      <!--  <img src="resources/images/invest.ico" alt="" class="brand-icon">-->
+                        <div class="brand-title">
+                            <span class="brand-text">Leadway Invest</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="fa fa-navicon fa-lg"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+      
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                     
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <img class="img-circle img-user media-object" src="resources/images/av1.png" alt="Profile Picture">
+                                </span>
+                                <div class="username hidden-xs">   admin</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                                <!-- Dropdown heading  -->
+                                <div class="pad-all bord-btm">
+                                  <script>var lifespan=3600;</script>
+                                    <p class="text-lg text-semibold mar-btm">Session Lifespan</p>
+                                         <div id="life_bar" class="progress"><div  style="width: 100%;" class="progress-bar progress-bar-info">100%</div></div>
+                                </div>
+
+
+                                <!-- User dropdown menu -->
+                                <ul class="head-list">
+                                    
+                                    <li>
+                                        <a href="https://mytuitionaid.com/leadwayinvest/admin/Setting">
+                                             <i class="fa fa-cog fa-2x icon-lg icon-fw"></i> Settings
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="https://mytuitionaid.com/leadwayinvest/admin/Logout" class="btn btn-primary">
+                                        <i class="pli-unlock"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <h1 class="page-header text-overflow">Account Settings</h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                     <form method="post" action="https://mytuitionaid.com/leadwayinvest/admin/Search">
+                         
+                        <div class="input-group custom-search-form">
+                            <input type="text" name="query" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button name="search" class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                          
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+       
+				    <div class="panel">
+                    
+                  <form id="demo-bvd-notempty" onsubmit="return false;" action="" method="post" class="form-horizontal">
+	               
+                   	<div class="panel-body">
+                                                                   <fieldset>
+                        
+                        <div class="form-group">
+							<label class="col-lg-3 control-label">Last Name</label>
+							<div class="col-lg-5">
+								<input type="text" class="form-control" value="Adetola" name="lastName" placeholder="Last Name">
+							</div>
+						</div>
+                          <div class="form-group">
+							<label class="col-lg-3 control-label">First Name</label>
+							<div class="col-lg-5">
+								<input type="text" class="form-control" value="Olowolaju" name="firstName" placeholder="First Name">
+							</div>
+						</div>
+                        
+                         
+                    	<div class="form-group">
+							<label class="col-lg-3 control-label">Password</label>
+							<div class="col-lg-5">
+								<input type="password" id="p1" class="form-control" name="password" placeholder="Password">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">Retype password</label>
+							<div class="col-lg-5">
+								<input type="password" id="p2" class="form-control" name="confirmPassword" placeholder="Retype password">
+							</div>
+						</div>
+						 
+                        
+						<div class="form-group">
+							<label class="col-lg-3 control-label">Email address</label>
+							<div class="col-lg-5">
+								<input type="email" value="info@surepayinvest.com" class="form-control" name="email" placeholder="Email">
+							</div>
+						</div> 
+                        
+                        
+                        <input type="hidden" id="form_id" name="form" value="195cdaffc7c4fc1" hidden="hidden" />
+                         <input type="hidden" id="key" name="key" hidden="hidden" />
+                          
+                        
+                      </fieldset>
+                     
+                    </div>
+                    <div class="panel-footer">
+						<div class="row">
+							<div class="col-sm-7 col-sm-offset-3">
+								<button onclick="process()" name="update" class="btn btn-primary btn-labeled fa fa-check fa-lg" type="submit">Save</button>
+							</div>
+						</div>
+					</div>
+               </form>
+        </div>
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+           
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+                
+                   <!--Shortcut buttons-->
+                    <!--================================-->
+                    <div id="mainnav-shortcut">
+                        
+                    </div>
+                    <!--================================-->
+                    <!--End shortcut buttons-->
+                    <!--Menu-->
+                    <!--================================-->
+                     <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <!--Category name-->
+						            <li class="list-header">Navigation</li>
+						
+						            <!--Menu list item-->
+						            <li  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/">
+						                    <i class="fa fa-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
+						            <li class="list-divider"></li>
+                                    
+                                    
+                                    <li  >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Investors</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Payment">
+						                    <i class="fa fa-dollar"></i>
+						                    <span class="menu-title">
+												<strong>Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                      <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Investment">
+						                    <i class="fa fa-bar-chart"></i>
+						                    <span class="menu-title">
+												<strong>Investments & Interests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/WithdrawalRequest">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Withdrawal Requests</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                   
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
+						                    <i class="fa fa-money"></i>
+						                    <span class="menu-title">
+												<strong>Pending Payments</strong>
+											</span>
+						                </a>
+						            </li>
+                                  
+                                      <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/ApprovedPayment">
+						                    <i class="fa fa-check"></i>
+						                    <span class="menu-title">
+												<strong>Approved Payment</strong>
+											</span>
+						                </a>
+						            </li>
+                                      
+                                    
+                                     <li class="list-divider"></li>
+                                    
+                                   
+                                    
+                                    <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminAccount">
+						                    <i class="fa fa-users"></i>
+						                    <span class="menu-title">
+												<strong>Admin Accounts</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                     <li >
+						                <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminActivity">
+						                    <i class="fa fa-folder"></i>
+						                    <span class="menu-title">
+												<strong>Admin Activity</strong>
+											</span>
+						                </a>
+						            </li>
+                                    
+                                <!--    
+                                    <li class="list-divider"></li>
+                                       
+                                       <li >
+    						                <a href="https://mytuitionaid.com/leadwayinvest/admin/Report">
+    						                    <i class="fa fa-files-o"></i>
+    						                    <span class="menu-title">
+    												<strong>Reports</strong>
+    											</span>
+    						                </a>
+    						            </li>
+                                    
+                                     <li class="list-divider"></li>
+                               -->
+                            </div>
+                        </div>
+                    </div>                    <!--================================-->
+                    <!--End menu-->
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">&#0169; 2016 Leadway Invest</p>
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script type='text/javascript' src='resources/js/jquery-2.2.1.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/bootstrap.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/nifty.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/admin_signup.js?v=1.1'></script>
+<script type='text/javascript' src='resources/js/sha512.js?v=1.1'></script>
+    
+    <script type='text/javascript' src='resources/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1'></script>
+<script type='text/javascript' src='resources/plugins/bootstrap-validator/bootstrapValidator.min.js?v=1.1'></script>
+        
+    <script>
+      
+       var faIcon = {
+		valid: 'fa fa-check-circle fa-lg text-success',
+		invalid: 'fa fa-times-circle fa-lg',
+		validating: 'fa fa-refresh'
+	}
+
+
+    $('#demo-bvd-notempty').bootstrapValidator({
+		message: 'This value is not valid',
+		feedbackIcons: faIcon,
+		fields: {
+		  
+          firstName: {
+			validators: {
+				notEmpty: {
+					message: 'The first name is required and cannot be empty'
+				},
+				regexp: {
+					regexp: /^[A-Z\s]+$/i,
+					message: 'The first name can only consist of alphabetical characters and spaces'
+				}
+			}
+		},
+		lastName: {
+			validators: {
+				notEmpty: {
+					message: 'The last name is required and cannot be empty'
+				},
+				regexp: {
+					regexp: /^[A-Z\s]+$/i,
+					message: 'The last name can only consist of alphabetical characters and spaces'
+				}
+			}
+		},
+         
+		 password: {
+			validators: {
+				notEmpty: {
+					message: 'The password is required and can\'t be empty'
+				},
+				identical: {
+					field: 'confirmPassword',
+					message: 'The password and its confirm are not the same'
+				}
+			}
+		},
+		confirmPassword: {
+			validators: {
+				notEmpty: {
+					message: 'The confirm password is required and can\'t be empty'
+				},
+				identical: {
+					field: 'password',
+					message: 'The password and its confirm are not the same'
+				}
+			}
+		},
+          email: {
+			validators: {
+				notEmpty: {
+					message: 'The email address is required and can\'t be empty'
+				},
+				emailAddress: {
+					message: 'The input is not a valid email address'
+				}
+			}
+		}
+        
+        
+        }
+
+}).on('success.field.bv', function(e, data) {
+		var $parent = data.element.parents('.form-group');
+
+		// Remove the has-success class
+		$parent.removeClass('has-success');
+	});
+
+    
+    </script>
+    
+</body>
+</html>
