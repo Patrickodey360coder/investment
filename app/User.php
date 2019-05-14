@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function trustwayInvestments()
+    {
+        return $this->hasMany('App\TrustwayInvestment');
+    }
+
+    public function wallet()
+    {
+        return $this->hasOne('App\Wallet');
+    }
 }

@@ -22,4 +22,5 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
 	Route::get('/trustway-investment/create', 'TrustwayInvestmentController@createForm')->name('user.create-trustway-investments');
+	Route::post('/trustway-investment/create', 'TrustwayInvestmentController@store')->name('user.create-trustway-investments.store');
 });

@@ -7,15 +7,15 @@
       <div class="panel-body">
         <div class="panel">
                          <div class="panel-body">
-                                                          <form id="demo-bvd-notempty" action="" method="post" class="form-horizontal">
-                 
-                             
+                                                          <form id="demo-bvd-notempty" action="{{ route('user.create-trustway-investments.store') }}" method="post" class="form-horizontal">
+                                {{ csrf_field() }}
+                            
                                 <fieldset>
-                                
+                                @include('layouts.includes.errors')
                                 <div class="form-group">
                       <label class="col-lg-3 control-label">Type of Investment</label>
                       <div class="col-lg-4">
-                        <select data-placeholder="Choose an investor" class="form-control" required name="user" id="demo-chosen-select" tabindex="2">
+                        <select data-placeholder="Choose an investor" class="form-control" required name="investment-type" id="demo-chosen-select" tabindex="2">
                           <option value="">Please select an investment</option>
                           @foreach($investments as $investment)
                           <option value="{{ $investment }}">{{ $investment }}</option>
@@ -120,17 +120,17 @@
         switch (evt.target.value) {
           case 'Trustway 90':
             ROI = 12;
-            setUpDurationField(3, 25*1000, 500*1000);
+            setUpDurationField(3, 25000, 500000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway 180':
             ROI = 30;
-            setUpDurationField(6, 25*1000, 1000*1000);
+            setUpDurationField(6, 25000, 1000000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway 360':
             ROI = 75;
-            setUpDurationField(12, 50*1000, 1000*1000);
+            setUpDurationField(12, 50000, 1000000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway Pension':
@@ -138,6 +138,8 @@
             durationInputElem.classList.add('hidden');
             durationSelectElem.classList.remove('hidden');
             durationSelectElem.required = true;
+            amountElem.min = 100000;
+            amountElem.max = 1500000;
             break;
           default:
             ROI = 0;
