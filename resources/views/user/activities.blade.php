@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
   @section('title')
-    Trustway Investments
+    My Activitie
   @endsection
   @section('page-content')
     <div class="panel">
