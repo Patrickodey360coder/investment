@@ -86,6 +86,10 @@
         }
       })
 
+      durationSelectElem.addEventListener('change', function(evt){
+        setUpTotalEarnings(amountElem.value);
+      })
+
       selectElem.addEventListener('change', function(evt){
         switch (evt.target.value) {
           case 'Trustway 90':
@@ -110,6 +114,7 @@
             durationSelectElem.required = true;
             amountElem.min = 100000;
             amountElem.max = 1500000;
+            setUpTotalEarnings(amountElem.value);
             break;
           default:
             ROI = 0;
@@ -121,7 +126,24 @@
 
       function setUpTotalEarnings(amount){
         amount = parseInt(amount) || 0;
-        earningsElem.value = ROI ? amount + (amount * ROI/100) : '';
+        if(selectElem.value === 'Trustway Pension'){
+          earningsElem.value = calc(amount, durationSelectElem.value);
+        } else {
+          earningsElem.value = ROI ? amount + (amount * ROI/100) : '';
+        }
+      }
+
+      function calc(amount, years){
+        capital = parseInt(amount);
+        totalEarning = 0;
+
+        for(var i=0; i<years; i++){
+          totalEarning += capital * 50/100;
+          capital += capital * 25/100;
+        }
+        totalEarning += capital;  
+
+        return totalEarning.toFixed(2);
       }
 
       function setUpDurationField(months, minAmount, maxAmount) {

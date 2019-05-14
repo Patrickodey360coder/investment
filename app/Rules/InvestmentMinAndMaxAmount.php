@@ -40,8 +40,7 @@ class InvestmentMinAndMaxAmount implements Rule
                 return $amount >= 50000 && $amount <= 1000000;
 
             case 'Trustway Pension':
-            
-                return ;
+                return $amount >= 100000 && $amount <= 1500000;
 
             default:
                 return false;
@@ -70,7 +69,7 @@ class InvestmentMinAndMaxAmount implements Rule
                 return $investmentType . " investment amount can not be less than 50000 and greter than 1000000";
 
             case 'Trustway Pension':
-                return "";
+                return $investmentType . " investment amount can not be less than 100000 and greter than 1500000";
 
             default:
                 return "";

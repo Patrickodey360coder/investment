@@ -27,4 +27,9 @@ class TrustwayInvestment extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function trustwayPensionInvestment()
+    {
+        return $this->hasOne('App\TrustwayPensionInvestment');
+    }
 }

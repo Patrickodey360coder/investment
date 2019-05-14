@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\TrustwayInvestment;
+use App\TrustwayPensionInvestment;
 use App\Rules\InvestmentMinAndMaxAmount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -18,7 +19,21 @@ class TrustwayInvestmentController extends Controller
     	return view('user.trustway-investment')->with('trustwayInvestments', Auth::user()->trustwayInvestments)->with('activeLink', 'trustway');
     }
 
-    private function getCheckoutAmount($investmentType, $amount)
+    private function getTrustwayPensionAmount($amount, $years)
+    {
+        $capital = $amount;
+        $totalEarning = 0;
+
+        for($i=0; $i<$years; $i++){
+            $totalEarning += $capital * 50/100;
+            $capital += $capital * 25/100;
+        }
+        $totalEarning += $capital;  
+
+        return $totalEarning;
+    }
+
+    private function getCheckoutAmount($investmentType, $amount, $duration=0)
     {
     	$amount = (int) $amount;
     	switch ($investmentType) {
@@ -32,7 +47,7 @@ class TrustwayInvestmentController extends Controller
                 return $amount + ($amount * 75/100);
 
             case 'Trustway Pension':
-                return 0;
+                return $this->getTrustwayPensionAmount($amount, $duration);
 
             default:
                 return 0;
@@ -50,12 +65,14 @@ class TrustwayInvestmentController extends Controller
             
         ]);
         $amount = (int) $request->amount;
+        $duration = $request['duration'] ?? 0;
+        $duration = (int) $duration;
 
-        TrustwayInvestment::create([
+        $investment = TrustwayInvestment::create([
         	'user_id' => Auth::user()['id'],
         	'investment_amount' => $amount,
         	'investment_type' => $request['investment-type'],
-        	'checkout_amount' => $this->getCheckoutAmount($request['investment-type'], $amount)
+        	'checkout_amount' => $this->getCheckoutAmount($request['investment-type'], $amount, $duration)
         ]);
 
         $wallet->withdrawable = $wallet->withdrawable - $amount;
@@ -65,6 +82,12 @@ class TrustwayInvestmentController extends Controller
         	'user_id' => Auth::user()['id'],
         	'detail' => "Created " . $request['investment-type'] . " investment with &#8358;" . $amount
         ]);
+
+        if($request['investment-type'] == 'Trustway Pension'){
+            TrustwayPensionInvestment::create([
+                'trustway_investment_id' => $investment->id
+            ]);
+        }
 
     	Session::flash('success','Trustway investment successfully created.');
 
