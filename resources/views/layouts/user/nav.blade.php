@@ -19,7 +19,7 @@
                       <li class="list-header">Navigation</li>
           
                       <!--Menu list item-->
-                      <li  class="active-link"  >
+                      <li class="@if(!isset($activeLink)) active-link @endif">
                           <a href="{{ route('home') }}">
                               <i class="fa fa-home"></i>
                               <span class="menu-title">
@@ -30,7 +30,7 @@
           
                       <li class="list-divider"></li>
                       
-                      <li >
+                      <li class="@if(isset($activeLink) && $activeLink='trustway') active-link @endif">
                           <a href="{{ route('user.investments') }}">
                               <i class="fa fa-bar-chart"></i>
                               <span class="menu-title">

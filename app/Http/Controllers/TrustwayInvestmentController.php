@@ -15,7 +15,7 @@ class TrustwayInvestmentController extends Controller
 {
     public function index()
     {
-    	return view('user.trustway-investment')->with('trustwayInvestments', Auth::user()->trustwayInvestments);
+    	return view('user.trustway-investment')->with('trustwayInvestments', Auth::user()->trustwayInvestments)->with('activeLink', 'trustway');
     }
 
     private function getCheckoutAmount($investmentType, $amount)
@@ -68,6 +68,6 @@ class TrustwayInvestmentController extends Controller
     public function createForm()
     {
     	$wallet = Auth::user()->wallet;
-    	return view('user.create-trustway-investment')->with('investments', TrustwayInvestment::getInvestmentTypes())->with('wallet', $wallet);
+    	return view('user.create-trustway-investment')->with('investments', TrustwayInvestment::getInvestmentTypes())->with('wallet', $wallet)->with('activeLink', 'trustway');
     }
 }
