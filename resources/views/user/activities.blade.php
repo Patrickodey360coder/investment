@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
   @section('title')
-    My Activitie
+    My Activities
   @endsection
   @section('page-content')
     <div class="panel">
