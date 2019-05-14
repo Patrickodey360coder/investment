@@ -31,25 +31,44 @@
               <th>Amount</th>
               <th>Earnings</th> 
               <th>Status</th>
+              <th data-hide="phone, tablet">Date created</th>
               <th data-hide="phone, tablet">Date of investment</th>
               <th data-hide="phone, tablet">Checkout Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr style=" ">
-              <td>1</td>
-              <td>Trustway 90</td>
-              <td>&#8358;1,000.00</td>
-              <td>&#8358;770.00 (77%)</td>
-              <td><span class="label label-table label-dark">Closed</label></td>
-              <td>16th of July, 2016 12:00 am</td>
-              <td>16th of July, 2016 12:00 am</td>
-            </tr>  
-            <tr>
-              <td colspan="7">
-                <h2 class="text-center">You don't have any Trustway Investment</h2>
-              </td>
-            </tr>
+            @if(count($trustwayInvestments) > 0)
+              <?php $count=1; ?>
+              @foreach($trustwayInvestments as $investment)
+                <tr>
+                  <td>{{ $count++ }}</td>
+                  <td>{{ $investment->investment_type }}</td>
+                  <td>&#8358;{{ $investment->investment_amount }}</td>
+                  <td>&#8358;{{ $investment->checkout_amount }}</td>
+                  <td>
+                    @if($investment->status == 'Active')
+                      <span class="label label-table label-success">
+                    @elseif($investment->status == 'Closed')
+                      <span class="label label-table label-dark">
+                    @elseif($investment->status == 'Pending')
+                      <span class="label label-table label-danger">
+                    @endif
+                      {{ $investment->status }}
+                    </label>
+                  </td>
+                  <!-- DATE FORMAT: 16th of July, 2016 12:00 am -->
+                  <td>{{ $investment->created_at }}</td>
+                  <td>{{ $investment->investment_date }}</td>
+                  <td>{{ $investment->checkout_date }}</td>
+                </tr>
+              @endforeach
+            @else
+              <tr>
+                <td colspan="7">
+                  <h2 class="text-center">You don't have any Trustway Investment</h2>
+                </td>
+              </tr>
+            @endif
           </tbody>
           <tfoot>
             <tr>

@@ -15,7 +15,7 @@ class TrustwayInvestmentController extends Controller
 {
     public function index()
     {
-    	return view('user.trustway-investment');
+    	return view('user.trustway-investment')->with('trustwayInvestments', Auth::user()->trustwayInvestments);
     }
 
     private function getCheckoutAmount($investmentType, $amount)
@@ -41,17 +41,15 @@ class TrustwayInvestmentController extends Controller
 
     public function store(Request $request)
     {
-    	$wallet = Wallet::all()->where('user_id', Auth::user()['id'])->first();
-    	//dd($wallet->withdrawable);
+    	$wallet = Auth::user()->wallet;
+    	
     	$this->validate($request, [
             'investment-type' => ['required', Rule::in(TrustwayInvestment::getInvestmentTypes())],
             'amount' => ['required', 'numeric', 'max:'.$wallet->withdrawable , new InvestmentMinAndMaxAmount],
             'duration' => ['required_if:investment-type,Trustway Pension', 'between:2,5', 'integer']
-            // 'password' => 'required|string|min:8|confirmed',
+            
         ]);
         $amount = (int) $request->amount;
-
-        //dd(Auth::user()->wallet());
 
         TrustwayInvestment::create([
         	'user_id' => Auth::user()['id'],
@@ -69,7 +67,7 @@ class TrustwayInvestmentController extends Controller
 
     public function createForm()
     {
-    	$wallet = Wallet::all()->where('user_id', Auth::user()['id'])->first();
+    	$wallet = Auth::user()->wallet;
     	return view('user.create-trustway-investment')->with('investments', TrustwayInvestment::getInvestmentTypes())->with('wallet', $wallet);
     }
 }

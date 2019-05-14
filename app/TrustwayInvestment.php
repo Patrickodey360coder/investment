@@ -3,12 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TrustwayInvestment extends Model
 {
-    use SoftDeletes;
-
     protected $fillable = [
         'user_id', 'investment_amount', 'checkout_amount', 'status', 'investment_type', 'investment_date', 'checkout_date',
     ];
