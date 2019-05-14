@@ -1,8 +1,39 @@
 @extends('layouts.user.app')
   @section('title')
-    Trustway Investments
+    Withdrawal Requests
   @endsection
   @section('page-content')
+    @if(!empty($wallet->withdrawable))
+      <div class="panel">
+        <div class="panel-title">Make Withdrawal Request</div>
+        <div class="panel-body">
+          <div class="panel">
+            <div class="panel-body">
+              <form id="demo-bvd-notempty" action="{{ route('user.withdrawals.create') }}" method="post" class="form-horizontal">
+                {{ csrf_field() }}
+                <fieldset>
+                  @include('layouts.includes.errors')
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Amount</label>
+                    <div class="col-lg-4">
+                        <input type="number" class="form-control" required name="amount" step="any" id="amount" placeholder="Enter the amount you want to withdraw" max="{{ $wallet->withdrawable }}">
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="col-sm-7 col-sm-offset-3">
+                      <button class="btn btn-primary btn-labeled fa fa-send fa-lg" type="submit">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endif
+
     <div class="panel">
       <div class="panel-body">
         <table id="demo-foo-filtering" class="table table-bordered table-hover toggle-circle" data-page-size="20">
@@ -13,59 +44,54 @@
                   <label class="control-label">Status</label>
                   <select id="demo-foo-filter-status" class="form-control">
                     <option value="">Show all</option>
-                    <option value="active">Active</option>
-                    <option value="closed">Closed</option>
+                    <option value="paid">Paid</option>
                     <option value="pending">Pending</option>
+                    <option value="rejected">Rejected</option>
                   </select>
                 </div>
-              </div>
-              <div class="col-sm-6 text-xs-center text-right">
-                <a class="btn btn-success" href="{{ route('user.create-trustway-investments') }}">Create Investment</a>
               </div>
             </div>
           </div>
           <thead>
             <tr>
               <th data-toggle="true">#</th>
-              <th data-hide="phone, tablet">Investment Type</th>
               <th>Amount</th>
-              <th>Earnings</th> 
               <th>Status</th>
               <th data-hide="phone, tablet">Date created</th>
-              <th data-hide="phone, tablet">Date of investment</th>
-              <th data-hide="phone, tablet">Checkout Date</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            @if(count($trustwayInvestments) > 0)
+            @if(count($withdrawals) > 0)
               <?php $count=1; ?>
-              @foreach($trustwayInvestments as $investment)
+              @foreach($withdrawals as $withdrawal)
                 <tr>
                   <td>{{ $count++ }}</td>
-                  <td>{{ $investment->investment_type }}</td>
-                  <td>&#8358;{{ $investment->investment_amount }}</td>
-                  <td>&#8358;{{ $investment->checkout_amount }}</td>
+                  <td>&#8358;{{ $withdrawal->amount }}</td>
                   <td>
-                    @if($investment->status == 'Active')
+                    @if($withdrawal->status == 'Paid')
                       <span class="label label-table label-success">
-                    @elseif($investment->status == 'Closed')
+                    @elseif($withdrawal->status == 'Rejected')
                       <span class="label label-table label-dark">
-                    @elseif($investment->status == 'Pending')
+                    @elseif($withdrawal->status == 'Pending')
                       <span class="label label-table label-danger">
                     @endif
-                      {{ $investment->status }}
+                      {{ $withdrawal->status }}
                     </label>
                   </td>
                   <!-- DATE FORMAT: 16th of July, 2016 12:00 am -->
-                  <td>{{ $investment->created_at }}</td>
-                  <td>{{ $investment->investment_date }}</td>
-                  <td>{{ $investment->checkout_date }}</td>
+                  <td>{{ $withdrawal->created_at }}</td>
+                  <td>
+                    @if($withdrawal->status == 'Pending')
+                      <a href="" class="btn btn-danger">Cancel</a>
+                    @endif
+                  </td>
                 </tr>
               @endforeach
             @else
               <tr>
-                <td colspan="8">
-                  <h2 class="text-center">You don't have any Trustway Investment</h2>
+                <td colspan="5">
+                  <h3 class="text-center">You don't have any withdrawal request.</h3>
                 </td>
               </tr>
             @endif

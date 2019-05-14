@@ -15,9 +15,6 @@
               <div class="nano-content">
                   <ul id="mainnav-menu" class="list-group">
           
-                      <!--Category name-->
-                      <li class="list-header">Navigation</li>
-          
                       <!--Menu list item-->
                       <li class="@if(!isset($activeLink)) active-link @endif">
                           <a href="{{ route('home') }}">
@@ -30,37 +27,17 @@
           
                       <li class="list-divider"></li>
                       
-                      <li class="@if(isset($activeLink) && $activeLink='trustway') active-link @endif">
+                      <li class="@if(isset($activeLink) && $activeLink=='trustway') active-link @endif">
                           <a href="{{ route('user.investments') }}">
                               <i class="fa fa-bar-chart"></i>
                               <span class="menu-title">
                                   <strong>My Investments</strong>
                               </span>
                           </a>
-                      </li>
+                      </li>                      
                       
-                      <li  >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Investors">
-                              <i class="fa fa-users"></i>
-                              <span class="menu-title">
-                                  <strong>Investors</strong>
-                              </span>
-                          </a>
-                      </li>
-                      
-                      
-                      <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/Payment">
-                              <i class="fa fa-dollar"></i>
-                              <span class="menu-title">
-                                  <strong>Payments</strong>
-                              </span>
-                          </a>
-                      </li>
-                      
-                      
-                      <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/WithdrawalRequest">
+                      <li class="@if(isset($activeLink) && $activeLink=='withdrawal') active-link @endif">
+                          <a href="{{ route('user.withdrawals') }}">
                               <i class="fa fa-money"></i>
                               <span class="menu-title">
                                   <strong>Withdrawal Requests</strong>
@@ -73,16 +50,7 @@
                           <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
                               <i class="fa fa-money"></i>
                               <span class="menu-title">
-                                  <strong>Pending Payments</strong>
-                              </span>
-                          </a>
-                      </li>
-                    
-                        <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/ApprovedPayment">
-                              <i class="fa fa-check"></i>
-                              <span class="menu-title">
-                                  <strong>Approved Payment</strong>
+                                  <strong>Make Payments</strong>
                               </span>
                           </a>
                       </li>
@@ -90,18 +58,7 @@
                       
                        <li class="list-divider"></li>
                       
-                     
-                      
-                      <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminAccount">
-                              <i class="fa fa-users"></i>
-                              <span class="menu-title">
-                                  <strong>Admin Accounts</strong>
-                              </span>
-                          </a>
-                      </li>
-                      
-                       <li >
+                       <li class="@if(isset($activeLink) && $activeLink=='activities') active-link @endif">
                           <a href="{{ route('user.activities') }}">
                               <i class="fa fa-folder"></i>
                               <span class="menu-title">

@@ -9,6 +9,6 @@ class ActivityController extends Controller
 {
     public function index()
     {
-    	return view('user.activities')->with('activities', Auth::user()->activities);
+    	return view('user.activities')->with('activities', Auth::user()->activities)->with('activeLink', 'activities');
     }
 }
