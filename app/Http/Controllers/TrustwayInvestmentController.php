@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\TrustwayInvestment;
-use App\Wallet;
 use App\Rules\InvestmentMinAndMaxAmount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -57,8 +57,14 @@ class TrustwayInvestmentController extends Controller
         	'investment_type' => $request['investment-type'],
         	'checkout_amount' => $this->getCheckoutAmount($request['investment-type'], $amount)
         ]);
+
         $wallet->withdrawable = $wallet->withdrawable - $amount;
         $wallet->save();
+
+        Activity::create([
+        	'user_id' => Auth::user()['id'],
+        	'detail' => "Created " . $request['investment-type'] . " investment with &#8358;" . $amount
+        ]);
 
     	Session::flash('success','Trustway investment successfully created.');
 

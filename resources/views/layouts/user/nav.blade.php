@@ -102,10 +102,10 @@
                       </li>
                       
                        <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/AdminActivity">
+                          <a href="{{ route('user.activities') }}">
                               <i class="fa fa-folder"></i>
                               <span class="menu-title">
-                                  <strong>Admin Activity</strong>
+                                  <strong>My Activities</strong>
                               </span>
                           </a>
                       </li>

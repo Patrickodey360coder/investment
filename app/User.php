@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function activities()
+    {
+        return $this->hasMany('App\Activity');
+    }
+
     public function trustwayInvestments()
     {
         return $this->hasMany('App\TrustwayInvestment');
