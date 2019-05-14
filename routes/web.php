@@ -28,4 +28,5 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/withdrawals', 'WithdrawalController@index')->name('user.withdrawals');
 	Route::post('/withdrawals', 'WithdrawalController@create')->name('user.withdrawals.create');
+	Route::get('/withdrawals/delete/{id}', 'WithdrawalController@delete')->name('user.withdrawals.delete');
 });

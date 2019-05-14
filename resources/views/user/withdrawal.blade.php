@@ -83,7 +83,7 @@
                   <td>{{ $withdrawal->created_at }}</td>
                   <td>
                     @if($withdrawal->status == 'Pending')
-                      <a href="" class="btn btn-danger">Cancel</a>
+                      <a href="{{ route('user.withdrawals.delete', ['id' => $withdrawal->id]) }}" class="btn btn-danger">Cancel</a>
                     @endif
                   </td>
                 </tr>
