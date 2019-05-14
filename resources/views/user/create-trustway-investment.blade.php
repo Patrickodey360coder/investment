@@ -6,88 +6,58 @@
     <div class="panel">
       <div class="panel-body">
         <div class="panel">
-                         <div class="panel-body">
-                                                          <form id="demo-bvd-notempty" action="{{ route('user.create-trustway-investments.store') }}" method="post" class="form-horizontal">
-                                {{ csrf_field() }}
-                            
-                                <fieldset>
-                                @include('layouts.includes.errors')
-                                <div class="form-group">
-                      <label class="col-lg-3 control-label">Type of Investment</label>
-                      <div class="col-lg-4">
-                        <select data-placeholder="Choose an investor" class="form-control" required name="investment-type" id="demo-chosen-select" tabindex="2">
-                          <option value="">Please select an investment</option>
-                          @foreach($investments as $investment)
-                          <option value="{{ $investment }}">{{ $investment }}</option>
-                          @endforeach
-                        </select>       
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-lg-3 control-label">Amount</label>
-                      <div class="col-lg-4">
-                          <input type="number" class="form-control" required name="amount" id="amount" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-lg-3 control-label">Duration</label>
-                      <div class="col-lg-4">
-                          <input type="text" class="form-control" id="durationInput" disabled placeholder="">
-                          <select data-placeholder="Choose an investor" class="form-control hidden" name="duration" id="durationSelect" tabindex="2">
-                            <option value="2">2 years</option>
-                            <option value="3">3 years</option>
-                            <option value="4">4 years</option>
-                            <option value="5">5 years</option>
-                        </select>  
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-lg-3 control-label">Total Earnings</label>
-                      <div class="col-lg-4">
-                          <input type="text" class="form-control" name="earnings" id="earnings" disabled placeholder="">
-                      </div>
-                    </div>
-                                
-                                
-                                 <!-- <div class="form-group">
-                      <label class="col-lg-3 control-label">Date of payment</label>
-                      <div class="col-lg-4">
-                                    
-                                      <div id="demo-dp-component">
-                        <div class="input-group date">
-                          <input type="text" name="date" class="form-control">
-                          <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                        </div>
-                        <small class="text-muted">Auto close on select</small>
-                      </div>
-                                         
-                                  </div>
-                    </div>
-                                
-                                 <div class="form-group">
-                      <label class="col-lg-3 control-label">Time of payment</label>
-                      <div class="col-lg-4">
-                                       <div class="input-group date">
-                      <input id="demo-tp-com" name="time" type="text" class="form-control">
-                      <span class="input-group-addon"><i class="fa fa-clock-o fa-lg"></i></span>
-                    </div>
-                                  </div>
-                    </div> -->
-                                
-                                        
-                                </fieldset>
-                                
-                                <div class="panel-footer">
-                    <div class="row">
-                      <div class="col-sm-7 col-sm-offset-3">
-                        <button class="btn btn-primary btn-labeled fa fa-send fa-lg" type="submit">Submit</button>
-                      </div>
-                    </div>
+          <div class="panel-body">
+            <form id="demo-bvd-notempty" action="{{ route('user.create-trustway-investments.store') }}" method="post" class="form-horizontal">
+              {{ csrf_field() }}
+          
+              <fieldset>
+                @include('layouts.includes.errors')
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Type of Investment</label>
+                  <div class="col-lg-4">
+                    <select data-placeholder="Choose an investor" class="form-control" required name="investment-type" id="demo-chosen-select" tabindex="2">
+                      <option value="">Please select an investment</option>
+                      @foreach($investments as $investment)
+                      <option value="{{ $investment }}">{{ $investment }}</option>
+                      @endforeach
+                    </select>       
                   </div>
-                           </form>
-                                
-                         </div>
-                         </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Amount</label>
+                  <div class="col-lg-4">
+                      <input type="number" step="any" class="form-control" required name="amount" id="amount" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Duration</label>
+                  <div class="col-lg-4">
+                    <input type="text" class="form-control" id="durationInput" disabled placeholder="">
+                    <select data-placeholder="Choose an investor" class="form-control hidden" name="duration" id="durationSelect" tabindex="2">
+                      <option value="2">2 years</option>
+                      <option value="3">3 years</option>
+                      <option value="4">4 years</option>
+                      <option value="5">5 years</option>
+                    </select>  
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-3 control-label">Total Earnings</label>
+                  <div class="col-lg-4">
+                      <input type="text" class="form-control" name="earnings" id="earnings" disabled placeholder="">
+                  </div>
+                </div>
+              </fieldset>
+              <div class="panel-footer">
+                <div class="row">
+                  <div class="col-sm-7 col-sm-offset-3">
+                    <button class="btn btn-primary btn-labeled fa fa-send fa-lg" type="submit">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   @endsection
