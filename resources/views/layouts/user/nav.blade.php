@@ -46,9 +46,9 @@
                       </li>
                       
                      
-                      <li >
-                          <a href="https://mytuitionaid.com/leadwayinvest/admin/PendingPayment">
-                              <i class="fa fa-money"></i>
+                      <li class="@if(isset($activeLink) && $activeLink=='payment') active-link @endif">
+                          <a href="{{ route('user.payments') }}">
+                              <i class="fa fa-dollar"></i>
                               <span class="menu-title">
                                   <strong>Make Payments</strong>
                               </span>

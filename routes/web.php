@@ -22,6 +22,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/activities', 'ActivityController@index')->name('user.activities');
 
+	Route::get('/payments', 'PaymentController@index')->name('user.payments');
+
 	Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
 	Route::get('/trustway-investment/create', 'TrustwayInvestmentController@createForm')->name('user.create-trustway-investments');
 	Route::post('/trustway-investment/create', 'TrustwayInvestmentController@store')->name('user.create-trustway-investments.store');
