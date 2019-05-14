@@ -10,18 +10,19 @@
   
       <!--STYLESHEET-->
       <!--=================================================-->
-      <link rel='stylesheet' href='/css/bootstrap.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/css/nifty.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/css/demo/nifty-demo-icons.min.css?v=1.1' type='text/css' media='all' />
+      <link rel='stylesheet' href="{{ asset('css/bootstrap.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('css/nifty.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('css/demo/nifty-demo-icons.min.css?v=1.1') }}" type='text/css' media='all' />
   
-      <link rel='stylesheet' href='/plugins/font-awesome/css/font-awesome.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/plugins/animate-css/animate.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/plugins/bootstrap-select/bootstrap-select.min.css?v=1.1' type='text/css' media='all' />
+      <link rel='stylesheet' href="{{ asset('plugins/font-awesome/css/font-awesome.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('plugins/animate-css/animate.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('plugins/bootstrap-select/bootstrap-select.min.css?v=1.1') }}" type='text/css' media='all' />
       
         
-      <link rel='stylesheet' href='/plugins/pace/pace.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/plugins/morris-js/morris.min.css?v=1.1' type='text/css' media='all' />
-  <link rel='stylesheet' href='/plugins/switchery/switchery.min.css?v=1.1' type='text/css' media='all' />
+      <link rel='stylesheet' href="{{ asset('plugins/pace/pace.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('plugins/morris-js/morris.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link rel='stylesheet' href="{{ asset('plugins/switchery/switchery.min.css?v=1.1') }}" type='text/css' media='all' />
+  <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
   <style type="text/css">
     #mainnav-container {
       min-height: 100vh;
@@ -64,6 +65,16 @@
       
       <!-- END OF CONTAINER -->
       @yield('scripts')      
+      <script src="{{ asset('js/toastr.min.js') }}"></script>
+      <script>
+          @if(Session::has('success'))
+              toastr.success("{{ Session::get('success') }}")
+          @endif
+          
+          @if(Session::has('info'))
+              toastr.info("{{ Session::get('info') }}")
+          @endif
+      </script>
   </body>
   </html>
   

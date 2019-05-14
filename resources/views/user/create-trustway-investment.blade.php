@@ -92,10 +92,10 @@
     </div>
   @endsection
   @section('scripts')
-    <script type='text/javascript' src='/js/jquery-2.2.1.min.js?v=1.1'></script>
-    <script type='text/javascript' src='/js/bootstrap.min.js?v=1.1'></script>
-    <script type='text/javascript' src='/js/nifty.min.js?v=1.1'></script>
-    <script type='text/javascript' src='/plugins/fast-click/fastclick.min.js?v=1.1'></script>
+    <script type='text/javascript' src="{{ asset('/js/jquery-2.2.1.min.js?v=1.1') }}"></script>
+    <script type='text/javascript' src="{{ asset('/js/bootstrap.min.js?v=1.1') }}"></script>
+    <script type='text/javascript' src="{{ asset('/js/nifty.min.js?v=1.1') }}"></script>
+    <script type='text/javascript' src="{{ asset('/plugins/fast-click/fastclick.min.js?v=1.1') }}"></script>
     <script type="text/javascript">
       var wallet = {{ $wallet['withdrawable'] }};
       var ROI = 0;
