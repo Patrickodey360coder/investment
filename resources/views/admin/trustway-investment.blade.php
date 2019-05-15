@@ -67,8 +67,8 @@
               @endforeach
             @else
               <tr>
-                <td colspan="10">
-                  <h2 class="text-center">You don't have any Trustway Investment</h2>
+                <td colspan="9">
+                  <h2 class="text-center">They are no Trustway Investments</h2>
                 </td>
               </tr>
             @endif
