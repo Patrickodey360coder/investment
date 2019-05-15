@@ -145,6 +145,35 @@
           { label: "Paid", data: {{ $paidWithdrawal }}, color: "#177bbb" },
            { label: "Pending", data: {{ $pendingWithdrawal }}, color: "#f84f9a" },
         ];
+
+        $.plot('#demo-flot-donut', investmentDataSet, {
+          series: {
+            pie: {
+              show: true,
+              combine: {
+              color: '#999',
+              threshold: 0.1
+              }
+            }
+          },
+          legend: {
+          show: false
+          }
+        });
+
+        $.plot('#demo-morris-area', withdrawalDataSet, {
+          series: {
+            pie: {
+              show: true,
+              combine: {
+              color: '#999',
+              threshold: 0.1
+              }
+            }
+          },
+          legend: {
+          show: false
+          }
+        });
     </script>
-    <script type='text/javascript' src="{{ asset('js/dashboard.js?v=1.1') }}"></script>
   @endsection

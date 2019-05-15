@@ -90,7 +90,7 @@
         <div class="col-lg-6">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">New & Verified Investors (2019)</h3>
+                    <h3 class="panel-title">Withdrawals</h3>
                 </div>
                 <div class="panel-body">
     
@@ -123,92 +123,54 @@
     </div>
   @endsection
   @section('scripts')
-        <script type='text/javascript' src='/js/jquery-2.2.1.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/js/bootstrap.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/js/nifty.min.js?v=1.1'></script>
+        <script type='text/javascript' src="{{ asset('/js/jquery-2.2.1.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/js/bootstrap.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/js/nifty.min.js?v=1.1') }}"></script>
         
-        <script type='text/javascript' src='/plugins/fast-click/fastclick.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/morris-js/morris.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/morris-js/raphael-js/raphael.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/flot-charts/jquery.flot.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/flot-charts/jquery.flot.resize.min.js?v=1.1'></script>
-        <script type='text/javascript' src='/plugins/flot-charts/jquery.flot.pie.min.js?v=1.1'></script>
+        <script type='text/javascript' src="{{ asset('/plugins/fast-click/fastclick.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/bootstrap-select/bootstrap-select.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/morris-js/morris.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/morris-js/raphael-js/raphael.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/flot-charts/jquery.flot.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/flot-charts/jquery.flot.resize.min.js?v=1.1') }}"></script>
+        <script type='text/javascript' src="{{ asset('/plugins/flot-charts/jquery.flot.pie.min.js?v=1.1') }}"></script>
       
         <script>
       
-        var dataSet = [];
-        var dataSet = [
-          { label: "Active", data: 14, color: "#177bbb" },
-           { label: "Pending", data: 10, color: "#f84f9a" },
-          { label: "Withdrawn", data: 3, color: "#a6c600" },
-          { label: "Re-Invested", data: 0, color: "#8669CC" }
+        var investmentDataSet = [
+          { label: "Active", data: {{ $activeInvestment }}, color: "#177bbb" },
+           { label: "Pending", data: {{ $pendingInvestment }}, color: "#f84f9a" },
+          { label: "Closed", data: {{ $closedInvestment }}, color: "#a6c600" },
         ];
           
-        var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
-        var graph_data=[
-                        {
-              period: ''+month[0],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[1],
-              dl: 1,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[2],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[3],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[4],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[5],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[6],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[7],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[8],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[9],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[10],
-              dl: 0,
-              up: 0         } 
-              
-              ,           {
-              period: ''+month[11],
-              dl: 0,
-              up: 0         } 
-              
-                          
-              ];
+        $.plot('#demo-flot-donut', investmentDataSet, {
+          series: {
+            pie: {
+              show: true,
+              combine: {
+              color: '#999',
+              threshold: 0.1
+              }
+            }
+          },
+          legend: {
+          show: false
+          }
+        });
+
+        $.plot('#demo-morris-area', withdrawalDataSet, {
+          series: {
+            pie: {
+              show: true,
+              combine: {
+              color: '#999',
+              threshold: 0.1
+              }
+            }
+          },
+          legend: {
+          show: false
+          }
+        });
     </script>
-    <script type='text/javascript' src='/js/dashboard.js?v=1.1'></script>
   @endsection
