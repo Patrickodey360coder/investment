@@ -19,21 +19,19 @@
                   </select>
                 </div>
               </div>
-              <div class="col-sm-6 text-xs-center text-right">
-                <a class="btn btn-success" href="{{ route('user.create-trustway-investments') }}">Create Investment</a>
-              </div>
             </div>
           </div>
           <thead>
             <tr>
               <th data-toggle="true">#</th>
+              <th>Investor</th>
               <th data-hide="phone, tablet">Investment Type</th>
               <th>Amount</th>
               <th data-hide="phone, tablet">Total Earnings</th> 
               <th>Status</th>
               <th data-hide="phone, tablet">Date created</th>
-              <th data-hide="phone, tablet">Date Approved</th>
               <th data-hide="phone, tablet">Checkout Date</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +40,7 @@
               @foreach($trustwayInvestments as $investment)
                 <tr>
                   <td>{{ $count++ }}</td>
+                  <td>{{ $investment->user->name }}</td>
                   <td>{{ $investment->investment_type }}</td>
                   <td>&#8358;{{ $investment->investment_amount }}</td>
                   <td>&#8358;{{ $investment->checkout_amount }}</td>
@@ -58,13 +57,17 @@
                   </td>
                   <!-- DATE FORMAT: 16th of July, 2016 12:00 am -->
                   <td>{{ $investment->created_at }}</td>
-                  <td>{{ $investment->investment_date }}</td>
                   <td>{{ $investment->checkout_date }}</td>
+                  <td>
+                    @if($investment->status == 'Pending')
+                      <a href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" class="btn btn-success">Activate</a>
+                    @endif
+                  </td>
                 </tr>
               @endforeach
             @else
               <tr>
-                <td colspan="8">
+                <td colspan="10">
                   <h2 class="text-center">You don't have any Trustway Investment</h2>
                 </td>
               </tr>

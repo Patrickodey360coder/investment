@@ -85,7 +85,8 @@ class TrustwayInvestmentController extends Controller
 
         if($request['investment-type'] == 'Trustway Pension'){
             TrustwayPensionInvestment::create([
-                'trustway_investment_id' => $investment->id
+                'trustway_investment_id' => $investment->id,
+                'duration' => (string) $duration,
             ]);
         }
 
@@ -98,5 +99,54 @@ class TrustwayInvestmentController extends Controller
     {
     	$wallet = Auth::user()->wallet;
     	return view('user.create-trustway-investment')->with('investments', TrustwayInvestment::getInvestmentTypes())->with('wallet', $wallet)->with('activeLink', 'trustway');
+    }
+
+    public function show()
+    {
+        return view('admin.trustway-investment')->with('trustwayInvestments', TrustwayInvestment::all())->with('activeLink', 'trustway');
+    }
+
+    public function activate(Request $request, $id)
+    {
+        $investment = TrustwayInvestment::find($id);
+        $investment = (!empty($investment) && $investment['status'] == "Pending") ? $investment : null;
+
+        if($investment){
+            $investment->investment_date = strftime("%Y-%m-%d %H:%M:%S", time());
+
+            switch ($investment['investment_type']) {
+                case 'Trustway 90':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+3 months'));
+                    break;
+
+                case 'Trustway 180':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+6 months'));
+                    break;
+
+                case 'Trustway 360':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+12 months'));
+                    break;
+
+                case 'Trustway Pension':
+                    dd('Trustway Pension');
+                    break;
+
+                default:
+                    break;
+            }
+
+            $investment->status = 'Active';
+            $investment->save();
+            
+            $wallet = $investment->user->wallet;
+            $wallet->balance = $wallet->balance - $investment->investment_amount;
+            $wallet->save();
+
+            Session::flash('success', "Successfully activated the requested investment");
+        } else {
+            Session::flash('error', "Could not activate the requested investment");
+        };
+
+        return redirect()->route('admin.investments');
     }
 }

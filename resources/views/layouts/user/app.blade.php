@@ -58,7 +58,11 @@
               </div>
               
               <!--END CONTENT CONTAINER-->
-              @include('layouts.user.nav')  
+              @if(Auth::user()->role == 'admin')
+                @include('layouts.admin.nav')  
+              @else
+                @include('layouts.user.nav')  
+              @endif
           </div>
           @include('layouts.user.footer')
       </div>

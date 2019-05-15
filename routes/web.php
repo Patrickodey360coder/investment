@@ -18,14 +18,24 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
+	Route::get('/activities', 'ActivityController@index')->name('user.activities');
+
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	Route::get('/profile', 'UserController@index')->name('profile');
 	Route::post('/profile', 'UserController@update')->name('profile.update');
 
-	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
-		Route::get('/activities', 'ActivityController@index')->name('user.activities');
+	Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function(){
+		Route::get('/payments', 'PaymentController@index')->name('admin.payments');
 
+		Route::get('/trustway-investment', 'TrustwayInvestmentController@show')->name('admin.investments');
+
+		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');
+
+		Route::get('/withdrawals', 'WithdrawalController@index')->name('admin.withdrawals');
+	});
+
+	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
 		Route::get('/payments', 'PaymentController@index')->name('user.payments');
 
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
