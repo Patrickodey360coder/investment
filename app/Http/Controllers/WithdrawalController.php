@@ -70,4 +70,63 @@ class WithdrawalController extends Controller
     	}
     	return redirect()->route('user.withdrawals');
     }
+
+    public function show()
+    {
+        return view('admin.withdrawal')->with('withdrawals', Withdrawal::all())->with('activeLink', 'withdrawal');
+    }
+
+    public function accept(Request $request, $id)
+    {
+        $withdrawal = Withdrawal::find($id);
+        $withdrawal = (!empty($withdrawal) && $withdrawal['status'] == "Pending") ? $withdrawal : null;
+        
+        if($withdrawal){
+            $amount = (int) $withdrawal['amount'];
+            
+            $withdrawal->status = 'Paid';
+            $withdrawal->save();
+
+            $wallet = $withdrawal->user->wallet;
+            $wallet->balance = $wallet->balance - $amount;
+            $wallet->save();
+
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You accepted withdrawal request #" . $withdrawal->id . " of &#8358;" . $amount
+            ]);
+
+            Session::flash('success','Successfully accepted the requested withdrawal request.');
+        } else {
+            Session::flash('error', "Could not accept the requested withdrawal request");
+        }
+        return redirect()->route('admin.withdrawals');
+    }
+
+    public function reject(Request $request, $id)
+    {
+        $withdrawal = Withdrawal::find($id);
+        $withdrawal = (!empty($withdrawal) && $withdrawal['status'] == "Pending") ? $withdrawal : null;
+        
+        if($withdrawal){
+            $amount = (int) $withdrawal['amount'];
+            
+            $withdrawal->status = 'Rejected';
+            $withdrawal->save();
+
+            $wallet = $withdrawal->user->wallet;
+            $wallet->withdrawable = $wallet->withdrawable + $amount;
+            $wallet->save();
+
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You canceled withdrawal request #" . $withdrawal->id . " of &#8358;" . $amount
+            ]);
+
+            Session::flash('success','Successfully rejected the requested withdrawal request.');
+        } else {
+            Session::flash('error', "Could not reject the requested withdrawal request");
+        }
+        return redirect()->route('admin.withdrawals');
+    }
 }

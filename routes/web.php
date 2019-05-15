@@ -29,10 +29,11 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('/payments', 'PaymentController@index')->name('admin.payments');
 
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@show')->name('admin.investments');
-
 		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');
 
-		Route::get('/withdrawals', 'WithdrawalController@index')->name('admin.withdrawals');
+		Route::get('/withdrawals', 'WithdrawalController@show')->name('admin.withdrawals');
+		Route::get('/withdrawals/{id}/accept', 'WithdrawalController@accept')->name('admin.accept.withdrawals');
+		Route::get('/withdrawals/{id}/reject', 'WithdrawalController@reject')->name('admin.reject.withdrawals');
 	});
 
 	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
