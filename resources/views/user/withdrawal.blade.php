@@ -16,7 +16,7 @@
                   <div class="form-group">
                     <label class="col-lg-3 control-label">Amount</label>
                     <div class="col-lg-4">
-                        <input type="number" class="form-control" required name="amount" step="any" id="amount" placeholder="Enter the amount you want to withdraw" max="{{ $wallet->withdrawable }}">
+                        <input type="number" class="form-control" required name="amount" step="any" id="amount" placeholder="Enter the amount you want to withdraw" min="0" max="{{ $wallet->withdrawable }}">
                     </div>
                   </div>
                 </fieldset>

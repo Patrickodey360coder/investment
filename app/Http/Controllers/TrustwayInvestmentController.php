@@ -60,7 +60,7 @@ class TrustwayInvestmentController extends Controller
     	
     	$this->validate($request, [
             'investment-type' => ['required', Rule::in(TrustwayInvestment::getInvestmentTypes())],
-            'amount' => ['required', 'numeric', 'max:'.$wallet->withdrawable , new InvestmentMinAndMaxAmount],
+            'amount' => ['required', 'numeric', 'min:0', 'max:'.$wallet->withdrawable , new InvestmentMinAndMaxAmount],
             'duration' => ['required_if:investment-type,Trustway Pension', 'between:2,5', 'integer']
             
         ]);

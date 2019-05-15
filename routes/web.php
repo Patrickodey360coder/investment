@@ -26,7 +26,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/profile', 'UserController@update')->name('profile.update');
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function(){
-		Route::get('/payments', 'PaymentController@index')->name('admin.payments');
+		Route::get('/investors', 'UserController@showInvestors')->name('admin.investors');
+
+		Route::post('/payments/{id}', 'PaymentController@addPayment')->name('admin.user.payments');
 
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@show')->name('admin.investments');
 		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');

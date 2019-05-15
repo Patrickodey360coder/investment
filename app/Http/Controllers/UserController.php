@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -26,5 +27,10 @@ class UserController extends Controller
 
         Session::flash('success','Profile saved.');
         return redirect()->route('profile');
+    }
+
+    public function showInvestors()
+    {
+    	return view('admin.investors')->with('investors', User::all()->where('role', 'user'))->with('activeLink', 'investor');
     }
 }

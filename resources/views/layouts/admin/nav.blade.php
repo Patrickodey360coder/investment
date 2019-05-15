@@ -26,6 +26,15 @@
                       </li>
           
                       <li class="list-divider"></li>
+
+                      <li class="@if(isset($activeLink) && $activeLink=='investor') active-link @endif">
+                          <a href="{{ route('admin.investors') }}">
+                              <i class="fa fa-user"></i>
+                              <span class="menu-title">
+                                  <strong>All Investors</strong>
+                              </span>
+                          </a>
+                      </li>
                       
                       <li class="@if(isset($activeLink) && $activeLink=='trustway') active-link @endif">
                           <a href="{{ route('admin.investments') }}">
@@ -43,18 +52,7 @@
                                   <strong>All Withdrawal Requests</strong>
                               </span>
                           </a>
-                      </li>
-                      
-                     
-                      <li class="@if(isset($activeLink) && $activeLink=='payment') active-link @endif">
-                          <a href="{{ route('admin.payments') }}">
-                              <i class="fa fa-dollar"></i>
-                              <span class="menu-title">
-                                  <strong>Make Payments</strong>
-                              </span>
-                          </a>
-                      </li>
-                        
+                      </li>                       
                       
                        <li class="list-divider"></li>
                       

@@ -21,7 +21,7 @@ class WithdrawalController extends Controller
     	$user_id = Auth::user()['id'];
     	
     	$this->validate($request, [
-            'amount' => ['required', 'numeric', 'max:'.$wallet->withdrawable],
+            'amount' => ['required', 'numeric', 'min:0', 'max:'.$wallet->withdrawable],
         ]);
 
         $amount = (int) $request->amount;
