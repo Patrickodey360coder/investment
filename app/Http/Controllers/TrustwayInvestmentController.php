@@ -147,6 +147,11 @@ class TrustwayInvestmentController extends Controller
             $wallet->balance = $wallet->balance - $investment->investment_amount;
             $wallet->save();
 
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You activated " . $investment['investment_type'] . " investment #" . $investment->id . " of &#8358;" . $investment->investment_amount
+            ]);
+
             Session::flash('success', "Successfully activated the requested investment");
         } else {
             Session::flash('error', "Could not activate the requested investment");
