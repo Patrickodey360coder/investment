@@ -128,7 +128,12 @@ class TrustwayInvestmentController extends Controller
                     break;
 
                 case 'Trustway Pension':
-                    dd('Trustway Pension');
+                    $trustwayPension = $investment->trustwayPensionInvestment;
+                    $trustwayPension->next_payout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 years'));
+                    $trustwayPension->next_payout_amount = 50/100 * $investment->investment_amount;
+                    $trustwayPension->save();
+
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' .$trustwayPension->duration.' years'));
                     break;
 
                 default:
@@ -137,7 +142,7 @@ class TrustwayInvestmentController extends Controller
 
             $investment->status = 'Active';
             $investment->save();
-            
+
             $wallet = $investment->user->wallet;
             $wallet->balance = $wallet->balance - $investment->investment_amount;
             $wallet->save();
