@@ -39,6 +39,9 @@ Route::group(['middleware' => 'auth'], function(){
 	});
 
 	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
+		Route::get('/bank', 'BankAccountController@index')->name('user.bank');
+		Route::post('/bank', 'BankAccountController@update')->name('user.bank.update');
+
 		Route::get('/payments', 'PaymentController@index')->name('user.payments');
 
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');

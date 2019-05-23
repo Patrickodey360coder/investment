@@ -67,6 +67,15 @@
                           </a>
                       </li>
 
+                      <li class="@if(isset($activeLink) && $activeLink=='bank') active-link @endif">
+                          <a href="{{ route('user.bank') }}">
+                              <i class="fa fa-money"></i>
+                              <span class="menu-title">
+                                  <strong>My Bank Details</strong>
+                              </span>
+                          </a>
+                      </li>
+
                       <li class="@if(isset($activeLink) && $activeLink=='profile') active-link @endif">
                           <a href="{{ route('profile') }}">
                               <i class="fa fa-user"></i>
