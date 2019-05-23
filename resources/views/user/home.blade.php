@@ -16,8 +16,8 @@
                 </div>
     
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">37</p>
-                    <p class="text-muted mar-no">Investors</p>
+                    <p class="text-2x mar-no text-semibold">{{ $investments }}</p>
+                    <p class="text-muted mar-no">Investments</p>
                 </div>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -30,13 +30,13 @@
             <div class="panel media pad-all">
                 <div class="media-left">
                     <span class="icon-wrap icon-circle icon-wrap-md bg-info">
-                        <i class="fa fa-user fa-2x"></i>
+                        <i class="fa fa-naira fa-2x"></i>
                     </span>
                 </div>
     
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">2</p>
-                    <p class="text-muted mar-no">Administrators</p>
+                    <p class="text-2x mar-no text-semibold">{{ $paidWithdrawal }}</p>
+                    <p class="text-muted mar-no">Total Paid</p>
                 </div>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -49,7 +49,7 @@
             <div class="panel media pad-all">
                 <div class="media-left">
                     <span class="icon-wrap icon-circle  icon-wrap-md bg-warning">
-                        <i class=" fa fa-dollar fa-2x"></i>
+                        <i class=" fa fa-naira fa-2x"></i>
                     </span>
                 </div>
     
@@ -68,7 +68,7 @@
             <div class="panel media pad-all">
                 <div class="media-left">
                     <span class="icon-wrap  icon-circle  icon-wrap-md bg-danger">
-                         <i class=" fa fa-dollar fa-2x"></i>
+                         <i class=" fa fa-naira fa-2x"></i>
                     </span>
                 </div>
     
@@ -93,7 +93,7 @@
                     <h3 class="panel-title">Withdrawals</h3>
                 </div>
                 <div class="panel-body">
-    
+                
                     <!--Morris Area Chart placeholder-->
                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <div id="demo-morris-area" style="height:215px"></div>
@@ -141,6 +141,11 @@
           { label: "Active", data: {{ $activeInvestment }}, color: "#177bbb" },
            { label: "Pending", data: {{ $pendingInvestment }}, color: "#f84f9a" },
           { label: "Closed", data: {{ $closedInvestment }}, color: "#a6c600" },
+        ];
+
+        var withdrawalDataSet = [
+          { label: "Paid", data: {{ $paidWithdrawal }}, color: "#177bbb" },
+           { label: "Pending", data: {{ $pendingWithdrawal }}, color: "#f84f9a" },
         ];
           
         $.plot('#demo-flot-donut', investmentDataSet, {

@@ -48,7 +48,7 @@
                      
                       <li class="@if(isset($activeLink) && $activeLink=='payment') active-link @endif">
                           <a href="{{ route('user.payments') }}">
-                              <i class="fa fa-dollar"></i>
+                              <i class="fa fa-naira"></i>
                               <span class="menu-title">
                                   <strong>Make Payments</strong>
                               </span>

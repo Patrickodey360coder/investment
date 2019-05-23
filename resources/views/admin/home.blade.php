@@ -49,7 +49,7 @@
             <div class="panel media pad-all">
                 <div class="media-left">
                     <span class="icon-wrap icon-circle  icon-wrap-md bg-warning">
-                        <i class=" fa fa-dollar fa-2x"></i>
+                        <i class=" fa fa-naira fa-2x"></i>
                     </span>
                 </div>
     
@@ -68,7 +68,7 @@
             <div class="panel media pad-all">
                 <div class="media-left">
                     <span class="icon-wrap  icon-circle  icon-wrap-md bg-danger">
-                         <i class=" fa fa-dollar fa-2x"></i>
+                         <i class=" fa fa-naira fa-2x"></i>
                     </span>
                 </div>
     

@@ -27,6 +27,9 @@
     #mainnav-container {
       min-height: 100vh;
     }
+    .fa-naira:before {
+      content: "\0020A6";
+    }
   </style>
   
       <script type='text/javascript' src='/plugins/pace/pace.min.js?v=1.1'></script>

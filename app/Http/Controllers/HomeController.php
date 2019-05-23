@@ -44,6 +44,7 @@ class HomeController extends Controller
         }
 
         $userId = Auth::user()['id'];
+        $investmentsCount = count(Auth::user()->trustwayInvestments);
 
         $activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
         $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');
@@ -53,6 +54,6 @@ class HomeController extends Controller
         $paidWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Paid')->sum('amount');
 
         $wallet = Wallet::all()->where('user_id', $userId)->first();
-        return view('user.home')->with('wallet', $wallet)->with('activeInvestment', $activeInvestment)->with('pendingInvestment', $pendingInvestment)->with('closedInvestment', $closedInvestment)->with('pendingWithdrawal', $pendingWithdrawal)->with('paidWithdrawal', $paidWithdrawal);
+        return view('user.home')->with('wallet', $wallet)->with('activeInvestment', $activeInvestment)->with('pendingInvestment', $pendingInvestment)->with('closedInvestment', $closedInvestment)->with('pendingWithdrawal', $pendingWithdrawal)->with('paidWithdrawal', $paidWithdrawal)->with('investments', $investmentsCount);
     }
 }
