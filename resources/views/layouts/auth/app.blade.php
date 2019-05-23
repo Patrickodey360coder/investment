@@ -4,7 +4,7 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Leadway Invest | Login</title>
+      <title>Trustway Invest | Login</title>
         <link rel="icon" type="image/x-icon" href="images/invest.ico" />
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <!--STYLESHEET-->
@@ -34,7 +34,7 @@
           <div class="cls-header cls-header-lg">
               <div class="cls-brand">
                   <a class="box-inline" href="{{ route('index') }}">
-                      <span class="brand-title">Leadway Invest </span>
+                      <span class="brand-title">Trustway Invest </span>
                   </a>
               </div>
           </div>
