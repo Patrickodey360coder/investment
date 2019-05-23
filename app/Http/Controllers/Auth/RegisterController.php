@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\BankAccount;
 use App\User;
 use App\Wallet;
 use App\Http\Controllers\Controller;
@@ -91,6 +92,13 @@ class RegisterController extends Controller
             'total_earnings' => 0,
             'balance' => 0,
             'withdrawable' => 0,
+        ]);
+
+        BankAccount::create([
+            'user_id' => $user->id,
+            'bank_name' => '',
+            'account_name' => '',
+            'account_number' => '',
         ]);
     }
 }
