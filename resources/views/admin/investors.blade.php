@@ -29,11 +29,18 @@
             @if(count($investors) > 0)
               @foreach($investors as $investor)
                 <tr>
+                  <?php
+                    $bank = $investor->bankAccount;
+                    $bankName = empty($bank->bank_name) ? 'Not yet set' : $bank->bank_name;
+                    $accountName = empty($bank->account_name) ? 'Not yet set' : $bank->account_name;
+                    $accountNumber = empty($bank->account_number) ? 'Not yet set' : $bank->account_number;
+                  ?>
                   <td>{{ $investor->name }}</td>
                   <td>{{ $investor->email }}</td>
                   <td>{{ $investor->country }}</td>
                   <td>
-                    <button class="btn btn-info investor-payment" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.payments', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#paymentModal">Add &nbsp; Payment</button>
+                    <button class="btn btn-info investor-payment" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.payments', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#paymentModal">Add Payment</button>
+                    <button class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
                   </td>
                 </tr>
               @endforeach
@@ -57,8 +64,6 @@
         </table>
       </div>
     </div>
-    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#paymentModal">More Info</button>
-
     <div id="paymentModal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -86,7 +91,27 @@
           </form>
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->
-    </div><!-- modal fade -->
+    </div>
+    <div id="bankModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Bank Details</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- modal-header -->
+          <div class="modal-body">
+            <h4>Bank Name: <span id="bankName">H</span></h4>
+            <h4>Account Name: <span id="accountName"></span></h4>
+            <h4>Account Number: <span id="accountNumber"></span></h4>
+          </div><!-- modal-body -->
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+          </div><!-- modal-footer -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
   @endsection
   @section('scripts')
     <script type='text/javascript' src="{{ asset('js/jquery-2.2.1.min.js?v=1.1') }}"></script>
@@ -98,11 +123,26 @@
     <script type='text/javascript' src="{{ asset('plugins/fooTable/dist/footable.all.min.js?v=1.1') }}"></script>
             
           <script>
+            var bankModalHeading = document.querySelector('#bankModal h5');
+            var accountName = document.getElementById('accountName');
+            var accountNumber = document.getElementById('accountNumber');
+            var bankName = document.getElementById('bankName');
+
             var investorPaymentBtns = document.getElementsByClassName('investor-payment');
+            var investorBankBtns = document.getElementsByClassName('investor-bank');
+
             var paymentModalHeading = document.querySelector('#paymentModal h5');
             var paymentModalform = document.querySelector('#paymentModal form');
 
             for (var i = 0; i < investorPaymentBtns.length; i++) {
+              investorBankBtns[i].addEventListener('click', function(evt){
+                evt.preventDefault();
+                bankModalHeading.innerHTML = "Bank Details for " + evt.target.dataset.name;
+                accountNumber.innerHTML = evt.target.dataset.accountnumber;
+                accountName.innerHTML = evt.target.dataset.accountname;
+                bankName.innerHTML = evt.target.dataset.bankname;
+              })
+
               investorPaymentBtns[i].addEventListener('click', function(evt){
                 evt.preventDefault();
                 paymentModalHeading.innerHTML = "Add Incoming Payment for " + evt.target.dataset.name;
