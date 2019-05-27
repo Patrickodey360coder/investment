@@ -103,7 +103,11 @@ class TrustwayInvestmentController extends Controller
 
     public function show()
     {
-        return view('admin.trustway-investment')->with('trustwayInvestments', TrustwayInvestment::all())->with('activeLink', 'trustway');
+        $threeMonths = strftime("%Y-%m-%d 00:00:00", strtotime("-3 months 1 day"));
+        $sixMonths = strftime("%Y-%m-%d 00:00:00", strtotime("-6 months 1 day"));
+        $oneYear = strftime("%Y-%m-%d 00:00:00", strtotime("-12 months 1 day"));
+        
+        return view('admin.trustway-investment')->with('trustwayInvestments', TrustwayInvestment::all())->with('activeLink', 'trustway')->with('threeMonths', $threeMonths)->with('sixMonths', $sixMonths)->with('oneYear', $oneYear);
     }
 
     public function activate(Request $request, $id)
@@ -158,5 +162,60 @@ class TrustwayInvestmentController extends Controller
         };
 
         return redirect()->route('admin.investments');
+    }
+
+    public function activateWithDate(Request $request, $id)
+    {
+        $investment = TrustwayInvestment::find($id);
+        $investment = (!empty($investment) && $investment['status'] == "Pending") ? $investment : null;
+        $date = strtotime($request->date);
+
+        if($investment){
+            $investment->investment_date = strftime("%Y-%m-%d %H:%M:%S", $date);
+
+            switch ($investment['investment_type']) {
+                case 'Trustway 90':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+3 months', $date));
+                    break;
+
+                case 'Trustway 180':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+6 months', $date));
+                    break;
+
+                case 'Trustway 360':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+12 months', $date));
+                    break;
+
+                case 'Trustway Pension':
+                    $trustwayPension = $investment->trustwayPensionInvestment;
+                    $trustwayPension->next_payout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 years', $date));
+                    $trustwayPension->next_payout_amount = 50/100 * $investment->investment_amount;
+                    $trustwayPension->save();
+
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' .$trustwayPension->duration.' years', $date));
+                    break;
+
+                default:
+                    break;
+            }
+
+            $investment->status = 'Active';
+            $investment->save();
+
+            $wallet = $investment->user->wallet;
+            $wallet->balance = $wallet->balance - $investment->investment_amount;
+            $wallet->save();
+
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You activated " . $investment['investment_type'] . " investment #" . $investment->id . " of &#8358;" . $investment->investment_amount
+            ]);
+
+            Session::flash('success', "Successfully activated the requested investment");
+        } else {
+            Session::flash('error', "Could not activate the requested investment");
+        };
+
+        return redirect()->route('admin.investments');   
     }
 }

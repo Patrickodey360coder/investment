@@ -61,6 +61,7 @@
                   <td>
                     @if($investment->status == 'Pending')
                       <a href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" class="btn btn-success">Activate</a>
+                      <button class="btn btn-info activate-investment" data-investment_type="{{ $investment->investment_type }}" data-href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" data-toggle="modal" data-target="#activateModal">Change Activation Date</button>
                     @endif
                   </td>
                 </tr>
@@ -75,7 +76,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="8">
+              <td colspan="9">
               <div class="text-right">
                 <ul class="pagination"></ul>
               </div>  
@@ -85,18 +86,93 @@
         </table>
       </div>
     </div>
+    <div id="activateModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Activate Investment</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- modal-header -->
+          <form class="form-horizontal" method="post">
+            {{ csrf_field() }}
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Investment start date</label>
+                <div class="col-lg-4">
+                    <div class="input-group date">
+                      <input type="text" name="date" id="pikaday" class="form-control">
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+                    </div>
+                </div>
+              </div>
+            </div><!-- modal-body -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+            </div><!-- modal-footer -->
+          </form>
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
   @endsection
   @section('scripts')
+    <link rel='stylesheet' href="{{ asset('plugins/bootstrap-datepicker/bootstrap-datepicker.css?') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ asset('css/pikaday.css?') }}" type='text/css' media='all' />
     <script type='text/javascript' src="{{ asset('js/jquery-2.2.1.min.js?v=1.1') }}"></script>
     <script type='text/javascript' src="{{ asset('js/bootstrap.min.js?v=1.1') }}"></script>
     <script type='text/javascript' src="{{ asset('js/nifty.min.js?v=1.1') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/pikaday.js') }}"></script>
         
         <script type='text/javascript' src="{{ asset('plugins/fast-click/fastclick.min.js?v=1.1') }}"></script>
     <script type='text/javascript' src="{{ asset('plugins/bootstrap-select/bootstrap-select.min.js?v=1.1') }}"></script>
     <script type='text/javascript' src="{{ asset('plugins/fooTable/dist/footable.all.min.js?v=1.1') }}"></script>
+    <script type='text/javascript' src="{{ asset('plugins/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
             
           <script>
-          
+            var picker;
+            var minDate;
+            var threeMonths = new Date("{{ $threeMonths }}");
+            var sixMonths = new Date("{{ $sixMonths }}");
+            var oneYear = new Date("{{ $oneYear }}");
+
+            var activateInvestmentBtns = document.getElementsByClassName('activate-investment');
+            var activateInvestmentModalform = document.querySelector('#activateModal form');
+            
+            for (var i = 0; i < activateInvestmentBtns.length; i++) {
+              activateInvestmentBtns[i].addEventListener('click', function(evt){
+                switch (evt.target.dataset.investment_type) {
+                  case 'Trustway 90':
+                    minDate = threeMonths;
+                    break;
+                  case 'Trustway 180':
+                    minDate = sixMonths;
+                    break;
+                  case 'Trustway 360':
+                  case 'Trustway Pension':
+                    minDate = oneYear;
+                    break;
+                  default:
+                    break;
+                }
+                activateInvestmentModalform.action = evt.target.dataset.href;
+                picker && picker.destroy && picker.destroy();
+                picker = new Pikaday({ 
+                  field: document.getElementById('pikaday'),
+                  format: "YYYY-MMM-D",
+                  minDate: minDate,
+                  maxDate: new Date(),
+                });
+              })
+            }
+
+          $('#demo-dp-component .input-group.date').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd',
+            minDate: '05/28/2019 1:46 PM'
+          });
+          //$('#demo-dp-component .input-group.date').data("DateTimePicker").minDate('05/28/2019 1:46 PM')
           var filtering = $('#demo-foo-filtering');
       filtering.footable().on('footable_filtering', function (e) {
         var selected = $('#demo-foo-filter-status').find(':selected').val();
