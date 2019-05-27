@@ -6,17 +6,6 @@
     <div class="panel">
       <div class="panel-body">
         <table id="demo-foo-filtering" class="table table-bordered table-hover toggle-circle" data-page-size="20">
-          <div class="pad-btm form-inline">
-            <div class="row">
-              <div class="col-sm-6 text-xs-center">
-              </div>
-              <div class="col-sm-6 text-xs-center text-right">
-                <div class="form-group">
-                  <input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="off">
-                </div>
-              </div>
-            </div>
-          </div>
           <thead>
             <tr>
               <th>Full Name</th>
@@ -25,6 +14,23 @@
               <th>Actions</th>
             </tr>
           </thead>
+          <div class="pad-btm form-inline">
+            <div class="row">
+              <div class="col-sm-6 text-xs-center">
+                <div class="form-group">
+                  <label class="control-label"></label>
+                  <select id="demo-foo-filter-status" class="form-control">
+                    <option value="">Show all</option>                  
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6 text-xs-center text-right">
+                <div class="form-group">
+                  <input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </div>
           <tbody>
             @if(count($investors) > 0)
               @foreach($investors as $investor)
