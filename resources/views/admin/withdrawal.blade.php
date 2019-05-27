@@ -19,12 +19,17 @@
                   </select>
                 </div>
               </div>
+              <div class="col-sm-6 text-xs-center text-right">
+                <div class="form-group">
+                  <input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                </div>
+              </div>
             </div>
           </div>
           <thead>
             <tr>
               <th data-toggle="true">#</th>
-              <th>Investor</th>
+              <th>User</th>
               <th>Amount</th>
               <th>Status</th>
               <th data-hide="phone, tablet">Date created</th>
@@ -37,7 +42,7 @@
               @foreach($withdrawals as $withdrawal)
                 <tr>
                   <td>{{ $count++ }}</td>
-                  <td>{{ $withdrawal->user->name }}</td>
+                  <td>{{ $withdrawal->user->name }} ({{ $withdrawal->user->email }})</td>
                   <td>&#8358;{{ $withdrawal->amount }}</td>
                   <td>
                     @if($withdrawal->status == 'Paid')
@@ -101,6 +106,11 @@
 
       // Filter status
       $('#demo-foo-filter-status').change(function (e) {
+        e.preventDefault();
+        filtering.trigger('footable_filter', {filter: $(this).val()});
+      });
+
+      $('#demo-foo-search').on('input', function (e) {
         e.preventDefault();
         filtering.trigger('footable_filter', {filter: $(this).val()});
       });
