@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/profile', 'UserController@update')->name('profile.update');
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function(){
+		Route::post('/bonus/{id}', 'BonusController@addPayment')->name('admin.user.bonus');
+
 		Route::get('/investors', 'UserController@showInvestors')->name('admin.investors');
 
 		Route::post('/payments/{id}', 'PaymentController@addPayment')->name('admin.user.payments');

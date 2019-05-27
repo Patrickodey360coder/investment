@@ -40,6 +40,7 @@
                   <td>{{ $investor->country }}</td>
                   <td>
                     <button class="btn btn-info investor-payment" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.payments', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#paymentModal">Add Payment</button>
+                    <button class="btn btn-info investor-bonus" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.bonus', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#bonusModal">Add Bonus</button>
                     <button class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
                   </td>
                 </tr>
@@ -86,6 +87,36 @@
                 </fieldset>
             </div><!-- modal-body -->
             <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+            </div><!-- modal-footer -->
+          </form>
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
+    <div id="bonusModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Bonus</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- modal-header -->
+          <form class="form-horizontal" method="post">
+            {{ csrf_field() }}
+            <div class="modal-body">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Amount</label>
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control" required name="amount" step="any" min="0" id="amount" placeholder="Enter the amount you received">
+                    </div>
+                  </div>
+                </fieldset>
+            </div><!-- modal-body -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit</button>
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
             </div><!-- modal-footer -->
           </form>
@@ -130,9 +161,13 @@
 
             var investorPaymentBtns = document.getElementsByClassName('investor-payment');
             var investorBankBtns = document.getElementsByClassName('investor-bank');
+            var investorBonusBtns = document.getElementsByClassName('investor-bonus');
 
             var paymentModalHeading = document.querySelector('#paymentModal h5');
             var paymentModalform = document.querySelector('#paymentModal form');
+
+            var bonusModalHeading = document.querySelector('#bonusModal h5');
+            var bonusModalform = document.querySelector('#bonusModal form');
 
             for (var i = 0; i < investorPaymentBtns.length; i++) {
               investorBankBtns[i].addEventListener('click', function(evt){
@@ -141,6 +176,12 @@
                 accountNumber.innerHTML = evt.target.dataset.accountnumber;
                 accountName.innerHTML = evt.target.dataset.accountname;
                 bankName.innerHTML = evt.target.dataset.bankname;
+              })
+
+              investorBonusBtns[i].addEventListener('click', function(evt){
+                evt.preventDefault();
+                bonusModalHeading.innerHTML = "Add Bonus for " + evt.target.dataset.name;
+                bonusModalform.action = evt.target.dataset.href;
               })
 
               investorPaymentBtns[i].addEventListener('click', function(evt){
