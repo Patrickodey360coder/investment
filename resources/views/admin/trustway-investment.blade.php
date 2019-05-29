@@ -102,7 +102,7 @@
                 <label class="col-lg-3 control-label">Investment start date</label>
                 <div class="col-lg-4">
                     <div class="input-group date">
-                      <input type="text" name="date" id="pikaday" class="form-control">
+                      <input autocomplete="off" type="text" name="date" id="pikaday" class="form-control">
                       <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
                     </div>
                 </div>

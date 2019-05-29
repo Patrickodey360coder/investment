@@ -26,7 +26,7 @@ class BonusController extends Controller
 
     		Activity::create([
                 'user_id' => Auth::user()['id'],
-                'detail' => "You added a bonus of &#8358;" . $request->amount . " to " . $user->name . "(" . $user->email . ")";
+                'detail' => "You added a bonus of &#8358;" . $request->amount . " to " . $user->name . "(" . $user->email . ")"
             ]);
 
     		Activity::create([

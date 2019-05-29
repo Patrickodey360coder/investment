@@ -35,6 +35,15 @@
                               </span>
                           </a>
                       </li>
+
+                      <li class="@if(isset($activeLink) && $activeLink=='premium') active-link @endif">
+                          <a href="{{ route('admin.premium.users') }}">
+                              <i class="fa fa-user"></i>
+                              <span class="menu-title">
+                                  <strong>All Premium Investors</strong>
+                              </span>
+                          </a>
+                      </li>
                       
                       <li class="@if(isset($activeLink) && $activeLink=='trustway') active-link @endif">
                           <a href="{{ route('admin.investments') }}">
