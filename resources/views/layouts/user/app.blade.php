@@ -27,6 +27,13 @@
     #mainnav-container {
       min-height: 100vh;
     }
+    #mainnav-menu i {
+      transition: .5s;
+      display: inline-block!important;
+    }
+    #mainnav-menu li:hover i, #mainnav-menu .active-link i {
+      transform: scale(1.5);
+    }
     .fa-naira:before {
       content: "\0020A6";
     }
