@@ -21,6 +21,22 @@
                 <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="name" placeholder="Full Name" required>
               </div>
             </div>
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Country</label>
+              <div class="col-lg-5">
+                <select id="country" type="text" name="country" class="form-control" required>
+                <option value="">Please select a country</option>
+                @foreach($countries as $country)
+                  @if (Auth::user()->country == $country)
+                      <option value="{{ $country }}" selected>{{ $country }}</option>
+                  @else
+                      <option value="{{ $country }}">{{ $country }}</option>
+                  @endif
+                @endforeach
+              </select>
+              </div>
+            </div>
                         
                          
                       <div class="form-group">
