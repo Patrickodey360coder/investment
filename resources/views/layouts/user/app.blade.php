@@ -30,6 +30,12 @@
     .fa-naira:before {
       content: "\0020A6";
     }
+
+    @media (max-width: 992px) {
+      #container.mainnav-out #content-container, #container.mainnav-in #mainnav-container {
+        left: -220px;  
+      }
+    }
   </style>
   
       <script type='text/javascript' src='/plugins/pace/pace.min.js?v=1.1'></script>
