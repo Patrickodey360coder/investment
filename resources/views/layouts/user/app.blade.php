@@ -76,6 +76,8 @@
               <!--END CONTENT CONTAINER-->
               @if(Auth::user()->role == 'admin')
                 @include('layouts.admin.nav')  
+              @elseif(Auth::user()->role == 'premium')
+                @include('layouts.premium.nav') 
               @else
                 @include('layouts.user.nav')  
               @endif
