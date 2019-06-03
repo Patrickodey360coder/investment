@@ -93,6 +93,7 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'total_earnings' => 0,
             'balance' => 0,
+            'bonus' => 0,
             'withdrawable' => 0,
         ]);
 

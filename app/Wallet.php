@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Wallet extends Model
 {
 	protected $fillable = [
-        'user_id', 'total_earnings', 'balance', 'withdrawable',
+        'user_id', 'total_earnings', 'balance', 'withdrawable', 'bonus'
     ];
 
     public function user()

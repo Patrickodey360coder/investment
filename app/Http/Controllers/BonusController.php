@@ -20,6 +20,7 @@ class BonusController extends Controller
     	if(!empty($user) && $user->role == 'user'){
     		$wallet = $user->wallet;
     		$wallet->balance += (int) $request->amount;
+            $wallet->bonus += (int) $request->amount;
     		$wallet->withdrawable += (int) $request->amount;
     		$wallet->total_earnings += (int) $request->amount;
     		$wallet->save();

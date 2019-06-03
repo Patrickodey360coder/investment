@@ -35,8 +35,8 @@
                 </div>
     
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">{{ $paidWithdrawal }}</p>
-                    <p class="text-muted mar-no">Total Paid</p>
+                    <p class="text-2x mar-no text-semibold">{{ $wallet['total_earnings'] }}</p>
+                    <p class="text-muted mar-no">Total Earnings</p>
                 </div>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -54,8 +54,8 @@
                 </div>
     
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">{{ $wallet['total_earnings'] }}</p>
-                    <p class="text-muted mar-no">Total Earnings</p>
+                    <p class="text-2x mar-no text-semibold">{{ $wallet['bonus'] }}</p>
+                    <p class="text-muted mar-no">Total Bonus</p>
                 </div>
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
