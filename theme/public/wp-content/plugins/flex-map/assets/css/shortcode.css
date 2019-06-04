@@ -1,0 +1,49 @@
+.controls {
+    margin-top: 6px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 35px !important;
+    line-height: 35px !important;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff !important;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 30% !important;
+    color: black !important;
+}
+.owl-wrapper-outer:hover{
+    cursor:pointer;
+}
+.gm-style .gm-style-iw{
+    left: 25px !important;
+}
+.controls:focus {
+    border-color: #4d90fe;
+}
+#type-selector {
+
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+.controls::-webkit-input-placeholder {
+    color: black!important;
+}
+
+.controls:-moz-placeholder { /* Firefox 18- */
+    color: black!important;
+}
+
+.controls::-moz-placeholder {  /* Firefox 19+ */
+    color: black!important;
+}
+
+.controls:-ms-input-placeholder {
+    color: black!important;
+}
