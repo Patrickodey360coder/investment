@@ -16,8 +16,12 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/about-us', function () {
-    return view('about-us');
+    return view('about-us')->with('activeLink','about-us');
 })->name('about-us');
+
+Route::get('/services', function () {
+    return view('services')->with('activeLink','services');
+})->name('services');
 
 Auth::routes();
 

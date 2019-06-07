@@ -202,7 +202,7 @@ margin-bottom: 32px;}
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="https://demo.farost.net/fcgroup/">Home</a></li><li>About Us</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>About Us</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
