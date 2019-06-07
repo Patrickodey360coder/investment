@@ -23,6 +23,10 @@ Route::get('/services', function () {
     return view('services')->with('activeLink','services');
 })->name('services');
 
+Route::get('/investment', function () {
+    return view('investment')->with('activeLink','investment');
+})->name('investment');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
