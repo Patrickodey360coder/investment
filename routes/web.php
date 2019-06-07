@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about-us');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){

@@ -1,0 +1,4 @@
+.vc_wrapper-param-type-img .img-select ul li.active img,
+.vc_wrapper-param-type-img .img-select ul li img:hover{
+	box-shadow:0px 0px 10px red;
+}
