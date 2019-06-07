@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index')->with('activeLink','index');
 })->name('index');
 
 Route::get('/about-us', function () {

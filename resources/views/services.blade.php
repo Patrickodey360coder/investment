@@ -198,7 +198,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                                 <!-- Image Icon -->
                                                                  
                                     <div class="fancy-box-image-icon">
-                                        <img src="/wp-content/uploads/2016/05/funds-img2.png" alt=""/>
+                                        <img src="/wp-content/uploads/2016/05/invest-imgHover.png" alt=""/>
                                     </div>
                                                                 <!-- title-->
                                                                     <h4 class="title">Loans</h4>

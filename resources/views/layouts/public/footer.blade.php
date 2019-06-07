@@ -78,7 +78,7 @@ Thanks, JoomlaMan               <span class="more">
     </div>
 </div></aside></div><div class=" col-lg-3 col-md-2 col-xs-12">                                          <div class="copyright-wrap">
                             <div class="logo-footer-wrap">
-                                <a href="https://demo.farost.net/fcgroup/"><img src="/wp-content/themes/wp-fcgroup/assets/images/footer-logo.png" alt="" /></a>
+                                <a href="{{ route('index') }}"><img src="/wp-content/themes/wp-fcgroup/assets/images/footer-logo.png" alt="" /></a>
                             </div>
                             <div class="copyright-inner">
                                 Copyright © FC Group 2017.<br>
