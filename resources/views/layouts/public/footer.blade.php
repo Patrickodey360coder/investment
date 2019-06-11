@@ -39,15 +39,15 @@
             <li><i class="fa fa-map-marker"></i> No 4a, Volta Crescent, Maitama, FCT Abuja. Nigeria</li>
             <li><i class="fa fa-phone"></i>+2348023616359</li>
             <li><i class="fa fa-envelope"></i> <a href="mailto:info@fcgroup.com">info@fcgroup.com</a></li>
-          </ul></aside></div><div class=" col-lg-2 col-md-3 col-xs-12"><aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="wg-title">Our services</h3><div class="menu-our-services-container"><ul id="menu-our-services" class="menu"><li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="#">Tax Advisory Service</a></li>
-<li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="#">Saving &#038; Investments</a></li>
-<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="#">Mutial Funds</a></li>
-<li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a href="#">Retairment Planning</a></li>
-<li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65"><a href="#">Investment Planning</a></li>
-</ul></div></aside></div><div class=" col-lg-3 col-md-3 col-xs-12"><aside id="znews-twitter-widget-2" class="widget widget_znews-twitter-widget"><h3 class="wg-title">Twitter Feeds</h3><div class="news-twitter bxslider nt-layout-default" data-mode="vertical" data-speed="5000" data-auto="0" data-ticker="0" data-minslides="1" data-maxslides="1" data-slidewidth="0" data-controls="0" data-pager="0">
+          </ul></aside></div><div class=" col-lg-2 col-md-3 col-xs-12"><aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="wg-title"></h3><div class="menu-our-services-container"><ul id="menu-our-services" class="menu"><li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="{{ route('index') }}" class="">Home</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="{{ route('about-us') }}" class="">About Us</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="{{ route('services') }}" class="">Services</a></li>
+<li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a href="{{ route('investment') }}" class="">Investment Plans</a></li>
+<!-- <li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65"><a href="{{ route('index') }}" class="">Home</a></li> -->
+</ul></div></aside></div><div class=" col-lg-3 col-md-3 col-xs-12"><aside id="znews-twitter-widget-2" class="widget widget_znews-twitter-widget"><h3 class="wg-title"></h3><div class="news-twitter bxslider nt-layout-default" data-mode="vertical" data-speed="5000" data-auto="0" data-ticker="0" data-minslides="1" data-maxslides="1" data-slidewidth="0" data-controls="0" data-pager="0">
 
     <div class="news-twitter-item">
-        <a href="#">Disclaimer</a>    
+        <a href="{{ route('disclaimer') }}">Disclaimer</a>    
     </div>
 </div></aside></div><div class=" col-lg-3 col-md-2 col-xs-12">                                          <div class="copyright-wrap">
                             <div class="logo-footer-wrap">

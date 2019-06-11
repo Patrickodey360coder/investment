@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index')->with('activeLink','index');
 })->name('index');
 
+Route::get('/disclaimer', function () {
+    return view('disclaimer')->with('activeLink','');
+})->name('disclaimer');
+
 Route::get('/about-us', function () {
     return view('about-us')->with('activeLink','about-us');
 })->name('about-us');

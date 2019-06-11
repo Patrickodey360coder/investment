@@ -34,8 +34,8 @@
             </a>
         </li>
     @else
-        <li id="menu-item-1248" class="menu-item menu-item-type-post_type menu-item-object-page no_group menu-item-1248" data-depth="0"><a href="{{ route('login') }}" class=""><span class="menu-title">Login</span></a></li>
-        <li id="menu-item-1248" class="menu-item menu-item-type-post_type menu-item-object-page no_group menu-item-1248" data-depth="0"><a href="{{ route('register') }}" class=""><span class="menu-title">Register</span></a></li>
+        <li id="menu-item-1248" class="@if(isset($activeLink) && $activeLink=='login') current-menu-item page_item page-item-6  current_page_item @endif menu-item menu-item-type-post_type menu-item-object-page no_group menu-item-1248" data-depth="0"><a href="{{ route('login') }}" class=""><span class="menu-title">Login</span></a></li>
+        <li id="menu-item-1248" class="@if(isset($activeLink) && $activeLink=='register') current-menu-item page_item page-item-6  current_page_item @endif menu-item menu-item-type-post_type menu-item-object-page no_group menu-item-1248" data-depth="0"><a href="{{ route('register') }}" class=""><span class="menu-title">Register</span></a></li>
     @endauth
 @endif
 </ul></div>            </nav><!-- #site-navigation -->

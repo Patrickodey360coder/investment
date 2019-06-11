@@ -1,4 +1,4 @@
-<?php $activeLink = 'login'; ?>
+<?php $activeLink = 'register'; ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -6,7 +6,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Login &#8211; Trustway</title>
+<title>Disclaimer &#8211; Trustway</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -165,11 +165,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                         <div class="text-left col-md-5">
                             <div id="page-title-text" class="page-title-text">
                                 <div class="page-title-text-inner">
-                                    <h1>Login</h1>
+                                    <h1>Disclaimer</h1>
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>Login</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>Disclaimer</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
@@ -182,56 +182,20 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
             <main id="main" class="site-main">
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Sign In to your account</h2></div></div></div></div></div>
+                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Disclaimer</h2></div></div></div></div></div>
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
                         <div class="wpb_column vc_column_container vc_col-sm-1 vc_col-lg-1 vc_col-md-1 vc_col-xs-1"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-10 vc_col-md-10 vc_col-xs-10"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper"> 
-                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                            {{ csrf_field() }}
-                              @if ($errors->has('email'))
-                                <p class="text-danger">
-                                  <strong>{{ $errors->first('email') }}</strong>
-                                </p>
-                              @endif
-                              <div class="form-group">
-                                  <div class="input-group">
-                                      <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                      <input id="email" type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required autofocus>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                    <input id="key" name="password" type="password" class="form-control" placeholder="Password" required>
-                                    @if ($errors->has('password'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('password') }}</strong>
-                                      </span>
-                                    @endif
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 text-left checkbox">
-                                  <a class="btn btn-link" href="{{ route('password.request') }}" style="color: blue;">
-                                    Forgot Your Password?
-                                  </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="form-group text-right">
-                                    <button id="login_button" class="btn btn-success text-uppercase" type="submit">Sign In</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            <p>The content on this website was provided by Trustway Capital and is meant for general information purposes only.</p>
+
+                            <p>While we endeavor to keep the information on this website up to date and correct, we make no representations or warranties of any kind, expressed or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+
+                            <p>In no event will we be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+
+                            <p>Through this website, you are able to link to other websites which are not under the control of Trustway Capital. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+
+                            <p>Every effort is made to keep the website up and running smoothly. However, Leadway Capital takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+
                         </div>
                         </div>
                         </div>
