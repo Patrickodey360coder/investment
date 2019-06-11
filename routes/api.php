@@ -22,9 +22,14 @@ Route::group(['prefix' => 'v1'], function () {
 	});
 
 	Route::group(['middleware' => ['auth:api'], ], function () {
-		Route::get('/logout', 'API\UserController@logout');
 		Route::get('/activity', 'API\ActivityController@index');
+
+		Route::get('/bank', 'API\BankAccountController@index');		
+
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
+
+		Route::get('/logout', 'API\UserController@logout');
+
 		Route::get('/withdrawals', 'API\WithdrawalController@index');
 		Route::post('/withdrawals', 'API\WithdrawalController@create');
 	});
