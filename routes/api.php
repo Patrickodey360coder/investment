@@ -24,7 +24,8 @@ Route::group(['prefix' => 'v1'], function () {
 	Route::group(['middleware' => ['auth:api'], ], function () {
 		Route::get('/activity', 'API\ActivityController@index');
 
-		Route::get('/bank', 'API\BankAccountController@index');		
+		Route::get('/bank', 'API\BankAccountController@index');
+		Route::post('/bank', 'API\BankAccountController@create');
 
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
 
