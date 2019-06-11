@@ -31,6 +31,7 @@ Route::group(['prefix' => 'v1'], function () {
 
 		Route::get('/logout', 'API\UserController@logout');
 
+		Route::post('/password', 'API\UserController@changePassword');
 		Route::post('/profile', 'API\UserController@update');
 
 		Route::get('/withdrawals', 'API\WithdrawalController@index');

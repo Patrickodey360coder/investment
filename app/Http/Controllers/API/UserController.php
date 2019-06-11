@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use Validator;
+use Hash;
 use App\User;
 use App\BankAccount;
 use App\Wallet;
@@ -53,7 +54,6 @@ class UserController extends Controller
             'required',
             'min:8',
             'string',
-            'max:255',
           ]
         ]);
 
@@ -143,6 +143,52 @@ class UserController extends Controller
         return response()->json([
             'user' => $user,
             'message' => 'Profile updated successfully.',
+        ], 200);
+    }
+
+    public function changePassword(Request $request)
+    {
+        $validator = Validator::make($request->input(), [
+            'current-password' => [
+                'required',
+            ],
+            'new-password' => [
+                'required',
+                'min:8',
+                'string',
+            ],
+            'confirm-password' => [
+                'required',
+                'same:new-password',
+            ],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => $validator->errors(),
+            ], 400);
+        }
+
+        $user = $request->user();
+
+        if (!Hash::check($request['current-password'], $user->getAuthPassword())) {
+            return response()->json([
+                'error' => [
+                    'The current password is incorrect.',
+                ],
+            ], 400);
+        }
+
+        $user->password = Hash::make($request->input('new-password'));
+        $user->save();
+
+        Activity::create([
+            'user_id' => $user->id,
+            'detail' => "Updated password"
+        ]);
+
+        return response()->json([
+            'message' => 'Password updated successfully',
         ], 200);
     }
 }
