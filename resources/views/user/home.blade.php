@@ -93,10 +93,15 @@
                     <h3 class="panel-title">Withdrawals</h3>
                 </div>
                 <div class="panel-body">
-                
-                    <!--Morris Area Chart placeholder-->
-                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <div id="demo-morris-area" style="height:215px"></div>
+                    <?php
+                      if(empty($paidWithdrawal) && empty($pendingWithdrawal)){
+                        echo '<div style="height:215px">';
+                        echo "<h3>You have not made any withdrawals</h3>";
+                        echo "</div>";
+                      } else {
+                        echo '<div id="demo-morris-area" style="height:215px"></div>';
+                      }
+                    ?>
                     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     
                 </div>
@@ -110,12 +115,19 @@
                     <h3 class="panel-title">Investments</h3>
                 </div>
                 <div class="panel-body">
-    
-                    <!--Flot Donut Chart placeholder -->
-                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <div id="demo-flot-donut" style="height:215px"></div>
-                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    
+                    <?php
+                      if(empty($investments)){
+                        echo '<div style="height:215px">';
+                        echo "<h3>You have not made any investments</h3>";
+                        echo "</div>";
+                      } else if(empty($activeInvestment) && empty($closedInvestment) && empty($pendingInvestment)){
+                        echo '<div style="height:215px">';
+                        echo "<h3>You have ".$investments." running investment</h3>";
+                        echo "</div>";
+                      } else {
+                        echo '<div id="demo-flot-donut" style="height:215px"></div>';
+                      }
+                    ?>
                 </div>
             </div>
         </div>

@@ -44,7 +44,11 @@ class HomeController extends Controller
         }
 
         $userId = Auth::user()['id'];
-        $investmentsCount = count(Auth::user()->trustwayInvestments);
+        if(Auth::user()['role'] == 'premium'){
+            $investmentsCount = 1;
+        } else {
+            $investmentsCount = count(Auth::user()->trustwayInvestments);
+        }
 
         $activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
         $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');

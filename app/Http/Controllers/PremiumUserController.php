@@ -63,21 +63,12 @@ class PremiumUserController extends Controller
         ]);
 
         $password = $this->genPassword(8);
-        
         $investment_date = strtotime($request->investment_date);
 
         $user = User::create([
         	'email'=> $request['email'],
         	'role' => 'Premium',
         	'password' => bcrypt($password)
-        ]);
-
-        Wallet::create([
-            'user_id' => $user->id,
-            'total_earnings' => 0,
-            'balance' => 0,
-            'bonus' => 0,
-            'withdrawable' => 0,
         ]);
 
         BankAccount::create([
@@ -105,6 +96,29 @@ class PremiumUserController extends Controller
             'user_id' => $user->id,
             'detail' => "You were added a premium investment of &#8358;" . $request['investment_amount']
         ]);
+
+        $total_earnings = 0;
+        if(time() > $investment_date){
+            $month = 1;
+            $roiAmount = 10/100*$request['investment_amount'];
+            while (time() > strtotime('+'.$month.' months', $investment_date)) {
+                $month++;
+                $total_earnings += $roiAmount;
+                Activity::create([
+                    'user_id' => $user->id,
+                    'detail' => "You were paid &#8358;".$roiAmount." as ROI on your premium investment"
+                ]);
+            }
+        }
+
+        Wallet::create([
+            'user_id' => $user->id,
+            'total_earnings' => $total_earnings,
+            'balance' => 0,
+            'bonus' => 0,
+            'withdrawable' => 0,
+        ]);
+
         Session::flash('success', "Successfully created premium user");
         
 
@@ -119,7 +133,7 @@ class PremiumUserController extends Controller
         $message = str_replace('%LOGIN%', $MAINURL.'login/', $message);
         $message = str_replace('%ADDRESS%', "ADDRESS", $message);
 
-        $from = "Adetola Olowolaju <adetola@trustwayinvestment.com>";
+        $from = "Adetola Olowolaju <adetola@trustwaycapital.ng>";
         $this->sendmail('You have been made a premium investor at Trustway Investment',$message, $from, $request['email']);
 
         return redirect()->back();
