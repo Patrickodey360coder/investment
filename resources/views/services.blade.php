@@ -184,7 +184,38 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
 
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
 	<div class="entry-content">
-		<div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">We offer Different Services</h2><div class="sub-heading">We offer a wide range of services that cut across diverse streams of investment opportunities.</div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029"><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640428887"><div class="wpb_wrapper">                
+		<div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">We offer Different Services</h2><div class="sub-heading">We offer a wide range of services that cut across diverse streams of investment opportunities.</div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper">                
+
+                <div class="cms-fancyboxes-wraper cms-fancyboxes-style-2 wow fadeIn  template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-3"  data-wow-delay="400ms" >
+                    <div class=" cms-fancyboxes-body">
+                        <div class="cms-fancybox-item">
+                            <!-- Image-->
+                                                                                        <div class="fancy-box-image">
+                                    <img src="/wp-content/uploads/2016/05/services-img3.jpg" alt=""/>
+                                </div>
+                                                           
+                            <div class="cms_fancybox_item_inner greyBg">
+                                <!-- Image Icon -->
+                                                                 
+                                    <div class="fancy-box-image-icon">
+                                        <img src="/wp-content/uploads/2016/05/saving-img2.png" alt=""/>
+                                    </div>
+                                                                <!-- title-->
+                                                                    <h4 class="title">Investment Plans</h4>
+                                
+                                <!-- description-->
+                                                                <div class="fancy-box-content">
+                                    At Trustway Capital, we bring great value to your investments with us through various investment opportunities.                                </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+</div></div></div>
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640428887"><div class="wpb_wrapper">                
 
                 <div class="cms-fancyboxes-wraper cms-fancyboxes-style-2 wow fadeIn  template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-2"  data-wow-delay="200ms" >
                     <div class=" cms-fancyboxes-body">
@@ -213,36 +244,8 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                 
 
 
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper">                
-
-                <div class="cms-fancyboxes-wraper cms-fancyboxes-style-2 wow fadeIn  template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-3"  data-wow-delay="400ms" >
-                    <div class=" cms-fancyboxes-body">
-                        <div class="cms-fancybox-item">
-                            <!-- Image-->
-                                                                                        <div class="fancy-box-image">
-                                    <img src="/wp-content/uploads/2016/05/services-img3.jpg" alt=""/>
-                                </div>
-                                                           
-                            <div class="cms_fancybox_item_inner greyBg">
-                                <!-- Image Icon -->
-                                                                 
-                                    <div class="fancy-box-image-icon">
-                                        <img src="/wp-content/uploads/2016/05/saving-img2.png" alt=""/>
-                                    </div>
-                                                                <!-- title-->
-                                                                    <h4 class="title">Saving &amp; Investments</h4>
-                                
-                                <!-- description-->
-                                                                <div class="fancy-box-content">
-                                    At Trustway Capital, we bring great value to your investments with us through various investment opportunities.                                </div>
-                                                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640455799"><div class="wpb_wrapper">                
+</div></div></div>
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468640455799"><div class="wpb_wrapper">                
 
                 <div class="cms-fancyboxes-wraper cms-fancyboxes-style-2 wow fadeIn  template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-4"  data-wow-delay="600ms" >
                     <div class=" cms-fancyboxes-body">
@@ -377,7 +380,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
 	<div  class="wpb_single_image wpb_content_element vc_align_center  wpb_animate_when_almost_visible wpb_cms_animate wow fadeIn cms_animate wow fadeIn vc_custom_1468397248106">
 		
 		<figure class="wpb_wrapper vc_figure">
-			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="410" height="601" src="/wp-content/uploads/2016/05/business-meeting.png" class="vc_single_image-img attachment-full" alt="" srcset="/wp-content/uploads/2016/05/business-meeting.png 410w, /wp-content/uploads/2016/05/business-meeting-205x300.png 205w" sizes="(max-width: 410px) 100vw, 410px" /></div>
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="410" height="601" src="/wp-content/uploads/2016/05/business-meeting.jpg" class="vc_single_image-img attachment-full" alt="" srcset="/wp-content/uploads/2016/05/business-meeting.jpg 410w, /wp-content/uploads/2016/05/business-meeting-205x300.png 205w" sizes="(max-width: 410px) 100vw, 410px" /></div>
 		</figure>
 	</div>
 </div></div></div>

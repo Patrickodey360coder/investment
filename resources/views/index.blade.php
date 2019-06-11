@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Finance Group &#8211; Finance WordPress Theme</title>
+<title>Trustway Capital</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -398,7 +398,52 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 
                 <article id="post-4" class="clearfix post-4 page type-page status-publish hentry">
 	<div class="entry-content">
-		<div id="services" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default-black vc_custom_heading">We offer Different Services</h2><div class="sub-heading">We offer a wide range of services that cut across diverse streams of investment opportunities.</div></div><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1470320643933"><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320609521"><div class="wpb_wrapper">               
+		<div id="services" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default-black vc_custom_heading">We offer Different Services</h2><div class="sub-heading">We offer a wide range of services that cut across diverse streams of investment opportunities.</div></div><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1470320643933">
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320622914"><div class="wpb_wrapper">               
+                                <div class="cms-fancyboxes-wraper cms-fancyboxes-style-4 wow fadeIn template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-3"  data-wow-delay="400ms" >
+                    <div class=" cms-fancyboxes-body greyBg " onclick ="">
+                        <div class="cms-fancybox-item">
+                            
+                                <!-- Image Icon-->
+                                                                                                    <div class="fancy-box-image cms_animate wow effect-pop in ">
+                                        <img src="/wp-content/uploads/2016/05/saving-img.png" alt=""/>
+                                    </div>
+                                                                 <!-- title 1-->
+                                                                    <h4 class="black-color">Invetment Plans</h4>
+                                                           
+                            <div class="cms_fancybox_item_inner">
+                                <div class="cms_fancybox_text">
+                                    <div class="cms_fancybox_text_info">
+                                        <div class="cms_fancybox_text_info_box">
+
+                                            <!-- Image Icon Hover-->
+                                                                                                                                        <div class="fancy-box-image-hover">
+                                                    <img src="/wp-content/uploads/2016/05/saving-imgHover.png" alt=""/>
+                                                </div>
+                                            
+                                            <!-- title 2-->
+                                                                                            <h4 class="white-color">Invetment Plans</h4>
+                                            
+                                            <!-- description-->
+                                                                                            <div class="fancy-box-content">
+                                                    At Trustway Capital, we bring great value to your investments with us through various investment opportunities.                   </div>
+                                             
+                                            <!-- readmore -->
+                                            <div class="cms-fancyboxes-foot">
+                                                <a class="cms-button transparent-readmore" href="{{ route('services') }}" title="read more" target="_self" >read more</a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+</div></div></div>
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320609521"><div class="wpb_wrapper">               
                                 <div class="cms-fancyboxes-wraper cms-fancyboxes-style-4 wow fadeIn template-cms_fancybox_single content-align-default " id="cms-fancy-box-single"   >
                     <div class=" cms-fancyboxes-body greyBg " onclick ="">
                         <div class="cms-fancybox-item">
@@ -442,50 +487,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 
 
 </div></div></div>
-<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320622914"><div class="wpb_wrapper">               
-                                <div class="cms-fancyboxes-wraper cms-fancyboxes-style-4 wow fadeIn template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-3"  data-wow-delay="400ms" >
-                    <div class=" cms-fancyboxes-body greyBg " onclick ="">
-                        <div class="cms-fancybox-item">
-                            
-                                <!-- Image Icon-->
-                                                                                                    <div class="fancy-box-image cms_animate wow effect-pop in ">
-                                        <img src="/wp-content/uploads/2016/05/saving-img.png" alt=""/>
-                                    </div>
-                                                                 <!-- title 1-->
-                                                                    <h4 class="black-color">Saving &amp; Investments</h4>
-                                                           
-                            <div class="cms_fancybox_item_inner">
-                                <div class="cms_fancybox_text">
-                                    <div class="cms_fancybox_text_info">
-                                        <div class="cms_fancybox_text_info_box">
-
-                                            <!-- Image Icon Hover-->
-                                                                                                                                        <div class="fancy-box-image-hover">
-                                                    <img src="/wp-content/uploads/2016/05/saving-imgHover.png" alt=""/>
-                                                </div>
-                                            
-                                            <!-- title 2-->
-                                                                                            <h4 class="white-color">Saving &amp; Investments</h4>
-                                            
-                                            <!-- description-->
-                                                                                            <div class="fancy-box-content">
-                                                    At Trustway Capital, we bring great value to your investments with us through various investment opportunities.                   </div>
-                                             
-                                            <!-- readmore -->
-                                            <div class="cms-fancyboxes-foot">
-                                                <a class="cms-button transparent-readmore" href="{{ route('services') }}" title="read more" target="_self" >read more</a>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320628868"><div class="wpb_wrapper">               
+<div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12"><div class="vc_column-inner vc_custom_1470320628868"><div class="wpb_wrapper">               
                                 <div class="cms-fancyboxes-wraper cms-fancyboxes-style-4 wow fadeIn template-cms_fancybox_single content-align-default " id="cms-fancy-box-single-4"  data-wow-delay="600ms" >
                     <div class=" cms-fancyboxes-body greyBg " onclick ="">
                         <div class="cms-fancybox-item">
@@ -534,7 +536,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 	<div  class="wpb_single_image wpb_content_element vc_align_center  wpb_animate_when_almost_visible wpb_cms_animate wow fadeIn cms_animate wow fadeIn vc_custom_1468397248106">
 		
 		<figure class="wpb_wrapper vc_figure">
-			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="410" height="601" src="/wp-content/uploads/2016/05/business-meeting.png" class="vc_single_image-img attachment-full" alt="" srcset="/wp-content/uploads/2016/05/business-meeting.png 410w, /wp-content/uploads/2016/05/business-meeting-205x300.png 205w" sizes="(max-width: 410px) 100vw, 410px" /></div>
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="410" height="601" src="/wp-content/uploads/2016/05/business-meeting.jpg" class="vc_single_image-img attachment-full" alt="" srcset="/wp-content/uploads/2016/05/business-meeting.jpg 410w, /wp-content/uploads/2016/05/business-meeting-205x300.png 205w" sizes="(max-width: 410px) 100vw, 410px" /></div>
 		</figure>
 	</div>
 </div></div></div>
@@ -558,7 +560,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                     
                                     <!-- description-->
                                                                             <div class="fancy-box-content">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam uis nostrud exercitation.                                        </div>
+                                            At Trustway Capital, every business venture and transaction is subjected to the test of excellence, and we ensure that all our dealings with clients are with the optimum value and respect that it requires.</div>
                                      
 
                                     <!-- readmore -->
@@ -592,7 +594,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                     
                                     <!-- description-->
                                                                             <div class="fancy-box-content">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam uis nostrud exercitation.                                        </div>
+                                            Not only do we help our clients to make wise investment choices, we also stay with them through the journey. We don’t throw your money into the hands of various financial factors, and turn our eyes away.</div>
                                      
 
                                     <!-- readmore -->
@@ -626,7 +628,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                     
                                     <!-- description-->
                                                                             <div class="fancy-box-content">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam uis nostrud exercitation.                                        </div>
+                                            Why embark on a journey, without a destination in view? We are not a team of wishful-thinkers, who embark on unrealistic ventures. Rather, we are a team of professionals. We weigh the pros and cons before we take a leap, and every step we take is sure to bring a good outcome.</div>
                                      
 
                                     <!-- readmore -->

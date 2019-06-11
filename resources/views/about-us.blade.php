@@ -227,10 +227,10 @@ margin-bottom: 32px;}
     <div class="wpb_text_column wpb_content_element  ">
         <div class="wpb_wrapper">
             <p>●    You can only make a living with your salary. Wealth comes only by making smart investments.</p>
-            <p>●    Keeping your money in a good old piggy bank brings NO returns. Saving it in a bank or a fixed deposit account makes just a little difference.</p>
-            <p>●    As a civil servant or salary earner, passive investment will let you focus on your job while your money makes more money for you.</p>
-            <p>●    From tales of embezzlement and mismanagement to the slow and cumbersome documentation process it requires to access money, the pension fund system has been known to fail many retirees when they need it the most.</p>
-            <p>●    Personally, taking up your investment portfolio without prior experience of how the investment market works is a risky and stressful business.</p>
+            <p>●    Keeping your money in a good old piggy bank brings NO returns. Saving it in a bank or a fixed deposit account makes just a little difference.<strong> We generate realistic and guaranteed interest on your Money.</strong></p>
+            <p>●    As a civil servant or salary earner, passive investment will let you focus on your job while your money <strong>makes more money for you.</strong> </p>
+            <p>●    From tales of embezzlement and mismanagement to the slow and cumbersome documentation process it requires to access money, the pension fund system has been known to fail many retirees when they need it the most.<strong> We provide a reliable alternative.</strong></p>
+            <p>●    Personally, taking up your investment portfolio without prior experience of how the investment market works is a risky and stressful business.<strong> We do it for you.</strong></p>
 
         </div>
     </div>

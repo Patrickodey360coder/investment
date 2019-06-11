@@ -36,8 +36,8 @@
 </form>
 
 <ul class="address-wrap">
-            <li><i class="fa fa-map-marker"></i> 121 King Street, Melbourne Australia</li>
-            <li><i class="fa fa-phone"></i> +1 2586 4587 634</li>
+            <li><i class="fa fa-map-marker"></i> No 4a, Volta Crescent, Maitama, FCT Abuja. Nigeria</li>
+            <li><i class="fa fa-phone"></i>+2348023616359</li>
             <li><i class="fa fa-envelope"></i> <a href="mailto:info@fcgroup.com">info@fcgroup.com</a></li>
           </ul></aside></div><div class=" col-lg-2 col-md-3 col-xs-12"><aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="wg-title">Our services</h3><div class="menu-our-services-container"><ul id="menu-our-services" class="menu"><li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="#">Tax Advisory Service</a></li>
 <li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="#">Saving &#038; Investments</a></li>
@@ -47,41 +47,14 @@
 </ul></div></aside></div><div class=" col-lg-3 col-md-3 col-xs-12"><aside id="znews-twitter-widget-2" class="widget widget_znews-twitter-widget"><h3 class="wg-title">Twitter Feeds</h3><div class="news-twitter bxslider nt-layout-default" data-mode="vertical" data-speed="5000" data-auto="0" data-ticker="0" data-minslides="1" data-maxslides="1" data-slidewidth="0" data-controls="0" data-pager="0">
 
     <div class="news-twitter-item">
-        <div class="item-content">
-            <i class="fa fa-twitter"></i>
-            <div class="item-content-inner">
-                Great Team and friends &nbsp;<a href="http://twitter.com/VivaTweets" target="_blank">@VivaTweets</a>&nbsp; &nbsp;<a href="http://twitter.com/themediavillage" target="_blank">@themediavillage</a>&nbsp; &nbsp;<a href="http://twitter.com/redfernmedia" target="_blank">@redfernmedia</a>&nbsp; &nbsp;<a href="http://twitter.com/WhitakerMuseum" target="_blank">@WhitakerMuseum</a>&nbsp;                <span class="more">
-                    <span class="tweet-date">November, 27, 11</span>
-                    <!-- <a class="readmore" href="http://twitter.com//statuses/"></a> -->
-                </span>
-            </div>
-            
-        </div>
-
-    
-    
-
-    
-        <div class="item-content">
-            <i class="fa fa-twitter"></i>
-            <div class="item-content-inner">
-                &nbsp;<a href="http://twitter.com/pepperstreet" target="_blank">@pepperstreet</a>&nbsp; Hi there, could you take a screenshot for us and let us know the error, we cannot see.
-Thanks, JoomlaMan               <span class="more">
-                    <span class="tweet-date">July, 04, 07</span>
-                    <!-- <a class="readmore" href="http://twitter.com//statuses/"></a> -->
-                </span>
-            </div>
-            
-        </div>
-
-    
+        <a href="#">Disclaimer</a>    
     </div>
 </div></aside></div><div class=" col-lg-3 col-md-2 col-xs-12">                                          <div class="copyright-wrap">
                             <div class="logo-footer-wrap">
                                 <a href="{{ route('index') }}"><img src="/wp-content/themes/wp-fcgroup/assets/images/footer-logo.png" alt="" /></a>
                             </div>
                             <div class="copyright-inner">
-                                Copyright © FC Group 2017.<br>
+                                Copyright © Trustway Capital {{ strftime("%Y", time()) }}.<br>
 All rights reserved.<br>
 Created by: <a href="#">Designingmedia</a>                          </div>
                         </div>
