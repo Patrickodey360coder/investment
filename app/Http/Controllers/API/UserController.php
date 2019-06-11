@@ -90,4 +90,22 @@ class UserController extends Controller
 
         return response()->json($res, 200);
     }
+
+    public function logout(Request $request)
+    {
+        if (\array_key_exists('reset-all', $request->all()) &&
+            $request->all()['reset-all'] == 'true') {
+            $this->logoutAll();
+
+            return response()->json([
+                'message' => 'Tokens deleted successfully.',
+            ], 200);
+        }
+
+        $request->user()->token()->revoke();
+
+        return response()->json([
+            'message' => 'Logout successful.',
+        ], 200);
+    }
 }
