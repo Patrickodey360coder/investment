@@ -26,5 +26,6 @@ Route::group(['prefix' => 'v1'], function () {
 		Route::get('/activity', 'API\ActivityController@index');
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
 		Route::get('/withdrawals', 'API\WithdrawalController@index');
+		Route::post('/withdrawals', 'API\WithdrawalController@create');
 	});
 });
