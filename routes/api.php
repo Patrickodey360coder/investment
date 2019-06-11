@@ -25,6 +25,6 @@ Route::group(['prefix' => 'v1'], function () {
 		Route::get('/logout', 'API\UserController@logout');
 		Route::get('/activity', 'API\ActivityController@index');
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
-		Route::get('/withdrawals', 'API\WithdrawalInvestmentController@index');
+		Route::get('/withdrawals', 'API\WithdrawalController@index');
 	});
 });
