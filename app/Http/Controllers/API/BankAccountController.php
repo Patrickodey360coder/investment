@@ -16,7 +16,7 @@ class BankAccountController extends Controller
         ], 200);
     }
 
-    public function create(Request $request)
+    public function update(Request $request)
     {
     	$validator = Validator::make($request->input(), [
           'account_name' => [
@@ -55,6 +55,7 @@ class BankAccountController extends Controller
         ]);
 
         return response()->json([
+            'message' => 'Successfully created bank account details',
             'bank' => $bank,
         ], 200);
     }

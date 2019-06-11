@@ -53,6 +53,7 @@ class WithdrawalController extends Controller
         ]);
 
         return response()->json([
+            'message' => 'Successfully created withdrawal request',
             'wallet' => $wallet,
             'withdrawal' => $withdrawal
         ], 200);

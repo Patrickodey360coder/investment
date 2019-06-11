@@ -9,6 +9,7 @@ use Validator;
 use App\User;
 use App\BankAccount;
 use App\Wallet;
+use App\Activity;
 
 require '../resources/countries.php';
 
@@ -106,6 +107,42 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'Logout successful.',
+        ], 200);
+    }
+
+    public function update(Request $request)
+    {
+        $validator = Validator::make($request->input(), [
+          'name' => [
+            'required',
+            'string',
+            'max:255',
+          ],
+          'country' => [
+            'required',
+            Rule::in(Countries)
+          ]
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+              'error' => $validator->errors(),
+            ], 400);
+        }
+
+        $user = $request->user();
+        $user->name = $request['name'];
+        $user->country = $request['country'];
+        $user->save();
+
+        Activity::create([
+            'user_id' => $user->id,
+            'detail' => "Updated profile"
+        ]);
+
+        return response()->json([
+            'user' => $user,
+            'message' => 'Profile updated successfully.',
         ], 200);
     }
 }

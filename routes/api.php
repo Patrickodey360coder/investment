@@ -25,11 +25,13 @@ Route::group(['prefix' => 'v1'], function () {
 		Route::get('/activity', 'API\ActivityController@index');
 
 		Route::get('/bank', 'API\BankAccountController@index');
-		Route::post('/bank', 'API\BankAccountController@create');
+		Route::post('/bank', 'API\BankAccountController@update');
 
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
 
 		Route::get('/logout', 'API\UserController@logout');
+
+		Route::post('/profile', 'API\UserController@update');
 
 		Route::get('/withdrawals', 'API\WithdrawalController@index');
 		Route::post('/withdrawals', 'API\WithdrawalController@create');
