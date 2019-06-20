@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('index')->with('activeLink','index');
 })->name('index');
 
+Route::get('/blog/maximize-investment', function () {
+    return view('blog.maximize-investment')->with('activeLink','');
+})->name('blog-1');
+
+Route::get('/blog/financial-freedom', function () {
+    return view('blog.financial-freedom')->with('activeLink','');
+})->name('blog-2');
+
 Route::get('/disclaimer', function () {
     return view('disclaimer')->with('activeLink','');
 })->name('disclaimer');
@@ -30,6 +38,19 @@ Route::get('/services', function () {
 Route::get('/investment', function () {
     return view('investment')->with('activeLink','investment');
 })->name('investment');
+
+Route::get('/investmentpage', function () {
+    return view('investmentpage')->with('activeLink','');
+})->name('investmentpage');
+
+Route::get('/loans', function () {
+    return view('loans')->with('activeLink','');
+})->name('loans');
+
+Route::get('/retirement', function () {
+    return view('retirement')->with('activeLink','');
+})->name('retirement');
+
 
 Auth::routes();
 

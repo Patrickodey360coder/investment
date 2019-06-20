@@ -122,12 +122,12 @@ class PremiumUserController extends Controller
         Session::flash('success', "Successfully created premium user");
         
 
-        $MAINURL = "http://www.kidlever.com/";
+        $MAINURL = "http://www.trustwaycapital.ng/";
 
         $message = file_get_contents(getcwd()."/../resources/views/email/newPremiumUser.html");
 
         $message = str_replace('%MAINURL%', $MAINURL, $message);
-        $message = str_replace('%SITENAME%', 'Trustway Investment', $message);
+        $message = str_replace('%SITENAME%', 'Trustway Capital', $message);
         $message = str_replace('%EMAIL%', $request['email'], $message);
         $message = str_replace('%PASSWORD%', $password, $message);
         $message = str_replace('%LOGIN%', $MAINURL.'login/', $message);

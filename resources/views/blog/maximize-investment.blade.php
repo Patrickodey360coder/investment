@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Register &#8211; Trustway</title>
+<title>HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES &#8211; Trustway</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -164,11 +164,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                         <div class="text-left col-md-5">
                             <div id="page-title-text" class="page-title-text">
                                 <div class="page-title-text-inner">
-                                    <h1>Register</h1>
+                                    <h1>HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES</h1>
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="">Home</a></li><li>Register</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
@@ -181,89 +181,29 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
             <main id="main" class="site-main">
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Create an account</h2></div></div></div></div></div>
+                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES</h2></div></div></div></div></div>
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
                         <div class="wpb_column vc_column_container vc_col-sm-1 vc_col-lg-1 vc_col-md-1 vc_col-xs-1"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-10 vc_col-md-10 vc_col-xs-10"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper"> 
-                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+                            <p>
+                                Seasons come when opportunity comes your way like the wind, and only if your wings have been trained over time, would you be able to soar in that wind of opportunity.<br/><br/>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                @if ($errors->has('name'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="name" type="text" name="name" maxlength="255" class="form-control" placeholder="Full Name" value="{{ old('name') }}" required autofocus>
-                                </div>
-                            </div>
+                                Investment opportunities are not always easily visible to people. Sometimes they are hidden in the midst of a national catastrophe, natural disasters or even wrong decisions. <br/><br/>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                @if ($errors->has('email'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="email" type="text" name="email" maxlength="255" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
-                                </div>
-                            </div>
+                                The magic happens when you realized you are standing on a gold mine and not in a quagmire of fear and uncertainty.<br/><br/>
 
-                            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                @if ($errors->has('country'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
-                                  <select id="country" type="text" name="country" class="form-control" required>
-                                    <option value="">Please select a country</option>
-                                    @foreach($countries as $country)
-                                        @if (old('country') == $country)
-                                            <option value="{{ $country }}" selected>{{ $country }}</option>
-                                        @else
-                                            <option value="{{ $country }}">{{ $country }}</option>
-                                        @endif
-                                    @endforeach
-                                  </select>
-                                </div>
-                            </div>
+                                Opportunities are harnessed by those who have the eyes and the guts for it.<br><br>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                @if ($errors->has('password'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password" type="password" name="password" minlength="8" class="form-control" placeholder="Password" required>
-                                </div>
-                            </div>
+                                Here are major tips you should keep in mind, if you would want good returns from your investments.
+                            </p>
+                            <ol>
+                                <li><b>Talk to the Experts</b> - there is a reason why the word <b>specialization</b> exists. To save you from the stress of being a know it all! As much as being vast in knowledge is a good attribute, you shouldn't invest in what you are not an expert in, especially when your future depends on it.<br>
+                                Consulting with financial experts might cost you now, but it would save you from losing everything in the future.</li><br><br><br>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password-confirm" type="password" minlength="8" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 text-left checkbox">
-                                  <a class="btn btn-link" href="{{ route('login') }}" style="color: blue;">
-                                    Sign In
-                                  </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="form-group text-right">
-                                        <button id="login_button" class="btn btn-success text-uppercase" type="submit">Register</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                <li><b>Nothing ventured, nothing gained</b> - Nobody ever had a worthwhile catch by sticking the fishing hook to the surface of the sea. If you must have a catch, then  you need to launch out. <br><br>Sometimes you need to go against your rational senses, in other to seize an opportunity. Your financial advisers would sometimes show your opportunities that doesn't seem to be convincing to your rational mind, but you never know what you stand to gain until you have launched out. </li><br><br><br>
+
+                                <li><b>Stay Intelligent</b> - staying abreast of happenings around you is one of the most valuable gifts you can give yourself. The key to financial resourcefulness is sometimes in the things that we know. Read the news, ask questions, and participate in meaningful conversations. <br><br>There are times when the rich are simply the learned.  </li><br><br><br>
+                            </ol>
                         </div>
                         </div>
                         </div>

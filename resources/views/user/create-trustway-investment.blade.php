@@ -38,6 +38,11 @@
                       <option value="3">3 years</option>
                       <option value="4">4 years</option>
                       <option value="5">5 years</option>
+                      <option value="6">6 years</option>
+                      <option value="7">7 years</option>
+                      <option value="8">8 years</option>
+                      <option value="9">9 years</option>
+                      <option value="10">10 years</option>
                     </select>  
                   </div>
                 </div>
@@ -93,22 +98,22 @@
       selectElem.addEventListener('change', function(evt){
         switch (evt.target.value) {
           case 'Trustway 90':
-            ROI = 12;
+            ROI = 15;
             setUpDurationField(3, 25000, 500000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway 180':
-            ROI = 30;
+            ROI = 40;
             setUpDurationField(6, 25000, 1000000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway 360':
-            ROI = 75;
+            ROI = 90;
             setUpDurationField(12, 50000, 1000000);
             setUpTotalEarnings(amountElem.value);
             break;
           case 'Trustway Pension':
-            ROI = 75;
+            ROI = 100;
             durationInputElem.classList.add('hidden');
             durationSelectElem.classList.remove('hidden');
             durationSelectElem.required = true;

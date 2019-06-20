@@ -7,7 +7,7 @@
           <a href="{{ route('index') }}" class="navbar-brand">
             <!--  <img src="/images/invest.ico" alt="" class="brand-icon">-->
               <div class="brand-title">
-                  <span class="brand-text">Trustway Invest</span>
+                  <span class="brand-text">Trustway Capital</span>
               </div>
           </a>
       </div>

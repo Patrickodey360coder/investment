@@ -167,7 +167,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">We Plan Your Financial Investments</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">We Provide Better Alternative to Piggy Banks, Cooperative Banks and Loan schemes through smart investment and saving plans.</p>
@@ -198,7 +198,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">We Plan Your Financial Investments</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">We Provide Better Alternative to Piggy Banks, Cooperative Banks and Loan schemes through smart investment and saving plans.</p>
@@ -233,7 +233,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">WE’LL FIND YOU THE RIGHT WORKERS &amp; MAXIMIZE EFFICIENCY</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">Get sound advice on money matters, investment ideas and business decisions at NO COST.</p>
@@ -264,7 +264,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">WE’LL FIND YOU THE RIGHT WORKERS &amp; MAXIMIZE EFFICIENCY</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">Get sound advice on money matters, investment ideas and business decisions at NO COST.</p>
@@ -299,7 +299,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">We Plan Your Financial Investments</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">Join the growing financial investment platform to day</p>
@@ -330,7 +330,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
 			<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="68" height="71" src="/wp-content/uploads/2016/07/small-logo.png" class="vc_single_image-img attachment-full" alt="" /></div>
 		</figure>
 	</div>
-<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">We Plan Your Financial Investments</h2><div class="sub-heading"></div></div>
+<div class="vc_custom_heading" ><h2 style="font-size: 40px;color: #ffffff;line-height: 1.1;text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">Let's Get You A Diversified Investment Portfolio</h2><div class="sub-heading"></div></div>
 	<div class="wpb_text_column wpb_content_element   hidden-xs ">
 		<div class="wpb_wrapper">
 			<p style="text-align: center;">Join the growing financial investment platform to day</p>
@@ -409,7 +409,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                         <img src="/wp-content/uploads/2016/05/saving-img.png" alt=""/>
                                     </div>
                                                                  <!-- title 1-->
-                                                                    <h4 class="black-color">Invetment Plans</h4>
+                                                                    <h4 class="black-color">Investment Plans</h4>
                                                            
                             <div class="cms_fancybox_item_inner">
                                 <div class="cms_fancybox_text">
@@ -422,7 +422,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                                 </div>
                                             
                                             <!-- title 2-->
-                                                                                            <h4 class="white-color">Invetment Plans</h4>
+                                                                                            <h4 class="white-color">Investment Plans</h4>
                                             
                                             <!-- description-->
                                                                                             <div class="fancy-box-content">
@@ -430,7 +430,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                              
                                             <!-- readmore -->
                                             <div class="cms-fancyboxes-foot">
-                                                <a class="cms-button transparent-readmore" href="{{ route('services') }}" title="read more" target="_self" >read more</a>
+                                                <a class="cms-button transparent-readmore" href="{{ route('investmentpage') }}" title="read more" target="_self" >read more</a>
                                             </div> 
                                         </div>
                                     </div>
@@ -474,7 +474,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                              
                                             <!-- readmore -->
                                             <div class="cms-fancyboxes-foot">
-                                                <a class="cms-button transparent-readmore" href="{{ route('services') }}" title="read more" target="_self" >read more</a>
+                                                <a class="cms-button transparent-readmore" href="{{ route('loans') }}" title="read more" target="_self" >read more</a>
                                             </div> 
                                         </div>
                                     </div>
@@ -518,7 +518,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                              
                                             <!-- readmore -->
                                             <div class="cms-fancyboxes-foot">
-                                                <a class="cms-button transparent-readmore" href="{{ route('services') }}" title="read more" target="_self" >read more</a>
+                                                <a class="cms-button transparent-readmore" href="{{ route('retirement') }}" title="read more" target="_self" >read more</a>
                                             </div> 
                                         </div>
                                     </div>
@@ -643,7 +643,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                 
 
 
-</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1468721041781"><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468720827752"><div class="wpb_wrapper"><div class="cms-counter-wraper template-cms_counter_single content-align-default " id="cms-counter">
+</div></div></div></div><!--<div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1468721041781"><div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3 vc_col-xs-12"><div class="vc_column-inner vc_custom_1468720827752"><div class="wpb_wrapper"><div class="cms-counter-wraper template-cms_counter_single content-align-default " id="cms-counter">
     <div class="cms-counter-body">
         <div class="cms-counter-single">
 			<div id="counter_cms-counter" class="cms-counter zero"  data-type="zero" data-digit="22" style="background-image: url(/wp-content/uploads/2016/05/big-logo-img.png);">
@@ -822,7 +822,7 @@ Cases</span></h4>
             </div>
             </div>
                 </div>
-</div></div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="latest-new" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1468633775206"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1468567825544"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">latest news</h2><div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div></div><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1469677522097"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="cms-carousel owl-carousel template-cms_carousel  " id="cms-carousel">
+</div></div></div></div></div></div></div></div></div>--><div class="vc_row-full-width vc_clearfix"></div><div id="latest-new" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1468633775206"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1468567825544"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-default vc_custom_heading">latest news</h2><div class="sub-heading">All the latest news from Trustway Capital</div></div><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1469677522097"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="cms-carousel owl-carousel template-cms_carousel  " id="cms-carousel">
     <div class="cms-carousel-item">        <div class="cms_carousel_inner  col-md-12">
             <article id="post-765" class="post-765 post type-post status-publish format-standard has-post-thumbnail hentry category-company-growth category-financial-investment tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
                 <div class="row">
@@ -830,8 +830,8 @@ Cases</span></h4>
                         <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/post-img3-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
                     </div>
                     <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 15, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/investment-planning-2/" rel="bookmark">investment Planning</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
+                        <div class="date">June , 13, 2019</div>
+                        <h5 class="black-color"><a href="{{ route('blog-1') }}" rel="bookmark">HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES</a></h5>                        <div class="cms-carousel-desc"><p>Seasons come when opportunity comes your way like the wind, and only if your wings have been trained over time, would you be able to soar in that wind of opportunity.</p>
 </div>
                     </div>
                 </div>
@@ -845,23 +845,25 @@ Cases</span></h4>
                         <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/post-img3-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
                     </div>
                     <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 15, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/making-cents-investments-in-start-ups-3/" rel="bookmark">Making Cents Investments in Start-ups</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
+                        <div class="date">June , 13, 2019</div>
+                        <h5 class="black-color"><a href="{{ route('blog-2') }}" rel="bookmark">FINANCIAL FREEDOM</a></h5>                        <div class="cms-carousel-desc"><p>Until you stop working for money, and your money starts to work for you, you are yet to experience financial freedom.</p>
 </div>
                     </div>
                 </div>
             </article>
        
         </div>
-        </div><div class="cms-carousel-item">        <div class="cms_carousel_inner  col-md-12">
-            <article id="post-758" class="post-758 post type-post status-publish format-standard has-post-thumbnail hentry category-company-growth category-financial-investment tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
+        </div>
+        <div class="cms-carousel-item">
+            <div class="cms_carousel_inner  col-md-12">
+            <article id="post-765" class="post-765 post type-post status-publish format-standard has-post-thumbnail hentry category-company-growth category-financial-investment tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
                 <div class="row">
                     <div class="news-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/post-img2-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
+                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/post-img3-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
                     </div>
                     <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 15, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/investment-planning/" rel="bookmark">investment Planning</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
+                        <div class="date">June , 13, 2019</div>
+                        <h5 class="black-color"><a href="{{ route('blog-1') }}" rel="bookmark">HOW TO MAXIMIZE INVESTMENT OPPORTUNITIES</a></h5>                        <div class="cms-carousel-desc"><p>Seasons come when opportunity comes your way like the wind, and only if your wings have been trained over time, would you be able to soar in that wind of opportunity.</p>
 </div>
                     </div>
                 </div>
@@ -869,56 +871,26 @@ Cases</span></h4>
        
         </div>
                 <div class="cms_carousel_inner  col-md-12">
-            <article id="post-479" class="post-479 post type-post status-publish format-standard has-post-thumbnail hentry category-company-growth category-financial-investment tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
+            <article id="post-759" class="post-759 post type-post status-publish format-standard has-post-thumbnail hentry category-company-growth category-financial-investment tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
                 <div class="row">
                     <div class="news-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/support-1-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
+                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/post-img3-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
                     </div>
                     <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 12, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/making-cents-investments-in-start-ups-2/" rel="bookmark">Making Cents Investments in Start-ups</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
+                        <div class="date">June , 13, 2019</div>
+                        <h5 class="black-color"><a href="{{ route('blog-2') }}" rel="bookmark">FINANCIAL FREEDOM</a></h5>                        <div class="cms-carousel-desc"><p>Until you stop working for money, and your money starts to work for you, you are yet to experience financial freedom.</p>
 </div>
                     </div>
                 </div>
             </article>
        
         </div>
-        </div><div class="cms-carousel-item">        <div class="cms_carousel_inner  col-md-12">
-            <article id="post-475" class="post-475 post type-post status-publish format-standard has-post-thumbnail hentry category-financial-modeling-and-planning category-investments-in-bonds category-uncategorized tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
-                <div class="row">
-                    <div class="news-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/investment-planning-services-pty-ltd_268997bf31-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
-                    </div>
-                    <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 12, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/become-profitable-for-companies/" rel="bookmark">become profitable for Companies</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
-</div>
-                    </div>
-                </div>
-            </article>
-       
         </div>
-                <div class="cms_carousel_inner  col-md-12">
-            <article id="post-472" class="post-472 post type-post status-publish format-standard has-post-thumbnail hentry category-financial-investment category-investments-in-bonds category-profits-wealth tag-about tag-account-profit tag-business tag-comments tag-detail tag-financial-investiment tag-our-advisors tag-project" >
-                <div class="row">
-                    <div class="news-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="cms-grid-media  has-thumbnail"><img width="430" height="200" src="/wp-content/uploads/2016/07/UK-Whistleblower-Blog-430x200.jpg" class="attachment-fcgroup-thumb-latest size-fcgroup-thumb-latest /wp-post-image" alt="" /></div>  
-                    </div>
-                    <div class="news-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="date">July , 12, 2016</div>
-                        <h5 class="black-color"><a href="https://demo.farost.net/fcgroup/making-cents-investments-in-start-ups/" rel="bookmark">Making Cents Investments in Start-ups</a></h5>                        <div class="cms-carousel-desc"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</p>
-</div>
-                    </div>
-                </div>
-            </article>
-       
-        </div>
-        </div></div></div></div></div></div><div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_custom_1468633691159  vc_custom_1468633691159" ><span class="vc_sep_holder vc_sep_holder_l"><span  style="border-color:#dddddd;" class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span  style="border-color:#dddddd;" class="vc_sep_line"></span></span>
-</div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+        </div></div></div></div></div><!--<div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_custom_1468633691159  vc_custom_1468633691159" ><span class="vc_sep_holder vc_sep_holder_l"><span  style="border-color:#dddddd;" class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span  style="border-color:#dddddd;" class="vc_sep_line"></span></span>
+</div>--></div></div></div></div><div class="vc_row-full-width vc_clearfix d-none"></div><div class="vc_row wpb_row vc_row-fluid d-none"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
 <div class="cms-clients-wrap">
-	<div class="row">
+	<!--<div class="row">
 		<div class="partner-heading col-lg-2 col-md-2 col-sm-12 col-xs-12">
-			<!-- title-->
 	         	            Our Business Partners	        		</div>
 		<div class="partners col-lg-10 col-md-10 col-sm-12 col-xs-12">
 							
@@ -978,13 +950,12 @@ Cases</span></h4>
 					</div>
 				</div>
 					</div>
-	</div>
+	</div>-->
 </div>
 </div></div></div></div>
 	</div><!-- .entry-content -->
 	@include('layouts.public.footer')
 </div><!-- .site -->
-
 	<script type="text/javascript">
 		var c = document.body.className;
 		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');

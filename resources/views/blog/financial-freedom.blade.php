@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Register &#8211; Trustway</title>
+<title>FINANCIAL FREEDOM &#8211; Trustway</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -164,11 +164,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                         <div class="text-left col-md-5">
                             <div id="page-title-text" class="page-title-text">
                                 <div class="page-title-text-inner">
-                                    <h1>Register</h1>
+                                    <h1>FINANCIAL FREEDOM</h1>
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="">Home</a></li><li>Register</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>FINANCIAL FREEDOM</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
@@ -181,89 +181,29 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
             <main id="main" class="site-main">
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Create an account</h2></div></div></div></div></div>
+                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">FINANCIAL FREEDOM</h2></div></div></div></div></div>
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
                         <div class="wpb_column vc_column_container vc_col-sm-1 vc_col-lg-1 vc_col-md-1 vc_col-xs-1"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-10 vc_col-md-10 vc_col-xs-10"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper"> 
-                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+                            <p>
+                                Until you stop working for money, and your money starts to work for you, you are yet to experience financial freedom.<br/><br/>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                @if ($errors->has('name'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="name" type="text" name="name" maxlength="255" class="form-control" placeholder="Full Name" value="{{ old('name') }}" required autofocus>
-                                </div>
-                            </div>
+                                According to wikipedia, financially independent people have assets that generate income that is at least equal to their expenses. Financial independence means you have enough wealth to live on, without working. <br/><br/>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                @if ($errors->has('email'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="email" type="text" name="email" maxlength="255" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
-                                </div>
-                            </div>
+                                You can be financially independent, if you play by the rules.<br/><br/>
+                            </p>
+                            <ol>
+                                <li><b>SET GOALS </b> - this could something you want to achieve or a status you want to attain at a certain age or stage of your life. Goal setting helps you to avoid distractions, and it energizes you to stay on the track of purpose, regardless of the hurdles before you.  Recognizing financial milestones becomes easier, when you have set goals before you.</li><br><br><br>
 
-                            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                @if ($errors->has('country'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
-                                  <select id="country" type="text" name="country" class="form-control" required>
-                                    <option value="">Please select a country</option>
-                                    @foreach($countries as $country)
-                                        @if (old('country') == $country)
-                                            <option value="{{ $country }}" selected>{{ $country }}</option>
-                                        @else
-                                            <option value="{{ $country }}">{{ $country }}</option>
-                                        @endif
-                                    @endforeach
-                                  </select>
-                                </div>
-                            </div>
+                                <li><b>DEFINE HOW YOU SPEND  </b> - A lot of people run into debts, due to their inability to define their spending pattern. If you keep spending on the things you don’t need, on the things you don't plan for, you may not be far from debts. <br><br>Developing an healthy spending culture would set you on the path to financial Freedom.</li><br><br><br>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                @if ($errors->has('password'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password" type="password" name="password" minlength="8" class="form-control" placeholder="Password" required>
-                                </div>
-                            </div>
+                                <li><b>INVEST</b> - if you can’t beat them, don’t join them. If you join them, you would still look like a fool in their company, until you have learnt what they knew to beat you in the first place. When you invest in yourself, you give yourself an edge above Some, and you are well equipped to make sound financial decisions that would culminate in financial freedom.</li><br><br><br>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password-confirm" type="password" minlength="8" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 text-left checkbox">
-                                  <a class="btn btn-link" href="{{ route('login') }}" style="color: blue;">
-                                    Sign In
-                                  </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="form-group text-right">
-                                        <button id="login_button" class="btn btn-success text-uppercase" type="submit">Register</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                <li><b>NEGOTIATE</b> - don’t be quick to accept things at face value. You can always Negotiate. Mastering the art of negotiation could save you from unnecessary expenses. </li><br><br><br>
+
+                                <li><b>YOU NEED A FINANCIAL ADVISOR </b> - don’t wait till you lose your hard earned Resources before you consult financial experts. Be guided on what to use your money for, invest your resources in profitable ventures that would yield good Returns. </li><br><br><br>
+                            </ol>
+                            <p>Still wondering about your first step to financial freedom? Call Trustway Capital today.</p>
                         </div>
                         </div>
                         </div>

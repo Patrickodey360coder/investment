@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Validator;
 use Hash;
@@ -22,15 +23,42 @@ class UserController extends Controller
         if (auth()->attempt(['email' => request('email'), 'password' => request('password')])) {
             // If it succeeds generate and return api token
             $user = auth()->user();
-            if($user->role === 'user' || $user->role === 'premium'){
+            if($user->role === 'user'){
 	            $res['user'] = $user;
-	            $res['token'] = auth()->user()->createToken('web-ui-api')->accessToken;
+                $res['wallet'] = $user->wallet;
+                $res['bank'] = $user->bankAccount;
+	            $res['token'] = $user->createToken('web-ui-api')->accessToken;
+
+                $investmentsCount = count($user()->trustwayInvestments);
+                $activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
+                $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');
+                $closedInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Closed')->sum('investment_amount');
+
+                $pendingWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Pending')->sum('amount');
+                $paidWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Paid')->sum('amount');
+
+                $res['home'] = [
+                    'investments' => [
+                        'count' => $investmentsCount,
+                        'active' => $activeInvestment,
+                        'pending' => $pendingInvestment,
+                        'closed' => $closedInvestment,
+                    ],
+                    'withdrawals' => [
+                        'pending' => $pendingWithdrawal,
+                        'paid' => $paidWithdrawal
+                    ]
+                ];
 
 	            return response()->json($res, 200);
-	        }
+	        } else {
+                return response()->json([
+                  'error' => strtoupper($user->role) . ' users must use the website',
+                ], 400);
+            }
         }
 
-        return response()->json(['error' => 'Unauthorised'], 401);
+        return response()->json(['error' => 'Incorrect email and password'], 401);
     }
 
     public function register(Request $request)
@@ -71,7 +99,7 @@ class UserController extends Controller
         ];
 
         $user = User::create($input);
-        Wallet::create([
+        $wallet = Wallet::create([
             'user_id' => $user->id,
             'total_earnings' => 0,
             'balance' => 0,
@@ -79,7 +107,7 @@ class UserController extends Controller
             'withdrawable' => 0,
         ]);
 
-        BankAccount::create([
+        $bank = BankAccount::create([
             'user_id' => $user->id,
             'bank_name' => '',
             'account_name' => '',
@@ -87,6 +115,8 @@ class UserController extends Controller
         ]);
 
         $res['user'] = $user;
+        $res['wallet'] = $wallet;
+        $res['bank'] = $bank;
         $res['token'] = $user->createToken('web-ui-api')->accessToken;
 
         return response()->json($res, 200);
@@ -144,6 +174,49 @@ class UserController extends Controller
             'user' => $user,
             'message' => 'Profile updated successfully.',
         ], 200);
+    }
+
+    public function forgotPassword(Request $request){
+        $validator = Validator::make($request->input(), [
+          'email' => [
+            'required',
+            'email',
+            'exists:users,email',
+          ]
+        ]);
+
+        $user = User::where('email', '=', $_POST['email']??'')->first();
+
+        if (empty($user)) {
+            return response()->json([
+              'error' => 'Your email does not exist in our database',
+            ], 400);
+        }
+
+        $password = $this->genPassword(8);
+        // SEND EMAIL CONTAINING PASSWORD
+
+        $user->password = Hash::make($password);
+        $user->save();
+
+        Activity::create([
+            'user_id' => $user->id,
+            'detail' => "Reset password"
+        ]);
+
+        return response()->json([
+            'message' => "An email has been sent containg your new password"
+        ]);
+    }
+
+    private function genPassword(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): ?string
+    {
+        $pieces = [];
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $pieces []= $keyspace[random_int(0, $max)];
+        }
+        return implode('', $pieces);
     }
 
     public function changePassword(Request $request)

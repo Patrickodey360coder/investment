@@ -25,7 +25,7 @@ class TrustwayInvestmentController extends Controller
         $totalEarning = 0;
 
         for($i=0; $i<$years; $i++){
-            $totalEarning += $capital * 50/100;
+            $totalEarning += $capital * 75/100;
             $capital += $capital * 25/100;
         }
         $totalEarning += $capital;  
@@ -38,13 +38,13 @@ class TrustwayInvestmentController extends Controller
     	$amount = (int) $amount;
     	switch ($investmentType) {
             case 'Trustway 90':
-                return $amount + ($amount * 12/100);
+                return $amount + ($amount * 15/100);
 
             case 'Trustway 180':
-                return $amount + ($amount * 30/100);
+                return $amount + ($amount * 40/100);
 
             case 'Trustway 360':
-                return $amount + ($amount * 75/100);
+                return $amount + ($amount * 90/100);
 
             case 'Trustway Pension':
                 return $this->getTrustwayPensionAmount($amount, $duration);
@@ -61,7 +61,7 @@ class TrustwayInvestmentController extends Controller
     	$this->validate($request, [
             'investment-type' => ['required', Rule::in(TrustwayInvestment::getInvestmentTypes())],
             'amount' => ['required', 'numeric', 'min:0', 'max:'.$wallet->withdrawable , new InvestmentMinAndMaxAmount],
-            'duration' => ['required_if:investment-type,Trustway Pension', 'between:2,5', 'integer']
+            'duration' => ['required_if:investment-type,Trustway Pension', 'between:2,10', 'integer']
             
         ]);
         $amount = (int) $request->amount;

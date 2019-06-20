@@ -1,3 +1,4 @@
+<?php $activeLink = 'login'; ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -5,7 +6,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Register &#8211; Trustway</title>
+<title>Loan &#8211; Trustway</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -164,11 +165,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                         <div class="text-left col-md-5">
                             <div id="page-title-text" class="page-title-text">
                                 <div class="page-title-text-inner">
-                                    <h1>Register</h1>
+                                    <h1>Loan</h1>
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="">Home</a></li><li>Register</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>Loan</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
@@ -181,89 +182,19 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
             <main id="main" class="site-main">
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Create an account</h2></div></div></div></div></div>
+                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Loan</h2></div></div></div></div></div>
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
                         <div class="wpb_column vc_column_container vc_col-sm-1 vc_col-lg-1 vc_col-md-1 vc_col-xs-1"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-10 vc_col-md-10 vc_col-xs-10"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper"> 
-                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+                            <p>
+                                After subscribing to our platform for a period of six months, you become qualified to request for a loan.  <br/><br/>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                @if ($errors->has('name'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="name" type="text" name="name" maxlength="255" class="form-control" placeholder="Full Name" value="{{ old('name') }}" required autofocus>
-                                </div>
-                            </div>
+                                However, what makes us different from other financial institutions is the EASE with which you get to pay back your loan. <br/><br/>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                @if ($errors->has('email'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                  <input id="email" type="text" name="email" maxlength="255" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
-                                </div>
-                            </div>
+                                A percentage of your returns on investment is deducted to service the loan, over a period of time. This relieves you of the burden to source for funds through other means, <br/><br/>
 
-                            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                @if ($errors->has('country'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
-                                  <select id="country" type="text" name="country" class="form-control" required>
-                                    <option value="">Please select a country</option>
-                                    @foreach($countries as $country)
-                                        @if (old('country') == $country)
-                                            <option value="{{ $country }}" selected>{{ $country }}</option>
-                                        @else
-                                            <option value="{{ $country }}">{{ $country }}</option>
-                                        @endif
-                                    @endforeach
-                                  </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                @if ($errors->has('password'))
-                                    <p class="text-danger">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </p>
-                                @endif
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password" type="password" name="password" minlength="8" class="form-control" placeholder="Password" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                  <input id="password-confirm" type="password" minlength="8" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 text-left checkbox">
-                                  <a class="btn btn-link" href="{{ route('login') }}" style="color: blue;">
-                                    Sign In
-                                  </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="form-group text-right">
-                                        <button id="login_button" class="btn btn-success text-uppercase" type="submit">Register</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                Say goodbye to financial hassles, and let your investment works for you.
+                            </p>
                         </div>
                         </div>
                         </div>

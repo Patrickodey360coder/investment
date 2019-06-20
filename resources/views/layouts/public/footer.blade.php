@@ -38,7 +38,7 @@
 <ul class="address-wrap">
             <li><i class="fa fa-map-marker"></i> No 4a, Volta Crescent, Maitama, FCT Abuja. Nigeria</li>
             <li><i class="fa fa-phone"></i>+2348023616359</li>
-            <li><i class="fa fa-envelope"></i> <a href="mailto:info@fcgroup.com">info@fcgroup.com</a></li>
+            <!--<li><i class="fa fa-envelope"></i> <a href="mailto:info@fcgroup.com">info@fcgroup.com</a></li>-->
           </ul></aside></div><div class=" col-lg-2 col-md-3 col-xs-12"><aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="wg-title"></h3><div class="menu-our-services-container"><ul id="menu-our-services" class="menu"><li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="{{ route('index') }}" class="">Home</a></li>
 <li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="{{ route('about-us') }}" class="">About Us</a></li>
 <li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="{{ route('services') }}" class="">Services</a></li>
@@ -55,10 +55,13 @@
                             </div>
                             <div class="copyright-inner">
                                 Copyright © Trustway Capital {{ strftime("%Y", time()) }}.<br>
-All rights reserved.<br>
-Created by: <a href="#">Designingmedia</a>                          </div>
+All rights reserved.<br></div>
                         </div>
                         <div class="social-indiv-wrap layout-footer"><ul class="social-indiv-inner"><li class="facebook"><a href="http://facebook"><i class="fa fa-facebook"></i></a></li><li class="twitter"><a href="http://twitter" target="_blank"><i class="fa fa-twitter"></i></a></li><li class="linkedin"><a href="http://linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li><li class="google"><a href="http://google" target="_blank"><i class="fa fa-google-plus"></i></a></li></ul></div>                                 </div>                </div>
             </div>
         </div><!-- #footer-bottom -->
     </footer><!-- .site-footer -->
+
+    <style type="text/css">
+        .vc_row.wpb_row.vc_row-fluid.vc_custom_1468485865940, .vc_row.wpb_row.vc_row-fluid.vc_row-no-padding.vc_hidden { display: none; }
+    </style>
