@@ -16,10 +16,54 @@ class PremiumUserController extends Controller
 {
     public function index()
     {
-    	$minInvestmentDate = strftime("%Y-%m-%d 00:00:00", strtotime("-12 months 1 day"));
-    	$maxInvestmentDate = strftime("%Y-%m-%d 00:00:00", strtotime("12 months"));
+        $minInvestmentDate = strftime("%Y-%m-%d 00:00:00", strtotime("-12 months 1 day"));
+        $maxInvestmentDate = strftime("%Y-%m-%d 00:00:00", strtotime("12 months"));
 
-    	return view('admin.premium')->with('investors', User::all()->where('role', 'premium'))->with('activeLink', 'premium')->with('minInvestmentDate', $minInvestmentDate)->with('maxInvestmentDate', $maxInvestmentDate);
+        return view('admin.premium')->with('investors', User::all()->where('role', 'premium'))->with('activeLink', 'premium')->with('minInvestmentDate', $minInvestmentDate)->with('maxInvestmentDate', $maxInvestmentDate);
+    }
+
+    public function addPayment(Request $request, $id)
+    {
+        $this->validate($request, [
+            'amount' => ['required', 'numeric', 'min:0'],
+            'months' => ['required', 'numeric', 'min:-12']
+        ]);
+
+        $premiumUser = PremiumUser::find($id);
+        if(!empty($premiumUser)){
+            $user = $premiumUser->user;
+
+            $premiumUser->investment_amount += $request->amount;
+            $premiumUser->months += $request->months;
+            $next_checkout_date = strtotime($premiumUser->next_checkout_date);
+            $expiration_date = strtotime($premiumUser->expiration_date);
+
+            if($next_checkout_date < time()){
+                $premiumUser->next_checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 months', time()));
+                $next_checkout_date = time();
+            }
+
+            $expiration_date = $expiration_date < time() ? time() : $expiration_date;
+
+            $premiumUser->expiration_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' . $request['months'] .' months', $expiration_date));
+            $premiumUser->save();
+
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You topped up the premium investment of " . $user->name . "(" . $user->email . ")"
+            ]);
+
+            Activity::create([
+                'user_id' => $user->id,
+                'detail' => "Your premium investment was topped up"
+            ]);
+
+            Session::flash('success', "Successfully added bonus to " . $user->name);
+        } else {
+            Session::flash('error', "Could not add the requested bonus");
+        }
+
+        return redirect()->back();
     }
 
     private function sendmail($subject,$message, $from, $to)
@@ -55,7 +99,7 @@ class PremiumUserController extends Controller
 
     public function create(Request $request)
     {
-    	$this->validate($request, [
+        $this->validate($request, [
             'email' => 'required|string|email|max:255|unique:users',
             'investment_amount' => 'required|numeric|min:1',
             'investment_date' => ['required', new ValidateDate],
@@ -66,9 +110,9 @@ class PremiumUserController extends Controller
         $investment_date = strtotime($request->investment_date);
 
         $user = User::create([
-        	'email'=> $request['email'],
-        	'role' => 'Premium',
-        	'password' => bcrypt($password)
+            'email'=> $request['email'],
+            'role' => 'Premium',
+            'password' => bcrypt($password)
         ]);
 
         BankAccount::create([
@@ -78,16 +122,7 @@ class PremiumUserController extends Controller
             'account_number' => '',
         ]);
 
-        PremiumUser::create([
-        	'user_id' => $user->id,
-        	'investment_amount' => $request['investment_amount'],
-        	'months' => $request['months'],
-        	'investment_date' => strftime("%Y-%m-%d %H:%M:%S", $investment_date),
-        	'expiration_date' => strftime("%Y-%m-%d 00:00:00", strtotime('+1 months', $investment_date)),
-        	'expiration_date' => strftime("%Y-%m-%d 00:00:00", strtotime('+' . $request['months'] .' months', $investment_date))
-        ]);
-
-		Activity::create([
+        Activity::create([
             'user_id' => Auth::user()['id'],
             'detail' => "You add " . $request['email'] ." as a premium user"
         ]);
@@ -97,11 +132,13 @@ class PremiumUserController extends Controller
             'detail' => "You were added a premium investment of &#8358;" . $request['investment_amount']
         ]);
 
+        $last_investment_date = $investment_date;
         $total_earnings = 0;
         if(time() > $investment_date){
             $month = 1;
             $roiAmount = 10/100*$request['investment_amount'];
             while (time() > strtotime('+'.$month.' months', $investment_date)) {
+                $last_investment_date = strtotime('+'.$month.' months', $investment_date);
                 $month++;
                 $total_earnings += $roiAmount;
                 Activity::create([
@@ -110,6 +147,15 @@ class PremiumUserController extends Controller
                 ]);
             }
         }
+
+        PremiumUser::create([
+            'user_id' => $user->id,
+            'investment_amount' => $request['investment_amount'],
+            'months' => $request['months'],
+            'investment_date' => strftime("%Y-%m-%d %H:%M:%S", $investment_date),
+            'next_checkout_date' => strftime("%Y-%m-%d 00:00:00", strtotime('+1 months', $last_investment_date)),
+            'expiration_date' => strftime("%Y-%m-%d 00:00:00", strtotime('+' . $request['months'] .' months', $investment_date))
+        ]);
 
         Wallet::create([
             'user_id' => $user->id,
@@ -122,19 +168,43 @@ class PremiumUserController extends Controller
         Session::flash('success', "Successfully created premium user");
         
 
-        $MAINURL = "http://www.trustwaycapital.ng/";
+        // $MAINURL = "http://www.trustwaycapital.ng/";
 
-        $message = file_get_contents(getcwd()."/../resources/views/email/newPremiumUser.html");
+        // $message = file_get_contents(getcwd()."/../resources/views/email/newPremiumUser.html");
 
-        $message = str_replace('%MAINURL%', $MAINURL, $message);
-        $message = str_replace('%SITENAME%', 'Trustway Capital', $message);
-        $message = str_replace('%EMAIL%', $request['email'], $message);
-        $message = str_replace('%PASSWORD%', $password, $message);
-        $message = str_replace('%LOGIN%', $MAINURL.'login/', $message);
-        $message = str_replace('%ADDRESS%', "ADDRESS", $message);
+        // $message = str_replace('%MAINURL%', $MAINURL, $message);
+        // $message = str_replace('%SITENAME%', 'Trustway Capital', $message);
+        // $message = str_replace('%EMAIL%', $request['email'], $message);
+        // $message = str_replace('%PASSWORD%', $password, $message);
+        // $message = str_replace('%LOGIN%', $MAINURL.'login/', $message);
+        // $message = str_replace('%ADDRESS%', "ADDRESS", $message);
 
-        $from = "Adetola Olowolaju <adetola@trustwaycapital.ng>";
-        $this->sendmail('You have been made a premium investor at Trustway Investment',$message, $from, $request['email']);
+        // $from = "Adetola Olowolaju <adetola@trustwaycapital.ng>";
+        // $this->sendmail('You have been made a premium investor at Trustway Investment',$message, $from, $request['email']);
+        
+        $result = array();
+        //The parameter after verify/ is the transaction reference to be verified
+        $password = $password;
+        $email = $request['email'];
+        $url = 'https://kidlever.com/sendmail/index.php?password='.$password; 
+        $url .='&email='.$email;
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //curl_setopt(
+    
+        // $ch, CURLOPT_HTTPHEADER, [
+        //     'Authorization: Bearer ' . PaystackPrivateKey]
+        // );
+        echo $url;
+    
+        $request = curl_exec($ch);
+        if(curl_error($ch)){
+            //echo 'error:' . curl_error($ch);
+        }
+    
+        curl_close($ch);
 
         return redirect()->back();
     }

@@ -11,9 +11,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
     	$user = $request->user();
-    	$userId =$user['id'];
+    	$userId = $user['id'];
 
-    	$investmentsCount = count($user()->trustwayInvestments);
+    	//$investmentsCount = count($user->trustwayInvestments);
+    	$investmentsCount = DB::table('trustway_investments')->where('user_id', $userId)->count();
     	$activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
         $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');
         $closedInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Closed')->sum('investment_amount');
@@ -22,7 +23,13 @@ class HomeController extends Controller
         $paidWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Paid')->sum('amount');
 
         $res = [
-            'user' => $user,
+            'user' => [
+            	"id" =>$user["id"],
+		        "name" => $user["name"],
+		        "email" => $user["email"],
+		        "role" => $user["role"],
+		        "country" => $user["country"],
+            ],
             'home' => [
             	'investments' => [
 	            	'count' => $investmentsCount,
@@ -37,7 +44,7 @@ class HomeController extends Controller
             ],
             'bank' => $user->bankAccount,
             'wallet' => $user->wallet
-        ]
+        ];
 
     	return response()->json($res, 200);
     }

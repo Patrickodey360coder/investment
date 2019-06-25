@@ -17,7 +17,7 @@ class BonusController extends Controller
         ]);
 
     	$user = User::find($id);
-    	if(!empty($user) && $user->role == 'user'){
+    	if(!empty($user)){
     		$wallet = $user->wallet;
     		$wallet->balance += (int) $request->amount;
             $wallet->bonus += (int) $request->amount;
@@ -40,6 +40,6 @@ class BonusController extends Controller
     		Session::flash('error', "Could not add the requested bonus");
     	}
 
-    	return redirect()->route('admin.investors');
+    	return redirect()->back();
     }
 }

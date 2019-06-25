@@ -12,6 +12,8 @@
               <th>Full Name</th>
               <th data-hide="phone, tablet">Email</th>
               <th data-hide="phone, tablet">Country</th>
+              <th data-hide="phone, tablet">Next Payment Date</th>
+              <th data-hide="phone, tablet">Expiration Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -36,8 +38,13 @@
           <tbody>
             @if(count($investors) > 0)
               @foreach($investors as $investor)
-                <tr>
+                <tr
+                  @if(strtotime($investor->premiumUser->next_checkout_date) - time() <= 604800)
+                    class="danger"
+                  @endif
+                >
                   <?php
+                    // 604800 is the number of seconds in 7 days
                     $bank = $investor->bankAccount;
                     $bankName = empty($bank->bank_name) ? 'Not yet set' : $bank->bank_name;
                     $accountName = empty($bank->account_name) ? 'Not yet set' : $bank->account_name;
@@ -46,7 +53,11 @@
                   <td>{{ $investor->name }}</td>
                   <td>{{ $investor->email }}</td>
                   <td>{{ $investor->country }}</td>
+                  <td>{{ $investor->premiumUser->next_checkout_date }}</td>
+                  <td>{{ $investor->premiumUser->expiration_date }}</td>
                   <td>
+                    <button class="btn btn-info investor-bonus" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.bonus', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#bonusModal">Add Bonus</button>
+                    <button class="btn btn-info investor-top" data-name="{{ $investor->name }}" data-href="{{ route('admin.premium.topup', ['id' => $investor->premiumUser->id]) }}" data-toggle="modal" data-target="#topModal">Top Up</button>
                     <button class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
                   </td>
                 </tr>
@@ -88,6 +99,72 @@
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
           </div><!-- modal-footer -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
+    <div id="bonusModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Bonus</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- modal-header -->
+          <form class="form-horizontal" method="post">
+            {{ csrf_field() }}
+            <div class="modal-body">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Amount</label>
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control" required name="amount" step="any" min="0" id="amount" placeholder="Enter the amount you received">
+                    </div>
+                  </div>
+                </fieldset>
+            </div><!-- modal-body -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+            </div><!-- modal-footer -->
+          </form>
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
+    <div id="topModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Bonus</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- modal-header -->
+          <form class="form-horizontal" method="post">
+            {{ csrf_field() }}
+            <div class="modal-body">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Amount</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" required name="amount" step="any" min="0" id="amount" placeholder="Enter the amount you received">
+                        <span>This is optional</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Months</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" required name="months" step="1" min="-12" id="months" placeholder="Add Extra Months to premium investment">
+                        <span>This is optional</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div><!-- modal-body -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Back</button>
+            </div><!-- modal-footer -->
+          </form>
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->
     </div>
@@ -160,6 +237,14 @@
             var bankName = document.getElementById('bankName');
 
             var investorBankBtns = document.getElementsByClassName('investor-bank');
+            var investorBonusBtns = document.getElementsByClassName('investor-bonus');
+            var investorTopBtns = document.getElementsByClassName('investor-top');
+
+            var bonusModalHeading = document.querySelector('#bonusModal h5');
+            var bonusModalform = document.querySelector('#bonusModal form');
+
+            var topModalHeading = document.querySelector('#topModal h5');
+            var topModalform = document.querySelector('#topModal form');
 
             for (var i = 0; i < investorBankBtns.length; i++) {
               investorBankBtns[i].addEventListener('click', function(evt){
@@ -168,6 +253,18 @@
                 accountNumber.innerHTML = evt.target.dataset.accountnumber;
                 accountName.innerHTML = evt.target.dataset.accountname;
                 bankName.innerHTML = evt.target.dataset.bankname;
+              })
+
+              investorBonusBtns[i].addEventListener('click', function(evt){
+                evt.preventDefault();
+                bonusModalHeading.innerHTML = "Add Bonus for " + evt.target.dataset.name;
+                bonusModalform.action = evt.target.dataset.href;
+              })
+
+              investorTopBtns[i].addEventListener('click', function(evt){
+                evt.preventDefault();
+                topModalHeading.innerHTML = "Top Up premium investment for " + evt.target.dataset.name;
+                topModalform.action = evt.target.dataset.href;
               })
             }
 

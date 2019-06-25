@@ -143,7 +143,7 @@
         totalEarning = 0;
 
         for(var i=0; i<years; i++){
-          totalEarning += capital * 50/100;
+          totalEarning += capital * 75/100;
           capital += capital * 25/100;
         }
         totalEarning += capital;  

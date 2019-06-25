@@ -23,13 +23,14 @@ class UserController extends Controller
         if (auth()->attempt(['email' => request('email'), 'password' => request('password')])) {
             // If it succeeds generate and return api token
             $user = auth()->user();
+            $userId = $user->id;
             if($user->role === 'user'){
 	            $res['user'] = $user;
                 $res['wallet'] = $user->wallet;
                 $res['bank'] = $user->bankAccount;
 	            $res['token'] = $user->createToken('web-ui-api')->accessToken;
 
-                $investmentsCount = count($user()->trustwayInvestments);
+                $investmentsCount = count($user->trustwayInvestments);
                 $activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
                 $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');
                 $closedInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Closed')->sum('investment_amount');
@@ -229,11 +230,7 @@ class UserController extends Controller
                 'required',
                 'min:8',
                 'string',
-            ],
-            'confirm-password' => [
-                'required',
-                'same:new-password',
-            ],
+            ]
         ]);
 
         if ($validator->fails()) {

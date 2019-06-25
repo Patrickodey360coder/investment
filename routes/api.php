@@ -28,6 +28,8 @@ Route::group(['prefix' => 'v1'], function () {
 		Route::get('/bank', 'API\BankAccountController@index');
 		Route::post('/bank', 'API\BankAccountController@update');
 
+		Route::get('/home', 'API\HomeController@index');
+
 		Route::get('/investments', 'API\TrustwayInvestmentController@index');
 
 		Route::get('/logout', 'API\UserController@logout');
