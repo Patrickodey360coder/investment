@@ -12,6 +12,7 @@
               <th>Full Name</th>
               <th data-hide="phone, tablet">Email</th>
               <th data-hide="phone, tablet">Country</th>
+              <th data-hide="phone, tablet">Investment Amount</th>
               <th data-hide="phone, tablet">Next Payment Date</th>
               <th data-hide="phone, tablet">Expiration Date</th>
               <th>Actions</th>
@@ -53,12 +54,13 @@
                   <td>{{ $investor->name }}</td>
                   <td>{{ $investor->email }}</td>
                   <td>{{ $investor->country }}</td>
+                  <td>&#8358;{{ $investor->premiumUser->investment_amount }}</td>
                   <td>{{ $investor->premiumUser->next_checkout_date }}</td>
                   <td>{{ $investor->premiumUser->expiration_date }}</td>
                   <td>
-                    <button class="btn btn-info investor-bonus" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.bonus', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#bonusModal">Add Bonus</button>
-                    <button class="btn btn-info investor-top" data-name="{{ $investor->name }}" data-href="{{ route('admin.premium.topup', ['id' => $investor->premiumUser->id]) }}" data-toggle="modal" data-target="#topModal">Top Up</button>
-                    <button class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
+                    <button style="margin-top: 5px;" class="btn btn-info investor-bonus" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.bonus', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#bonusModal">Add Bonus</button>
+                    <button style="margin-top: 5px;" class="btn btn-info investor-top" data-name="{{ $investor->name }}" data-href="{{ route('admin.premium.topup', ['id' => $investor->premiumUser->id]) }}" data-toggle="modal" data-target="#topModal">Top Up</button>
+                    <button style="margin-top: 5px;" class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
                   </td>
                 </tr>
               @endforeach

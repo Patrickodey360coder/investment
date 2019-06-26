@@ -116,7 +116,18 @@
                 </div>
                 <div class="panel-body">
                     <?php
-                      if(empty($investments)){
+                      if($user['role'] == 'premium'){
+                        echo '<div style="height:215px">';
+                        echo "<h3>You have 1 running investment</h3>";
+                        echo "<h3>Amount Invested: &#8358;".$user->premiumUser->investment_amount."</h3>";
+                        echo "<h3>Next Payment Date: ";
+                        echo $user->premiumUser->next_checkout_date ?date_format(date_create($user->premiumUser->next_checkout_date),'F jS Y') : '';
+                        echo "</h3>";
+                        echo "<h3>Expiration Date: ";
+                        echo $user->premiumUser->expiration_date ? date_format(date_create($user->premiumUser->expiration_date),'F jS Y') : '';
+                        echo "</h3>";
+                        echo "</div>";
+                      } else if(empty($investments)){
                         echo '<div style="height:215px">';
                         echo "<h3>You have not made any investments</h3>";
                         echo "</div>";

@@ -58,6 +58,6 @@ class HomeController extends Controller
         $paidWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Paid')->sum('amount');
 
         $wallet = Wallet::all()->where('user_id', $userId)->first();
-        return view('user.home')->with('wallet', $wallet)->with('activeInvestment', $activeInvestment)->with('pendingInvestment', $pendingInvestment)->with('closedInvestment', $closedInvestment)->with('pendingWithdrawal', $pendingWithdrawal)->with('paidWithdrawal', $paidWithdrawal)->with('investments', $investmentsCount);
+        return view('user.home')->with('wallet', $wallet)->with('activeInvestment', $activeInvestment)->with('pendingInvestment', $pendingInvestment)->with('closedInvestment', $closedInvestment)->with('pendingWithdrawal', $pendingWithdrawal)->with('paidWithdrawal', $paidWithdrawal)->with('investments', $investmentsCount)->with('user', Auth::user());
     }
 }
