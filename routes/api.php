@@ -30,7 +30,10 @@ Route::group(['prefix' => 'v1'], function () {
 
 		Route::get('/home', 'API\HomeController@index');
 
-		Route::get('/investments', 'API\TrustwayInvestmentController@index');
+		Route::group(['middleware' => 'userOnly'], function(){
+			Route::get('/investments', 'API\TrustwayInvestmentController@index');
+			Route::post('/investments', 'API\TrustwayInvestmentController@store');
+		});
 
 		Route::get('/logout', 'API\UserController@logout');
 

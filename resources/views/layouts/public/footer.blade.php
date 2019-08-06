@@ -47,7 +47,8 @@
 </ul></div></aside></div><div class=" col-lg-3 col-md-3 col-xs-12"><aside id="znews-twitter-widget-2" class="widget widget_znews-twitter-widget"><h3 class="wg-title"></h3><div class="news-twitter bxslider nt-layout-default" data-mode="vertical" data-speed="5000" data-auto="0" data-ticker="0" data-minslides="1" data-maxslides="1" data-slidewidth="0" data-controls="0" data-pager="0">
 
     <div class="news-twitter-item">
-        <a href="{{ route('disclaimer') }}">Disclaimer</a>    
+        <a href="{{ route('disclaimer') }}">Disclaimer</a><br>  
+        <a href="{{ route('privacy') }}">Privacy Policy</a>   
     </div>
 </div></aside></div><div class=" col-lg-3 col-md-2 col-xs-12">                                          <div class="copyright-wrap">
                             <div class="logo-footer-wrap">
@@ -65,3 +66,18 @@ All rights reserved.<br></div>
     <style type="text/css">
         .vc_row.wpb_row.vc_row-fluid.vc_custom_1468485865940, .vc_row.wpb_row.vc_row-fluid.vc_row-no-padding.vc_hidden { display: none; }
     </style>
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+      @if(Session::has('success'))
+          toastr.success("{{ Session::get('success') }}")
+      @endif
+
+      @if(Session::has('error'))
+          toastr.error("{{ Session::get('error') }}")
+      @endif
+      
+      @if(Session::has('info'))
+          toastr.info("{{ Session::get('info') }}")
+      @endif
+    </script>

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		<!-- Put this in the place where you want the button to show -->
+		<button
+			type="button"
+			name="shockinflux-inline-btn"
+			id="your_desired_id"
+			data-amount="100"
+			data-email="user@client.com"
+			data-template="clean"
+			data-currency="ngn"
+			data-language="en"
+			data-action="undefined"
+			data-transactionid="00000"
+			data-storeid="g1xq8y87y800000U2FsdGVkX1/LaykxunCYjDqjtawGReF+0CLekeY8v7YNA3U4jjYZo4OMehhOt5WpudyuTJYG2AACiy/JNw1IhlfCFVYDF3B7Hu0AHU4qOsLiAh15Kkal7dF8zi7Sb0g9HHhXo7q4X3FYeRERDjGqnCa0gOBmcjyn/niZtvb01Rtt5Ugcg5CUpIAWmZShwKgLyerrG1vrwuSqEischxDKapM5avW9XBJbKXuZo+x3uqw="
+			data-comment="Comment for Payment"
+			data-callback="function ace(response){console.log(response)}"
+			class="shockinflux-inline-btn" >
+			Make Payment
+		</button >
+		<!-- Put this before the closing  -->
+		<script src="https://scripts-cdn.boxedall.com/shockinflux/v2/payview/js/shockpayment_client.js" charset="utf-8"> </script>
+		<script> shock_init("your_desired_id"); </script> 
+	</body>
+</html>

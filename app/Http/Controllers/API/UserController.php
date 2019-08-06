@@ -24,7 +24,7 @@ class UserController extends Controller
             // If it succeeds generate and return api token
             $user = auth()->user();
             $userId = $user->id;
-            if($user->role === 'user'){
+            if($user->role !== 'admin'){
 	            $res['user'] = $user;
                 $res['wallet'] = $user->wallet;
                 $res['bank'] = $user->bankAccount;
@@ -50,6 +50,7 @@ class UserController extends Controller
                         'paid' => $paidWithdrawal
                     ]
                 ];
+                $res['premium'] = $user->premiumUser;
 
 	            return response()->json($res, 200);
 	        } else {
@@ -205,8 +206,23 @@ class UserController extends Controller
             'detail' => "Reset password"
         ]);
 
+        $email = $user->email;
+        $url = 'https://kidlever.com/sendmail/password.php?password='.$password; 
+        $url .='&email='.$email;
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $request = curl_exec($ch);
+        if(curl_error($ch)){
+            //echo 'error:' . curl_error($ch);
+        }
+    
+        curl_close($ch);
+
         return response()->json([
-            'message' => "An email has been sent containg your new password"
+            'message' => "An email has been sent containing your new password"
         ]);
     }
 

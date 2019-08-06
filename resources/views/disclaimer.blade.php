@@ -1,4 +1,3 @@
-<?php $activeLink = 'register'; ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>

@@ -50,12 +50,12 @@ class PremiumUserController extends Controller
 
             Activity::create([
                 'user_id' => Auth::user()['id'],
-                'detail' => "You topped up the premium investment of " . $user->name . "(" . $user->email . ")" . " with " . $request->amount . " and " . $request->months . " extra months"
+                'detail' => "You topped up the premium investment of " . $user->name . "(" . $user->email . ")" . " with &#8358;" . $request->amount . " and " . $request->months . " extra months"
             ]);
 
             Activity::create([
                 'user_id' => $user->id,
-                'detail' => "Your premium investment was topped up with " . $request->amount . " and " . $request->months . " extra months"
+                'detail' => "Your premium investment was topped up with &#8358;" . $request->amount . " and " . $request->months . " extra months"
             ]);
 
             Session::flash('success', "Successfully added bonus to " . $user->name);
@@ -197,7 +197,6 @@ class PremiumUserController extends Controller
         // $ch, CURLOPT_HTTPHEADER, [
         //     'Authorization: Bearer ' . PaystackPrivateKey]
         // );
-        echo $url;
     
         $request = curl_exec($ch);
         if(curl_error($ch)){

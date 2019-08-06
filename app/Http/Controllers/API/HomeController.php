@@ -43,7 +43,8 @@ class HomeController extends Controller
 	            ]
             ],
             'bank' => $user->bankAccount,
-            'wallet' => $user->wallet
+            'wallet' => $user->wallet,
+            'premium' => $user->premiumUser
         ];
 
     	return response()->json($res, 200);

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Hash;
 use Session;
 
 require '../resources/countries.php';
@@ -37,5 +39,63 @@ class UserController extends Controller
     public function showInvestors()
     {
     	return view('admin.investors')->with('investors', User::all()->where('role', 'user'))->with('activeLink', 'investor');
+    }
+
+    public function forgotPassword(Request $request){
+        $this->validate($request, [
+          'email' => [
+            'required',
+            'email',
+            'exists:users,email',
+          ]
+        ]);
+
+        $user = User::where('email', '=', $_POST['email']??'')->first();
+
+        if (empty($user)) {
+            Session::flash('error', "Could not find user in our database");
+
+            return redirect()->route('forgotPassword');
+        }
+
+        $password = $this->genPassword(8);
+        // SEND EMAIL CONTAINING PASSWORD
+
+        $user->password = Hash::make($password);
+        $user->save();
+
+        Activity::create([
+            'user_id' => $user->id,
+            'detail' => "Reset password"
+        ]);
+
+        $email = $user->email;
+        $url = 'https://kidlever.com/sendmail/password.php?password='.$password; 
+        $url .='&email='.$email;
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $request = curl_exec($ch);
+        if(curl_error($ch)){
+            //echo 'error:' . curl_error($ch);
+        }
+    
+        curl_close($ch);
+
+        Session::flash('success', "An email has been sent containing your new password");
+
+        return redirect()->route('login');
+    }
+
+    private function genPassword(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): ?string
+    {
+        $pieces = [];
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $pieces []= $keyspace[random_int(0, $max)];
+        }
+        return implode('', $pieces);
     }
 }

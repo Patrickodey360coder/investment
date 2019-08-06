@@ -221,7 +221,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                             </div>
                             <div class="row">
                                 <div class="col-xs-8 text-left checkbox">
-                                  <a class="btn btn-link" href="{{ route('password.request') }}" style="color: blue;">
+                                  <a class="btn btn-link" href="{{ route('forgotPassword') }}" style="color: blue;">
                                     Forgot Your Password?
                                   </a>
                                 </div>

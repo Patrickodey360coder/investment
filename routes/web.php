@@ -27,6 +27,10 @@ Route::get('/disclaimer', function () {
     return view('disclaimer')->with('activeLink','');
 })->name('disclaimer');
 
+Route::get('/privacy', function () {
+    return view('privacy')->with('activeLink','');
+})->name('privacy');
+
 Route::get('/about-us', function () {
     return view('about-us')->with('activeLink','about-us');
 })->name('about-us');
@@ -50,6 +54,12 @@ Route::get('/loans', function () {
 Route::get('/retirement', function () {
     return view('retirement')->with('activeLink','');
 })->name('retirement');
+
+Route::get('/forgot/password', function () {
+    return view('auth.forgot-password')->with('activeLink','');
+})->name('forgotPassword');
+
+Route::post('/forgot/password', 'UserController@forgotPassword')->name('resetPassword');
 
 
 Auth::routes();
