@@ -209,6 +209,15 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
         <div class="row cms-grid cms-grid cms-grid-masonry">
                     <div class="cms-grid-item cms-grid-item col-lg-6 col-md-6 col-sm-6 col-xs-12" data-groups='["all","category-short-term"]'>
                 <div class="cms-grid-item-inner" style="background-color:#fff">
+                    <div class="cms-grid-media  has-thumbnail"><img width="550" height="280" src="/wp-content/uploads/2016/07/project-img4.jpg" class="attachment-fcgroup-thumb-large size-fcgroup-thumb-large wp-post-image" alt="" srcset="/wp-content/uploads/2016/07/project-img4.jpg 550w, /wp-content/uploads/2016/07/project-img4-300x153.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" /></div>                    <div class="cms-grid-title">
+                        <h3>Trustway 30</h3>
+                    </div>
+                    <div class="cms-grid-desc"><p style="font-size: 17px">3.5% ROI(Return on Investment) for one month</p>
+</div>
+                </div>
+            </div>
+                    <div class="cms-grid-item cms-grid-item col-lg-6 col-md-6 col-sm-6 col-xs-12" data-groups='["all","category-short-term"]'>
+                <div class="cms-grid-item-inner" style="background-color:#fff">
                     <div class="cms-grid-media  has-thumbnail"><img width="550" height="280" src="/wp-content/uploads/2016/07/project-img5.jpg" class="attachment-fcgroup-thumb-large size-fcgroup-thumb-large wp-post-image" alt="" srcset="/wp-content/uploads/2016/07/project-img5.jpg 550w, /wp-content/uploads/2016/07/project-img5-300x153.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" /></div>                    <div class="cms-grid-title">
                         <h3>Trustway 90</h3>
                     </div>
