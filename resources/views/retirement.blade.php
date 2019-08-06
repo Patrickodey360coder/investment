@@ -6,7 +6,7 @@
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="https://demo.farost.net/fcgroup/xmlrpc.php" />
-<title>Retirement &#8211; Trustway</title>
+<title>Retirement Plans &#8211; Trustway</title>
                         <script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -165,11 +165,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                         <div class="text-left col-md-5">
                             <div id="page-title-text" class="page-title-text">
                                 <div class="page-title-text-inner">
-                                    <h1>Retirement</h1>
+                                    <h1>Retirement Plans</h1>
                                 </div>
                             </div>
                             <div id="breadcrumb-text" class="breadcrumb-text">
-                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>Retirement</li></ul>                            </div>    
+                                <ul class="breadcrumbs"><li><a href="{{ route('index') }}">Home</a></li><li>Retirement Plans</li></ul>                            </div>    
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
             <main id="main" class="site-main">
                 <article id="post-9" class="clearfix post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Retirement</h2></div></div></div></div></div>
+                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1469414874911"><div class="wpb_wrapper"><div class="vc_custom_heading" ><h2 style="text-align: center ;text-transform: uppercase " class="cmsc-custom-heading heading-roboto-black vc_custom_heading">Retirement Plans</h2></div></div></div></div></div>
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1468458640029">
                         <div class="wpb_column vc_column_container vc_col-sm-1 vc_col-lg-1 vc_col-md-1 vc_col-xs-1"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-10 vc_col-md-10 vc_col-xs-10"><div class="vc_column-inner vc_custom_1468640442478"><div class="wpb_wrapper"> 

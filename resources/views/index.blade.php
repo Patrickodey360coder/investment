@@ -497,7 +497,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                         <img src="/wp-content/uploads/2016/05/retirement-img.png" alt=""/>
                                     </div>
                                                                  <!-- title 1-->
-                                                                    <h4 class="black-color">Retirements</h4>
+                                                                    <h4 class="black-color">Retirement Plans</h4>
                                                            
                             <div class="cms_fancybox_item_inner">
                                 <div class="cms_fancybox_text">
@@ -510,7 +510,7 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                                 </div>
                                             
                                             <!-- title 2-->
-                                                                                            <h4 class="white-color">Retirements</h4>
+                                                                                            <h4 class="white-color">Retirement Plans</h4>
                                             
                                             <!-- description-->
                                                                                             <div class="fancy-box-content">
