@@ -212,8 +212,8 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\//wp-admin\/admin-ajax.php","
                                     </div>
 
                                 </div>
-                                                                <div class="explore-services arrow-in-home hidden-xs" data-target="#page">
-                                                                        Explore the services                                                                           <figure class="bounce"><a href="#page"><img alt="arrow" src="/wp-content/themes//wp-fcgroup/assets/images/arrow-down.png"></a></figure>
+                                                                <div class="explore-services arrow-in-home hidden-xs" data-target="#menu-main-menu">
+                                                                        Explore the services                                                                           <figure class="bounce"><a href="#menu-main-menu"><img alt="arrow" src="/wp-content/themes//wp-fcgroup/assets/images/arrow-down.png"></a></figure>
                                       <!--explore-services--> 
                                  
                                 </div>
