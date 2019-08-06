@@ -37,6 +37,9 @@ class TrustwayInvestmentController extends Controller
     {
     	$amount = (int) $amount;
     	switch ($investmentType) {
+            case 'Trustway 30':
+                return $amount + ($amount * 3.5/100);
+
             case 'Trustway 90':
                 return $amount + ($amount * 15/100);
 
@@ -119,6 +122,10 @@ class TrustwayInvestmentController extends Controller
             $investment->investment_date = strftime("%Y-%m-%d %H:%M:%S", time());
 
             switch ($investment['investment_type']) {
+                case 'Trustway 30':
+                    $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 months'));
+                    break;
+
                 case 'Trustway 90':
                     $investment->checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+3 months'));
                     break;

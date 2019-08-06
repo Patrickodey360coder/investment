@@ -30,18 +30,14 @@ class InvestmentMinAndMaxAmount implements Rule
         $investmentType = $_POST["investment-type"] ?? '';
 
         switch ($investmentType) {
+            case 'Trustway 30':
             case 'Trustway 90':
-                return $amount >= 25000 && $amount <= 500000;
-
             case 'Trustway 180':
-                return $amount >= 25000 && $amount <= 1000000;
-
+                return $amount >= 25000;
             case 'Trustway 360':
-                return $amount >= 50000 && $amount <= 1000000;
-
+                return $amount >= 50000;
             case 'Trustway Pension':
-                return $amount >= 100000 && $amount <= 1500000;
-
+                return $amount >= 100000;
             default:
                 return false;
         }

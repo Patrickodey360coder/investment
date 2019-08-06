@@ -37,6 +37,9 @@ class TrustwayInvestmentController extends Controller
     {
     	$amount = (int) $amount;
     	switch ($investmentType) {
+            case 'Trustway 30':
+                return $amount + ($amount * 3.5/100);
+
             case 'Trustway 90':
                 return $amount + ($amount * 15/100);
 

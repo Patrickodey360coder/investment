@@ -97,6 +97,11 @@
 
       selectElem.addEventListener('change', function(evt){
         switch (evt.target.value) {
+          case 'Trustway 30':
+            ROI = 3.5;
+            setUpDurationField(1, 25000, 500000);
+            setUpTotalEarnings(amountElem.value);
+            break;
           case 'Trustway 90':
             ROI = 15;
             setUpDurationField(3, 25000, 500000);
@@ -118,7 +123,6 @@
             durationSelectElem.classList.remove('hidden');
             durationSelectElem.required = true;
             amountElem.min = 100000;
-            amountElem.max = 1500000;
             setUpTotalEarnings(amountElem.value);
             break;
           default:
@@ -151,13 +155,12 @@
         return totalEarning.toFixed(2);
       }
 
-      function setUpDurationField(months, minAmount, maxAmount) {
+      function setUpDurationField(months, minAmount) {
         durationInputElem.value = months + " months";
         durationInputElem.classList.remove('hidden');
         durationSelectElem.classList.add('hidden');
         durationSelectElem.required = false;
         amountElem.min = minAmount;
-        amountElem.max = maxAmount;
       }
     </script>
   @endsection
