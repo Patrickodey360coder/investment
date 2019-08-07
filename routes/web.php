@@ -31,6 +31,10 @@ Route::get('/privacy', function () {
     return view('privacy')->with('activeLink','');
 })->name('privacy');
 
+Route::get('/terms', function () {
+    return view('terms')->with('activeLink','');
+})->name('terms');
+
 Route::get('/about-us', function () {
     return view('about-us')->with('activeLink','about-us');
 })->name('about-us');
