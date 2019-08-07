@@ -1025,5 +1025,14 @@ var cmscarousel = {"cms-carousel":{"margin":"0","loop":"true","mouseDrag":"true"
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-content/themes//wp-fcgroup/assets/js/owl.carousel.cms.js?ver=1.0.0'></script>
+<script>
+    document.addEventListener('readystatechange', function(){
+        var carouselNextBtn = document.querySelector('#fcgroup-carousel-slide-632 .owl-next');
+
+        setInterval(function(evt){
+            carouselNextBtn && carouselNextBtn.click && carouselNextBtn.click();
+        }, 3000);
+    })
+</script>
 </body>
 </html>
