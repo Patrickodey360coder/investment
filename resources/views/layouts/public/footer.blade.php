@@ -48,7 +48,7 @@
 
     <div class="news-twitter-item">
         <a href="{{ route('disclaimer') }}">Disclaimer</a><br>  
-        <a href="{{ route('privacy') }}">Privacy Policy</a>   
+        <a href="{{ route('privacy') }}">Privacy Policy</a><br>
         <a href="{{ route('terms') }}">Terms & Conditions</a>   
     </div>
 </div></aside></div><div class=" col-lg-3 col-md-2 col-xs-12">                                          <div class="copyright-wrap">
