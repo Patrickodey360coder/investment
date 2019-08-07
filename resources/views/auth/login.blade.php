@@ -1,4 +1,4 @@
-<?php $activeLink = 'login'; ?>
+ <?php $activeLink = 'login'; ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -217,6 +217,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                         </label>
                                     </div>
+                                    <p style="font-size: 1.6rem;">
+                                        <strong>
+                                            By signing in you agree to our <a href="{{ route('terms') }}"style="color: #51c5eb; text-decoration: underline;">terms and conditions</a>.
+                                        </strong>
+                                    </p>
                                 </div>
                             </div>
                             <div class="row">

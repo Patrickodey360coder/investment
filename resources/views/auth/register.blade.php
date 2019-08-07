@@ -250,6 +250,11 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                                   <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                   <input id="password-confirm" type="password" minlength="8" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
                                 </div>
+                                <p style="font-size: 1.6rem; margin-top: 10px;">
+                                    <strong>
+                                        By registering you agree to our <a href="{{ route('terms') }}"style="color: #51c5eb; text-decoration: underline;">terms and conditions</a>.
+                                    </strong>
+                                </p>
                             </div>
                             <div class="row">
                                 <div class="col-xs-8 text-left checkbox">
