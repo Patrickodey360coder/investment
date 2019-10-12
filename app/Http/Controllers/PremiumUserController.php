@@ -87,7 +87,7 @@ class PremiumUserController extends Controller
         }
     }
 
-    private function genPassword(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): ?string
+    private function genPassword(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
     {
         $pieces = [];
         $max = mb_strlen($keyspace, '8bit') - 1;
