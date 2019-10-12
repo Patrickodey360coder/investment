@@ -38,14 +38,17 @@ class PremiumUserController extends Controller
             $next_checkout_date = strtotime($premiumUser->next_checkout_date);
             $expiration_date = strtotime($premiumUser->expiration_date);
 
-            if($next_checkout_date < time()){
+            if($next_checkout_date < time() && $request->months > 0){
                 $premiumUser->next_checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 months', time()));
                 $next_checkout_date = time();
             }
 
-            $expiration_date = $expiration_date < time() ? time() : $expiration_date;
+            if($request->months != 0){
+                $expiration_date = $expiration_date < time() ? time() : $expiration_date;
 
-            $premiumUser->expiration_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' . $request['months'] .' months', $expiration_date));
+                $premiumUser->expiration_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' . $request['months'] .' months', $expiration_date));    
+            }
+            
             $premiumUser->save();
 
             Activity::create([
@@ -58,9 +61,9 @@ class PremiumUserController extends Controller
                 'detail' => "Your premium investment was topped up with &#8358;" . $request->amount . " and " . $request->months . " extra months"
             ]);
 
-            Session::flash('success', "Successfully added bonus to " . $user->name);
+            Session::flash('success', "Successfully topped up " . $user->name . " premium investment");
         } else {
-            Session::flash('error', "Could not add the requested bonus");
+            Session::flash('error', "Could not top up the requested investment");
         }
 
         return redirect()->back();
