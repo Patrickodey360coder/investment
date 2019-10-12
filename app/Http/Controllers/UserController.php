@@ -23,12 +23,14 @@ class UserController extends Controller
     {
     	$this->validate($request, [
             'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
             'country' => ['required', Rule::in(Countries)],
             'password' => 'required|string|min:8|confirmed',
         ]);
         $user = Auth::user();
     	$user->name = $request->name;
         $user->country = $request->country;
+        $user->phone = $request->phone;
     	$user->password = bcrypt($request->password);
         $user->save();
 

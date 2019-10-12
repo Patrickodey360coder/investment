@@ -23,6 +23,13 @@
             </div>
 
             <div class="form-group">
+              <label class="col-lg-3 control-label">Phone Number</label>
+              <div class="col-lg-5">
+                <input type="tel" id="p2" class="form-control" minlength="8" maxlength="20" name="phone" placeholder="Phone Number" required value="{{ Auth::user()->phone }}">
+              </div>
+            </div>
+
+            <div class="form-group">
               <label class="col-lg-3 control-label">Country</label>
               <div class="col-lg-5">
                 <select id="country" type="text" name="country" class="form-control" required>
