@@ -212,6 +212,18 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                @if ($errors->has('phone'))
+                                    <p class="text-danger">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </p>
+                                @endif
+                                <div class="input-group">
+                                  <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                  <input id="phone" type="tel" name="phone" minlength="3" maxlength="20" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}" required>
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                                 @if ($errors->has('country'))
                                     <p class="text-danger">
