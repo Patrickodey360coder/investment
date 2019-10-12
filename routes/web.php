@@ -91,6 +91,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');
 		Route::post('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activateWithDate')->name('admin.activate.investments');
 
+		Route::get('/trustway-investment/{id}/delete', 'TrustwayInvestmentController@delete')->name('admin.delete.investments');
+
 		Route::get('/withdrawals', 'WithdrawalController@show')->name('admin.withdrawals');
 		Route::get('/withdrawals/{id}/accept', 'WithdrawalController@accept')->name('admin.accept.withdrawals');
 		Route::get('/withdrawals/{id}/reject', 'WithdrawalController@reject')->name('admin.reject.withdrawals');

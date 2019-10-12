@@ -60,9 +60,10 @@
                   <td>{{ $investment->checkout_date }}</td>
                   <td>
                     @if($investment->status == 'Pending')
-                      <a href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" class="btn btn-success">Activate</a>
-                      <button class="btn btn-info activate-investment" data-investment_type="{{ $investment->investment_type }}" data-href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" data-toggle="modal" data-target="#activateModal">Change Activation Date</button>
+                      <a style="margin-top: 5px;" href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" class="btn btn-success">Activate</a>
+                      <button style="margin-top: 5px;" class="btn btn-info activate-investment" data-investment_type="{{ $investment->investment_type }}" data-href="{{ route('admin.activate.investments', ['id' => $investment->id]) }}" data-toggle="modal" data-target="#activateModal">Change Activation Date</button>
                     @endif
+                    <a style="margin-top: 5px;" onclick="return confirm('Are you sure you want to delete this investment');" href="{{ route('admin.delete.investments', ['id' => $investment->id]) }}" class="btn btn-danger">Delete</a>
                   </td>
                 </tr>
               @endforeach

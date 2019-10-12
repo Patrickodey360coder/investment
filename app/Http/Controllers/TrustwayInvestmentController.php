@@ -225,4 +225,33 @@ class TrustwayInvestmentController extends Controller
 
         return redirect()->route('admin.investments');   
     }
+
+    public function delete(Request $request, $id)
+    {
+        $investment = TrustwayInvestment::find($id);
+
+        if($investment) {
+            $trustwayPension = $investment->trustwayPensionInvestment;
+
+            if($trustwayPension) {
+                $trustwayPension->delete();
+            }
+            $investment->delete();
+            Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You deleted " . $investment['investment_type'] . " investment #" . $investment->id . " of &#8358;" . $investment->investment_amount
+            ]);
+
+            Activity::create([
+                'user_id' =>$investment['user_id'],
+                'detail' => "Your " . $investment['investment_type'] . " investment #" . $investment->id . " of &#8358;" . $investment->investment_amount . " was deleted."
+            ]);
+
+            Session::flash('success', "Successfully deleted the requested investment");
+        } else {
+            Session::flash('error', "Could not delete the requested investment");
+        };
+
+        return redirect()->route('admin.investments');  
+    }
 }
