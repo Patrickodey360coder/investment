@@ -45,15 +45,15 @@
                   <!-- DATE FORMAT: 16th of July, 2016 12:00 am -->
                   <td>{{ $request->created_at }}</td>
                   <td>
-                    <a href="{{ route('admin.accept.withdrawals', ['id' => $request->id]) }}" class="btn btn-success">Accept</a>&nbsp;
-                    <a href="{{ route('admin.reject.withdrawals', ['id' => $request->id]) }}" class="btn btn-danger">Reject</a>
+                    <a href="{{ route('admin.accept.premiumInvestmentReinitiation', ['id' => $request->id]) }}" class="btn btn-success">Accept</a>&nbsp;
+                    <a href="{{ route('admin.reject.premiumInvestmentReinitiation', ['id' => $request->id]) }}" class="btn btn-danger">Reject</a>
                   </td>
                 </tr>
               @endforeach
             @else
               <tr>
                 <td colspan="5">
-                  <h3 class="text-center">You don't have any withdrawal request.</h3>
+                  <h3 class="text-center">There are no reinitiation requests.</h3>
                 </td>
               </tr>
             @endif

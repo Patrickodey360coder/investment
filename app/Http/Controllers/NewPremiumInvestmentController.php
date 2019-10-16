@@ -62,4 +62,61 @@ class NewPremiumInvestmentController extends Controller
     {
     	return view('admin.newPremiumInvestment')->with('requests', NewPremiumInvestment::all())->with('activeLink', 'reinitiateInvestment');
     }
+
+    public function accept(Request $request, $id)
+    {
+    	$reinitiationRequest = NewPremiumInvestment::find($id);
+    	if($reinitiationRequest)
+    	{
+    		$premiumUser = $reinitiationRequest->user->premiumUser;
+    		$premiumUser->investment_amount = $reinitiationRequest->investment_amount;
+    		$premiumUser->months = $reinitiationRequest->months;
+    		$premiumUser->next_checkout_date = strftime("%Y-%m-%d 00:00:00", strtotime('+1 months', time()));
+    		$premiumUser->expiration_date = strftime("%Y-%m-%d 00:00:00", strtotime('+' . $reinitiationRequest->months .' months', time()));
+    		$premiumUser->save();
+
+    		$reinitiationRequest->delete();
+
+    		Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You accepted a premium investment reinitiation request of &#8358;".$reinitiationRequest->investment_amount." lasting ".$reinitiationRequest->months." months from user #".$reinitiationRequest->user_id
+            ]);
+
+            Activity::create([
+                'user_id' =>$reinitiationRequest['user_id'],
+                'detail' => "Your premium investment reinitiation request of &#8358;".$reinitiationRequest->investment_amount." lasting ".$reinitiationRequest->months." months was accepted."
+            ]);
+
+            Session::flash('success', "Successfully accepted the selected premium investment reinitiation request");
+    	} else {
+    		Session::flash('error', "Could not reject the selected premium investment reinitiation request");
+    	}
+
+    	return redirect()->route('admin.premium.reinitiatePremiumInvestment');
+    }
+
+    public function reject(Request $request, $id)
+    {
+    	$reinitiationRequest = NewPremiumInvestment::find($id);
+    	if($reinitiationRequest)
+    	{
+    		$reinitiationRequest->delete();
+
+    		Activity::create([
+                'user_id' => Auth::user()['id'],
+                'detail' => "You rejected a premium investment reinitiation request of &#8358;".$reinitiationRequest->investment_amount." lasting ".$reinitiationRequest->months." months from user #".$reinitiationRequest->user_id
+            ]);
+
+            Activity::create([
+                'user_id' =>$reinitiationRequest['user_id'],
+                'detail' => "Your premium investment reinitiation request of &#8358;".$reinitiationRequest->investment_amount." lasting ".$reinitiationRequest->months." months was rejected."
+            ]);
+
+            Session::flash('success', "Successfully rejected the selected premium investment reinitiation request");
+    	} else {
+    		Session::flash('error', "Could not reject the selected premium investment reinitiation request");
+    	}
+
+    	return redirect()->route('admin.premium.reinitiatePremiumInvestment');
+    }
 }

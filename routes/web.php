@@ -88,6 +88,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('/premium/topup/{id}', 'PremiumUserController@addPayment')->name('admin.premium.topup');
 
 		Route::get('/premium/reinitiate', 'NewPremiumInvestmentController@show')->name('admin.premium.reinitiatePremiumInvestment');
+		Route::get('/premium/reinitiate/{id}/accept', 'NewPremiumInvestmentController@accept')->name('admin.accept.premiumInvestmentReinitiation');
+		Route::get('/premium/reinitiate/{id}/reject', 'NewPremiumInvestmentController@reject')->name('admin.reject.premiumInvestmentReinitiation');
 
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@show')->name('admin.investments');
 		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');
