@@ -38,7 +38,7 @@ class User extends Authenticatable
         return $this->hasOne('App\PremiumUser');
     }
 
-    public function premiumUser()
+    public function newPremiumInvestment()
     {
         return $this->hasOne('App\NewPremiumInvestment');
     }
