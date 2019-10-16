@@ -38,6 +38,11 @@ class User extends Authenticatable
         return $this->hasOne('App\PremiumUser');
     }
 
+    public function premiumUser()
+    {
+        return $this->hasOne('App\NewPremiumInvestment');
+    }
+
     public function activities()
     {
         return $this->hasMany('App\Activity');
