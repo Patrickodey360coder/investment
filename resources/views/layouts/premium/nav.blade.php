@@ -25,7 +25,16 @@
                           </a>
                       </li>
           
-                      <li class="list-divider"></li>                   
+                      <li class="list-divider"></li>     
+
+                      <li class="@if(isset($activeLink) && $activeLink=='reinitiateInvestment') active-link @endif">
+                          <a href="{{ route('premium.reinitiateInvestment') }}">
+                              <i class="fa fa-naira"></i>
+                              <span class="menu-title">
+                                  <strong>Reinitiate Investment</strong>
+                              </span>
+                          </a>
+                      </li>              
                       
                       <li class="@if(isset($activeLink) && $activeLink=='withdrawal') active-link @endif">
                           <a href="{{ route('user.withdrawals') }}">

@@ -109,6 +109,11 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('/withdrawals/delete/{id}', 'WithdrawalController@delete')->name('user.withdrawals.delete');
 	});
 
+	Route::group(['prefix' => 'dashboard/premium', 'middleware' => 'premiumOnly'], function(){
+		Route::get('/reinitiate', 'NewPremiumInvestmentController@index')->name('premium.reinitiateInvestment');
+	});
+
+
 	Route::group(['prefix' => 'dashboard', 'middleware' => 'userOnly'], function(){
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@index')->name('user.investments');
 		Route::get('/trustway-investment/create', 'TrustwayInvestmentController@createForm')->name('user.create-trustway-investments');
