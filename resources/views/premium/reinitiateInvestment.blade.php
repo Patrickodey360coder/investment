@@ -6,16 +6,14 @@
                 <div id="page-content">
        
             <div class="panel">
-
 @if($canReinitiate)                    
-                  <form id="demo-bvd-notempty" action="{{ route('premium.investment.update') }}" method="post" class="form-horizontal">
+                  <form id="demo-bvd-notempty" action="{{ route('premium.reinitiateInvestment.save') }}" method="post" class="form-horizontal">
                   
                     <div class="panel-body">
                       {{ csrf_field() }}
           
                     <fieldset>
-                    @include('layouts.includes.errors')
-                        
+                        @include('layouts.includes.errors')
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Investment Amount</label>
                       <div class="col-lg-5">
@@ -26,7 +24,7 @@
                       <div class="form-group">
               <label class="col-lg-3 control-label">Investment Duration</label>
               <div class="col-lg-5">
-                <select class="form-control" name="duration" required>
+                <select class="form-control" name="months" required>
                   <?php
                     for ($months=6; $months <= 24; $months++) { 
                       echo "<option value='".$months."'>".$months." months</option>";

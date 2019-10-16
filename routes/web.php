@@ -111,6 +111,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::group(['prefix' => 'dashboard/premium', 'middleware' => 'premiumOnly'], function(){
 		Route::get('/reinitiate', 'NewPremiumInvestmentController@index')->name('premium.reinitiateInvestment');
+		Route::post('/reinitiate', 'NewPremiumInvestmentController@save')->name('premium.reinitiateInvestment.save');
 	});
 
 
