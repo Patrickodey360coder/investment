@@ -57,4 +57,9 @@ class NewPremiumInvestmentController extends Controller
 
         return redirect()->route('premium.reinitiateInvestment');
     }
+
+    public function show()
+    {
+    	return view('admin.newPremiumInvestment')->with('requests', NewPremiumInvestment::all())->with('activeLink', 'reinitiateInvestment');
+    }
 }

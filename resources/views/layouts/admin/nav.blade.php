@@ -44,6 +44,15 @@
                               </span>
                           </a>
                       </li>
+
+                      <li class="@if(isset($activeLink) && $activeLink=='reinitiatePremiumInvestment') active-link @endif">
+                          <a href="{{ route('admin.premium.reinitiatePremiumInvestment') }}">
+                              <i class="fa fa-money"></i>
+                              <span class="menu-title">
+                                  <strong>All Premium Investment Reinitiation Requests</strong>
+                              </span>
+                          </a>
+                      </li> 
                       
                       <li class="@if(isset($activeLink) && $activeLink=='trustway') active-link @endif">
                           <a href="{{ route('admin.investments') }}">

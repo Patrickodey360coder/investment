@@ -87,6 +87,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('/premium', 'PremiumUserController@create')->name('admin.premium.users.create');
 		Route::post('/premium/topup/{id}', 'PremiumUserController@addPayment')->name('admin.premium.topup');
 
+		Route::get('/premium/reinitiate', 'NewPremiumInvestmentController@show')->name('admin.premium.reinitiatePremiumInvestment');
+
 		Route::get('/trustway-investment', 'TrustwayInvestmentController@show')->name('admin.investments');
 		Route::get('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activate')->name('admin.activate.investments');
 		Route::post('/trustway-investment/{id}/activate', 'TrustwayInvestmentController@activateWithDate')->name('admin.activate.investments');
@@ -96,6 +98,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('/withdrawals', 'WithdrawalController@show')->name('admin.withdrawals');
 		Route::get('/withdrawals/{id}/accept', 'WithdrawalController@accept')->name('admin.accept.withdrawals');
 		Route::get('/withdrawals/{id}/reject', 'WithdrawalController@reject')->name('admin.reject.withdrawals');
+
+		Route::get('/premium/reinitiate', 'NewPremiumInvestmentController@show')->name('admin.premium.reinitiatePremiumInvestment');
 	});
 
 	Route::group(['prefix' => 'dashboard/user', 'middleware' => 'premiumAndUserOnly'], function(){
