@@ -210,4 +210,20 @@ class PremiumUserController extends Controller
 
         return redirect()->back();
     }
+
+    public function deactivate(Request $request, $id)
+    {
+        $premiumUser = PremiumUser::find($id);
+        if(!$premiumUser){
+            Session::flash('error', "Could not deactivate the requested premium investment");
+        }
+
+        $premiumUser->expiration_date = strftime("%Y-%m-%d %H:%M:%S", time());
+        $premiumUser->next_checkout_date = NULL;
+        $premiumUser->save();
+
+        Session::flash('success', "Successfully deactivated the requested premium investment");
+
+        return redirect()->route('admin.premium.users');
+    }
 }

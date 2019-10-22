@@ -61,6 +61,8 @@
                     <button style="margin-top: 5px;" class="btn btn-info investor-bonus" data-name="{{ $investor->name }}" data-href="{{ route('admin.user.bonus', ['id' => $investor->id]) }}" data-toggle="modal" data-target="#bonusModal">Add Bonus</button>
                     <button style="margin-top: 5px;" class="btn btn-info investor-top" data-name="{{ $investor->name }}" data-href="{{ route('admin.premium.topup', ['id' => $investor->premiumUser->id]) }}" data-toggle="modal" data-target="#topModal">Top Up</button>
                     <button style="margin-top: 5px;" class="btn btn-info investor-bank" data-name="{{ $investor->name }}" data-bankName="{{ $bankName }}" data-accountName="{{ $accountName }}" data-accountNumber="{{ $accountNumber }}" data-toggle="modal" data-target="#bankModal">View Bank Details</button>
+                    <a style="margin-top: 5px;" onclick="return confirm('Are you sure you want to deactivate this investment');" href="{{ route('admin.premium.deactivate', ['id' => $investor->premiumUser->id]) }}" class="btn btn-warning">Deactivate</a>
+                    <a style="margin-top: 5px;" onclick="return confirm('Are you sure you want to delete this investment');" href="{{ route('admin.premium.delete', ['id' => $investor->premiumUser->id]) }}" class="btn btn-danger">Delete</a>
                   </td>
                 </tr>
               @endforeach
