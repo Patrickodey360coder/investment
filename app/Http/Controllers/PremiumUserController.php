@@ -222,7 +222,31 @@ class PremiumUserController extends Controller
         $premiumUser->next_checkout_date = NULL;
         $premiumUser->save();
 
+        Activity::create([
+            'user_id' => Auth::user()['id'],
+            'detail' => "You deactivated the premium investment of " . $premiumUser->user->name . "(" . $premiumUser->user->email . ")"
+        ]);
+
+        Activity::create([
+            'user_id' => $premiumUser->user->id,
+            'detail' => "Your premium investment was deactivated"
+        ]);
+
         Session::flash('success', "Successfully deactivated the requested premium investment");
+
+        return redirect()->route('admin.premium.users');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $premiumUser = PremiumUser::find($id);
+        if(!$premiumUser){
+            Session::flash('error', "Could not delete the requested premium investment");
+        }
+
+        $premiumUser->user->delete();
+
+        Session::flash('success', "Successfully deleted the requested premium investment");
 
         return redirect()->route('admin.premium.users');
     }
