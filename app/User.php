@@ -28,6 +28,23 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($user) { // before delete() method call this
+            $user->bankAccount->delete();
+            $user->wallet->delete();
+            PremiumUser::where('user_id', $user->id)->delete();
+            NewPremiumInvestment::where('user_id', $user->id)->delete();
+            Activity::where('user_id', $user->id)->delete();
+            Withdrawal::where('user_id', $user->id)->delete();
+            foreach ($user->trustwayInvestments as $investment) {
+                TrustwayPensionInvestment::where('trustway_investment_id', $investment->id)->delete();
+            }
+            TrustwayInvestment::where('user_id', $user->id)->delete();
+        });
+    }
+
     public function bankAccount()
     {
         return $this->hasOne('App\BankAccount');

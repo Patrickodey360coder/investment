@@ -244,6 +244,11 @@ class PremiumUserController extends Controller
             Session::flash('error', "Could not delete the requested premium investment");
         }
 
+        Activity::create([
+            'user_id' => Auth::user()['id'],
+            'detail' => "You deleted the premium investor " . $premiumUser->user->name . "(" . $premiumUser->user->email . ")"
+        ]);
+
         $premiumUser->user->delete();
 
         Session::flash('success', "Successfully deleted the requested premium investment");
