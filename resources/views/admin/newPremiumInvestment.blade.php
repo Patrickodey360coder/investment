@@ -29,6 +29,7 @@
               <th>User</th>
               <th>Amount</th>
               <th>Duration</th>
+              <th>From Wallet</th>
               <th data-hide="phone, tablet">Date created</th>
               <th>Actions</th>
             </tr>
@@ -42,6 +43,7 @@
                   <td>{{ $request->user->name }} ({{ $request->user->email }})</td>
                   <td>&#8358;{{ $request->investment_amount }}</td>
                   <td>{{ $request->months }} months</td>
+                  <td>{{ $request->from_wallet }}</td>
                   <!-- DATE FORMAT: 16th of July, 2016 12:00 am -->
                   <td>{{ $request->created_at }}</td>
                   <td>
