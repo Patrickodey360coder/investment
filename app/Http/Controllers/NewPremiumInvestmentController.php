@@ -119,6 +119,12 @@ class NewPremiumInvestmentController extends Controller
     	$reinitiationRequest = NewPremiumInvestment::find($id);
     	if($reinitiationRequest)
     	{
+            if($reinitiationRequest->from_wallet === 'yes'){
+                $wallet = $reinitiationRequest->user->wallet;
+                $wallet->withdrawable = $wallet->withdrawable + $reinitiationRequest->investment_amount;
+                $wallet->save();
+            }
+
     		$reinitiationRequest->delete();
 
     		Activity::create([
