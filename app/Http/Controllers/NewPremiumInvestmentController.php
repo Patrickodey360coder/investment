@@ -87,6 +87,12 @@ class NewPremiumInvestmentController extends Controller
     	$reinitiationRequest = NewPremiumInvestment::find($id);
     	if($reinitiationRequest)
     	{
+            if($reinitiationRequest->from_wallet === 'yes'){
+                $wallet = $reinitiationRequest->user->wallet;
+                $wallet->balance = $wallet->balance - $reinitiationRequest->investment_amount;
+                $wallet->save();
+            }
+
     		$premiumUser = $reinitiationRequest->user->premiumUser;
     		$premiumUser->investment_amount = $reinitiationRequest->investment_amount;
     		$premiumUser->months = $reinitiationRequest->months;
