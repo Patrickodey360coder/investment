@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\NewPremiumInvestment;
 use App\Activity;
+use App\Rules\ValidateNewPremiumInvestmentAmount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Session;
 
 class NewPremiumInvestmentController extends Controller
@@ -19,29 +21,46 @@ class NewPremiumInvestmentController extends Controller
 
     public function save(Request $request)
     {
+        $user = Auth::user();
+        $premiumUser = $user->premiumUser;
+        $wallet = $user->wallet;
+
     	$this->validate($request, [
-            'amount' => ['required', 'numeric', 'min:200000'],
+            'amount' => ['required', 'numeric', 'min:200000', new ValidateNewPremiumInvestmentAmount($wallet)],
             'months' => ['required', 'numeric', 'min:6', 'max:24'],
+            'from_wallet' => ['required', Rule::in('yes', 'no')],
         ]);
 
-    	$user = Auth::user();
-    	$premiumUser = $user->premiumUser;
     	if(time() > strtotime($premiumUser->expiration_date)){
     		$amount = (int) $request->amount;
     		$months = (int) $request->months;
+            $from_wallet = $request->from_wallet;
 
     		$newPremiumInvestment = $user->newPremiumInvestment;
+
     		if($newPremiumInvestment){
+                if($newPremiumInvestment->from_wallet === 'yes'){
+                    $wallet->withdrawable = $wallet->withdrawable + $newPremiumInvestment->investment_amount;
+                    $wallet->save();
+                }
+
     			$newPremiumInvestment->investment_amount = $amount;
     			$newPremiumInvestment->months = $months;
+                $newPremiumInvestment->from_wallet = $from_wallet;
     			$newPremiumInvestment->save();
     		} else {
     			NewPremiumInvestment::create([
     				'investment_amount' => $amount,
     				'months' => $months,
-    				'user_id' => $user->id
+    				'user_id' => $user->id,
+                    'from_wallet' => $from_wallet
     			]);
     		}
+
+            if($from_wallet === 'yes'){
+                $wallet->withdrawable = $wallet->withdrawable - $amount;
+                $wallet->save();
+            }
 
     		Activity::create([
 	        	'user_id' => $user->id,

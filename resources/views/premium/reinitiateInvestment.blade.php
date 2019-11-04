@@ -33,6 +33,16 @@
                 </select>
               </div>
             </div>
+
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Reinitiate from your wallet</label>
+              <div class="col-lg-5">
+                <select class="form-control" name="from_wallet" required>
+                  <option value='yes'>Yes</option>
+                  <option value='no'>No</option>
+                </select>
+              </div>
+            </div>
             </fieldset>
                      
                     </div>
