@@ -54,7 +54,7 @@
               @endforeach
             @else
               <tr>
-                <td colspan="5">
+                <td colspan="7">
                   <h3 class="text-center">There are no reinitiation requests.</h3>
                 </td>
               </tr>
