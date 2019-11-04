@@ -18,6 +18,7 @@ class CreateNewPremiumInvestmentsTable extends Migration
             $table->unsignedInteger('user_id');//->index();
             $table->float('investment_amount');
             $table->unsignedInteger('months');
+            $table->enum('from_wallet', ['yes', 'no'])->default('no');
             $table->timestamps();
 
             $table->foreign('user_id')
