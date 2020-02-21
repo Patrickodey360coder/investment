@@ -97,6 +97,11 @@
 
       selectElem.addEventListener('change', function(evt){
         switch (evt.target.value) {
+          case 'Quantum 250':
+            ROI = 25;
+            setUpDurationField(3, 25000, 500000);
+            setUpTotalEarnings(amountElem.value);
+            break;
           case 'Trustway 30':
             ROI = 3.5;
             setUpDurationField(1, 25000, 500000);
