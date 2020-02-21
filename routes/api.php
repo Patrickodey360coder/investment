@@ -18,12 +18,10 @@ Route::group(['prefix' => 'v1'], function () {
 	Route::post('register', 'API\UserController@register');
 	Route::post('/password/forgot', 'API\UserController@forgotPassword');
 
-	Route::middleware('auth:api')->get('/user', function (Request $request) {
-	    return $request->user();
-	});
-
 	Route::group(['middleware' => ['auth:api'], ], function () {
 		Route::get('/activity', 'API\ActivityController@index');
+
+		Route::get('/user', 'API\UserController@getUserData');
 
 		Route::get('/bank', 'API\BankAccountController@index');
 		Route::post('/bank', 'API\BankAccountController@update');

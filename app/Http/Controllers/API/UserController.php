@@ -277,4 +277,38 @@ class UserController extends Controller
             'message' => 'Password updated successfully',
         ], 200);
     }
+
+    public function getUserData(Request $request)
+    {
+        $user = $request->user();
+        $userId = $user->id;
+
+        $res['user'] = $user;
+        $res['wallet'] = $user->wallet;
+        $res['bank'] = $user->bankAccount;
+
+        $investmentsCount = count($user->trustwayInvestments);
+        $activeInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Active')->sum('investment_amount');
+        $pendingInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Pending')->sum('investment_amount');
+        $closedInvestment = DB::table('trustway_investments')->where('user_id', $userId)->where('status', 'Closed')->sum('investment_amount');
+
+        $pendingWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Pending')->sum('amount');
+        $paidWithdrawal = DB::table('withdrawals')->where('user_id', $userId)->where('status', 'Paid')->sum('amount');
+
+        $res['home'] = [
+            'investments' => [
+                'count' => $investmentsCount,
+                'active' => $activeInvestment,
+                'pending' => $pendingInvestment,
+                'closed' => $closedInvestment,
+            ],
+            'withdrawals' => [
+                'pending' => $pendingWithdrawal,
+                'paid' => $paidWithdrawal
+            ]
+        ];
+        $res['premium'] = $user->premiumUser;
+
+        return response()->json($res, 200);
+    }
 }
