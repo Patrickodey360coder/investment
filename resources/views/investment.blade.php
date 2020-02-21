@@ -243,12 +243,12 @@ var wc_add_to_cart_params = {"ajax_url":"\/fcgroup\/wp-admin\/admin-ajax.php","w
 </div>
                 </div>
             </div>
-                        <div class="cms-grid-item cms-grid-item col-lg-6 col-md-6 col-sm-6 col-xs-12" data-groups='["all","category-long-term"]'>
+                        <div class="cms-grid-item cms-grid-item col-lg-6 col-md-6 col-sm-6 col-xs-12" data-groups='["all","category-short-term"]'>
                 <div class="cms-grid-item-inner" style="background-color:#fff">
                     <div class="cms-grid-media  has-thumbnail"><img width="550" height="280" src="/wp-content/uploads/2016/07/project-img1.jpg" class="attachment-fcgroup-thumb-large size-fcgroup-thumb-large wp-post-image" alt="" srcset="/wp-content/uploads/2016/07/project-img1.jpg 550w, /wp-content/uploads/2016/07/project-img1-300x153.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" /></div>                    <div class="cms-grid-title">
-                        <h3>Trustway Pension</h3>
+                        <h3>Quantum 250</h3>
                     </div>
-                    <div class="cms-grid-desc"><p style="font-size: 17px">100% ROI for 2 to 10 years. Note that in this plan only 75% of the ROI is withdrawable as the remaining 25% of the ROI is rolled over to be added to the initial capital annually.</p>
+                    <div class="cms-grid-desc"><p style="font-size: 17px">25% ROI(Return on Investment) for three months</p>
 </div>
                 </div>
             </div>
