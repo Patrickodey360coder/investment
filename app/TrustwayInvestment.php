@@ -11,7 +11,7 @@ class TrustwayInvestment extends Model
     ];
 
     protected static $statusValues = ['Active', 'Closed', 'Pending'];
-    protected static $investmentTypes = ['Trustway 30', 'Trustway 90', 'Trustway 180', 'Trustway 360', 'Trustway Pension'];
+    protected static $investmentTypes = ['Quantum 250', 'Trustway 30', 'Trustway 90', 'Trustway 180', 'Trustway 360', 'Trustway Pension'];
 
     public static function getStatusValues()
     {
