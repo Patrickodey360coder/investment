@@ -30,6 +30,7 @@ class InvestmentMinAndMaxAmount implements Rule
         $investmentType = $_POST["investment-type"] ?? '';
 
         switch ($investmentType) {
+            case 'Quantum 250':
             case 'Trustway 30':
             case 'Trustway 90':
             case 'Trustway 180':
@@ -55,6 +56,7 @@ class InvestmentMinAndMaxAmount implements Rule
         $investmentType = $_POST["investment-type"] ?? '';
 
         switch ($investmentType) {
+            case 'Quantum 250':
             case 'Trustway 30':
             case 'Trustway 90':
             case 'Trustway 180':
