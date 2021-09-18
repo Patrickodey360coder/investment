@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewPremiumInvestment extends Model
+class Token extends Model
 {
     protected $fillable = [
-        'user_id', 'investment_amount', 'months', 'from_wallet'
+        'user_id', 'total_earnings', 'balance', 'withdrawable', 'bonus', 'investment'
     ];
 
     public function user()
